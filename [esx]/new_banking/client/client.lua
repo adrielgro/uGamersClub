@@ -15,7 +15,7 @@ local banks = {
   {name="Bank", id=108, x=-351.534, y=-49.529, z=49.042},
   {name="Bank", id=108, x=241.727, y=220.706, z=106.286},
   {name="Bank", id=108, x=1175.0643310547, y=2706.6435546875, z=38.094036102295}
-}	
+}
 
 local atms = {
   {name="ATM", id=277, x=-386.733, y=6045.953, z=31.501},
@@ -119,8 +119,8 @@ if bankMenu then
   while true do
     Wait(0)
 	if nearBank() or nearATM() then
-			DisplayHelpText("Press ~INPUT_PICKUP~ to access the bank ~b~")
-	
+			DisplayHelpText("Presiona ~INPUT_PICKUP~ para acceder al banco ~b~")
+
 		if IsControlJustPressed(1, 38) then
 			inMenu = true
 			SetNuiFocus(true, true)
@@ -129,7 +129,7 @@ if bankMenu then
 			local ped = GetPlayerPed(-1)
 		end
 	end
-        
+
     if IsControlJustPressed(1, 322) then
 	  inMenu = false
       SetNuiFocus(false, false)
@@ -166,7 +166,7 @@ RegisterNetEvent('currentbalance1')
 AddEventHandler('currentbalance1', function(balance)
 	local id = PlayerId()
 	local playerName = GetPlayerName(id)
-	
+
 	SendNUIMessage({
 		type = "balanceHUD",
 		balance = balance,
@@ -207,7 +207,7 @@ end)
 --===============================================
 RegisterNUICallback('transfer', function(data)
 	TriggerServerEvent('bank:transfer', data.to, data.amountt)
-	
+
 end)
 
 
@@ -229,10 +229,10 @@ end)
 function nearBank()
 	local player = GetPlayerPed(-1)
 	local playerloc = GetEntityCoords(player, 0)
-	
+
 	for _, search in pairs(banks) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-		
+
 		if distance <= 3 then
 			return true
 		end
@@ -242,10 +242,10 @@ end
 function nearATM()
 	local player = GetPlayerPed(-1)
 	local playerloc = GetEntityCoords(player, 0)
-	
+
 	for _, search in pairs(atms) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-		
+
 		if distance <= 3 then
 			return true
 		end

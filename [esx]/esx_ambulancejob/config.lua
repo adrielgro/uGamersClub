@@ -30,7 +30,7 @@ Config.EarlyRespawn                 = false
 Config.RespawnFine                  = false
 Config.RespawnFineAmount            = 500
 
-Config.Locale                       = 'en'
+Config.Locale                       = 'es'
 
 Config.Blip = {
   Pos     = { x = 307.76, y = -1433.47, z = 28.97 },
