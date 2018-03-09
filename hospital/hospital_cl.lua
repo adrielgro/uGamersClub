@@ -42,10 +42,10 @@ function ConfigLang(lang)
 
   elseif lang == "EN" then
     lang_string = {
-      text1 = "Press ~INPUT_VEH_HORN~ to be treated ~r~(~h~~g~500$~r~)",
-      text2 = "The ~h~~g~doctor ~s~will ~h~~r~treat~s~ you, ~h~~b~be patient~s~.",
-      text3 = "You don't need ~h~~r~treatment~s~.",
-      text4 = "The ~h~~g~doctor ~h~~r~treated~s~ you.",
+      text1 = "Presiona ~INPUT_VEH_HORN~ para ser atendido/tratado ~r~(~h~~g~500$~r~)",
+      text2 = "El ~h~~g~doctor ~s~te ~h~~r~atenderá~s~, ~h~~b~se paciente~s~.",
+      text3 = "No necesitas ~h~~r~tratamiento~s~.",
+      text4 = "El ~h~~g~doctor te esta ~h~~r~tratando~s~.",
       text5 = "~h~You have ~h~~r~moved away~s~, the ~h~~g~doctor~s~ could not ~h~~r~heal~s~ you !",
   }
   end
@@ -98,14 +98,14 @@ Citizen.CreateThread(function()
       if treatment == true and timer == true and (GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), item.x, item.y, item.z, true) > 2) then
         Notify(lang_string.text5)
         treatment = false
-        timer = false            
+        timer = false
       end
-    end 
-  end       
+    end
+  end
 end)
 
 Citizen.CreateThread(function()
-    
+
     RequestModel(GetHashKey("s_m_m_doctor_01"))
     while not HasModelLoaded(GetHashKey("s_m_m_doctor_01")) do
       Wait(1)

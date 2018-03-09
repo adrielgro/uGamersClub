@@ -7,7 +7,7 @@
 	* This menu used the Scorpion Trainer as a framework to build off of.
 	* https://github.com/pongo1231/ScorpionTrainer
 	* (C) Emre Cürgül 2017
-	* 
+	*
 	* A lot of useful functionality has been converted from the lambda menu.
 	* https://lambda.menu
 	* (C) Oui 2017
@@ -17,8 +17,8 @@
 	*
 ---------------------------------------------------------------------------]]
 
-local selfDeathMessage = "~o~You ~s~died."
-local deathSuicideMessage = "~o~You ~s~commited suicide."
+local selfDeathMessage = "~o~Estás ~s~muerto."
+local deathSuicideMessage = "~o~Te has ~s~suicidado."
 
 -- Hold dead players to prevent multiple messages.
 local deadPlayers = {}
@@ -119,7 +119,7 @@ function handlePlayerDeathMessage( pedID, currentPed )
 		local kname = GetPlayerName( killer )
 
 		if ( kname == name ) then
-			msg = "~o~<C>" .. name .. "</C> ~s~commited suicide."
+			msg = "~o~<C>" .. name .. "</C> ~s~se suicidó."
 		elseif ( kname == GetPlayerName( me ) )then
 			msg = "~o~<C>You</C> ~s~" .. killActionFromWeaponHash( weaponHash ) .. " ~o~<C>" .. name .. "</C>~s~."
 		else
@@ -139,14 +139,14 @@ function checkForDeaths()
         if ( NetworkIsPlayerConnected( i ) ) then
         	local currentPed = GetPlayerPed( i )
 
-        	if ( DoesEntityExist( currentPed ) and IsEntityDead( currentPed ) ) then 
+        	if ( DoesEntityExist( currentPed ) and IsEntityDead( currentPed ) ) then
 
         		if(deadPlayers[i] == nil)then
         			TriggerEvent("mellotrainer:playerDeath", i)
 	       			deadPlayers[i] = true
 	       		end
 	       	else
-				deadPlayers[i] = nil	       		
+				deadPlayers[i] = nil
 			end
 		end
 	end

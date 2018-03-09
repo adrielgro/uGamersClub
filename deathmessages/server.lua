@@ -8,10 +8,10 @@ AddEventHandler('playerDied',function(killer,reason)
 		reason = 2
 	end
 	if reason == 0 then
-		TriggerClientEvent('showNotification', -1,"~o~".. GetPlayerName(source).."~w~ committed suicide. ")
+		TriggerClientEvent('showNotification', -1,"~o~".. GetPlayerName(source).."~w~ se suicidó. ")
 	elseif reason == 1 then
-		TriggerClientEvent('showNotification', -1,"~o~".. killer .. "~w~ killed ~o~"..GetPlayerName(source).."~w~.")
+		TriggerClientEvent('showNotification', -1,"~o~".. killer .. "~w~ asesinó a ~o~"..GetPlayerName(source).."~w~.")
 	else
-		TriggerClientEvent('showNotification', -1,"~o~".. GetPlayerName(source).."~w~ died respawn 2 minutes.")
+		TriggerClientEvent('showNotification', -1,"~o~".. GetPlayerName(source).."~w~ murió, reaparecerá en 2 minutos.")
 	end
 end)
