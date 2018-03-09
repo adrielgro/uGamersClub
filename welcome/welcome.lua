@@ -1,0 +1,5 @@
+AddEventHandler("playerSpawned", function(spawn)
+TriggerEvent("chatMessage", "", { 0, 0, 0 }, "Bienvenido a uGamers.CLUB")
+TriggerEvent("chatMessage", "", { 0, 0, 0 }, "Ingresa al teamspeak: ts3.mancos.club")
+TriggerEvent("chatMessage", "", { 0, 0, 0 }, "Recuerda seguir las normas de la comunidad")
+end)
