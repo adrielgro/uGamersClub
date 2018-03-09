@@ -9,7 +9,7 @@ function drawTxt(x,y ,width,height,scale, text, r,g,b,a)
     SetTextOutline()
     SetTextEntry("STRING")
     AddTextComponentString(text)
-    DrawText(150, height/2 - 30)
+    DrawText(150, height/2)
 end
 function drawTxt2(x,y ,width,height,scale, text, r,g,b,a)
     SetTextFont(6)

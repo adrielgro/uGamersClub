@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
 			if GetEntityHealth(myPed) < 115 then
 				SetPlayerInvincible(PlayerId(), true)
 				SetPedToRagdoll(myPed, 1000, 1000, 0, 0, 0, 0)
-				ShowNotification("~r~You were knocked out!")
+				ShowNotification("~r~Has sido noqueado!")
 				wait = 15
 				knockedOut = true
 				SetEntityHealth(myPed, 116)
@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
 			DisablePlayerFiring(PlayerId(), true)
 			SetPedToRagdoll(myPed, 1000, 1000, 0, 0, 0, 0)
 			ResetPedRagdollTimer(myPed)
-			
+
 			if wait >= 0 then
 				count = count - 1
 				if count == 0 then

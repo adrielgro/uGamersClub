@@ -6,6 +6,7 @@ server_scripts {
   'locales/br.lua',
   'locales/de.lua',
   'locales/en.lua',
+  'locales/es.lua',
   'locales/fr.lua',
   'config.lua',
   'server/esx_jobs_sv.lua'
