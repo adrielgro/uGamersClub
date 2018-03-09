@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = true -- turn this on if you want custom peds
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = true
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.PoliceStations = {
 
