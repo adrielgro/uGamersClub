@@ -31,7 +31,7 @@
   end, false)
 
   RegisterCommand('ad', function(source, args, user)
-  	TriggerClientEvent('chatMessage', -1, "^1[ADVERT]: " .. GetPlayerName(source), {255,215,0}, table.concat(args, " "))
+  	TriggerClientEvent('chatMessage', -1, "^1[ANUNCIO]: " .. GetPlayerName(source), {255,215,0}, table.concat(args, " "))
   end, false)
 
 function stringsplit(inputstr, sep)
