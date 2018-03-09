@@ -18,7 +18,7 @@ function drawLevel(r, g, b, a)
   SetTextDropShadow()
   SetTextOutline()
   SetTextEntry("STRING")
-  AddTextComponentString("~y~Voz~s~ " .. voice.level)
+  AddTextComponentString("~y~Voz:~s~ " .. voice.level)
   DrawText(0.175, 0.92)
 end
 
