@@ -8,7 +8,7 @@ No edites ningún archivo sin tener una copia previamente y tener sobre seguro q
 ---
 ### Estructura del proyecto
 
-El código del proyecto se encuentra en [/resources](https://github.com/adrielgro/uGamersClub/tree/master/resources). 
+El código del proyecto se encuentra en la raiz del proyecto. 
 
 ---
 ### Encargados de hacer el proyecto posible y ponerlo en marcha
