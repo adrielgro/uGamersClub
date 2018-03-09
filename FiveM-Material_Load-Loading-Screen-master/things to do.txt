@@ -1,0 +1,7 @@
+we change the controls in menu am from x to n9
+
+C:\BNEWESX\resources\commands
+
+C:\BNEWESX\resources\nos
+
+C:\BNEWESX\resources\PTTPoliceRadio
