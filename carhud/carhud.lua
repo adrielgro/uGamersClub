@@ -19,7 +19,7 @@ local HUD = {
 
 	Top 			= false, -- ALL TOP PANAL ( oil, dsc, plate, fluid, ac )
 
-	Plate 			= true, -- only if Top is false and you want to keep Plate Number
+	Plate 			= false, -- only if Top is false and you want to keep Plate Number
 
 }
 
