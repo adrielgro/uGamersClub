@@ -1,5 +1,5 @@
 Config = {}
-Config.Locale = 'en'
+Config.Locale = 'es'
 
 Stores = {
 	["paleto_twentyfourseven"] = {

@@ -7,6 +7,7 @@ client_scripts {
 	'locales/de.lua',
 	'locales/br.lua',
 	'locales/en.lua',
+	'locales/es.lua',
 	'locales/fr.lua',
 	'config.lua',
 	'client/esx_holdup_cl.lua'
@@ -17,6 +18,7 @@ server_scripts {
 	'locales/de.lua',
 	'locales/br.lua',
 	'locales/en.lua',
+	'locales/es.lua',
 	'locales/fr.lua',
 	'config.lua',
 	'server/esx_holdup_sv.lua'

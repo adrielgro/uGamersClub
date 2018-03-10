@@ -17,7 +17,7 @@ local vehicles = {
 {class = "offroad", name = "BLAZER4", price = 4200},
 {class = "offroad", name = "DUBSTA3", price = 4200},
 {class = "offroad", name = "MONSTER", price = 4200},
-{class = "offroad", name = "MARSHALL", price = 4200}, 
+{class = "offroad", name = "MARSHALL", price = 4200},
 {class = "offroad", name = "INSURGENT", price = 4200},
 {class = "offroad", name = "INSURGENT2", price = 4200},
 {class = "offroad", name = "TECHNICAL", price = 4200},
@@ -43,16 +43,16 @@ local vehicles = {
 RegisterServerEvent("baseevents:enteredVehicle")
 AddEventHandler("baseevents:enteredVehicle", function(veh, seat, displayName)
 	local vehPrice = nil
-	
+
 	for k, veh in pairs(vehicles) do
 		if displayName == veh.name then
 			vehPrice = veh.price
 			TriggerClientEvent("getVehPrice", -1, vehPrice)
 		end
 	end
-	
+
 	if seat == -1 and vehPrice ~= nil then
-		print(GetPlayerName(source) .. " is driving a " .. displayName .. "!" .. " and the price is: " .. vehPrice)
+		print(GetPlayerName(source) .. " esta manejando un " .. displayName .. "!" .. " y el precio es: " .. vehPrice)
 	end
 end)
 
@@ -70,5 +70,3 @@ AddEventHandler("resetMoney", function()
 		user.setMoney(0)
 	end)
 end)
-
-
