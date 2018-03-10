@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
 
 	while true do
 		Citizen.Wait(0)
-		
+
 		local isNearFuelStation, stationNumber = isNearStation()
 		local isNearFuelPStation, stationPlaneNumber = isNearPlaneStation()
 		local isNearFuelHStation, stationHeliNumber = isNearHeliStation()
@@ -107,7 +107,7 @@ Citizen.CreateThread(function()
 				menu = not menu
 				int = 0
 				--[[Menu.hidden = not Menu.hidden
-				
+
 				Menu.Title = "Station essence"
 				ClearMenu()
 				Menu.addButton("Eteindre le moteur", "stopMotor")]]--
@@ -128,7 +128,7 @@ Citizen.CreateThread(function()
 
 						TriggerServerEvent("essence:buy", int, stationNumber,false)
 					else
-					
+
 					end
 				end)
 
@@ -150,7 +150,7 @@ Citizen.CreateThread(function()
 				menu = not menu
 				int = 0
 				--[[Menu.hidden = not Menu.hidden
-				
+
 				Menu.Title = "Station essence"
 				ClearMenu()
 				Menu.addButton("Eteindre le moteur", "stopMotor")]]--
@@ -171,7 +171,7 @@ Citizen.CreateThread(function()
 
 						TriggerServerEvent("essence:buy", int, electricityPrice,true)
 					else
-					
+
 					end
 				end)
 
@@ -192,7 +192,7 @@ Citizen.CreateThread(function()
 				menu = not menu
 				int = 0
 				--[[Menu.hidden = not Menu.hidden
-				
+
 				Menu.Title = "Station essence"
 				ClearMenu()
 				Menu.addButton("Eteindre le moteur", "stopMotor")]]--
@@ -212,7 +212,7 @@ Citizen.CreateThread(function()
 
 						TriggerServerEvent("essence:buy", int, stationBoatNumber,false)
 					else
-					
+
 					end
 				end)
 
@@ -233,7 +233,7 @@ Citizen.CreateThread(function()
 				menu = not menu
 				int = 0
 				--[[Menu.hidden = not Menu.hidden
-				
+
 				Menu.Title = "Station essence"
 				ClearMenu()
 				Menu.addButton("Eteindre le moteur", "stopMotor")]]--
@@ -254,7 +254,7 @@ Citizen.CreateThread(function()
 
 						TriggerServerEvent("essence:buy", int, stationPlaneNumber,false)
 					else
-					
+
 					end
 				end)
 
@@ -275,7 +275,7 @@ Citizen.CreateThread(function()
 				menu = not menu
 				int = 0
 				--[[Menu.hidden = not Menu.hidden
-				
+
 				Menu.Title = "Station essence"
 				ClearMenu()
 				Menu.addButton("Eteindre le moteur", "stopMotor")]]--
@@ -296,7 +296,7 @@ Citizen.CreateThread(function()
 
 						TriggerServerEvent("essence:buy", int, stationHeliNumber,false)
 					else
-					
+
 					end
 				end)
 
@@ -354,7 +354,7 @@ Citizen.CreateThread(function()
 				essence = 0
 				SetVehicleFuelLevel(GetVehiclePedIsIn(GetPlayerPed(-1)),0)
 				SetVehicleUndriveable(GetVehiclePedIsUsing(GetPlayerPed(-1)), true)
-			end			
+			end
 		end
 	end
 
@@ -404,7 +404,7 @@ function renderBoxes()
 			if(showText) then
 				local percent = (essence/0.142)*100
 
-				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4,round(percent,1).."%", 255, 255, 255, 255, 0, 1)
+				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
 			end
 		else
 			if(showBar) then
@@ -416,7 +416,7 @@ function renderBoxes()
 			if(showText) then
 				local percent = (essence/0.142)*100
 
-				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4,round(percent,1).."%", 255, 255, 255, 255, 0, 1)
+				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
 			end
 		end
 	end

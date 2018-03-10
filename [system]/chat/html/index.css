@@ -36,7 +36,7 @@ em {
   width: 38%;
   height: 240px;
 
-  background-color: rgba(52, 73, 94, 0.7);
+  background-color: rgba(94, 52, 52, 0.7);
   -webkit-animation-duration: 2s;
 }
 
@@ -76,11 +76,12 @@ textarea {
   padding: 5px;
   padding-left: 27px;
   color: white;
-  background-color: rgba(44, 62, 80, 1.0);
+  background-color: rgba(94, 52, 52, 1.0);
   width: 100%;
   border-width: 0;
   height: 34px;
   overflow: hidden;
+  resize: none;
 }
 
 textarea:focus, input:focus {
@@ -104,7 +105,7 @@ textarea:focus, input:focus {
   font-size: 1.1rem;
   box-sizing: border-box;
   color: white;
-  background-color: rgba(44, 62, 80, 1.0);
+  background-color: rgba(94, 52, 52, 1.0);
   width: 100%;
 }
 
