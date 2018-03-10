@@ -396,9 +396,9 @@ AddEventHandler('es:playerLoaded', function(source)
 		}
 		
       	characters = {
-      	  character1 = "No Character",
-      	  character2 = "No Character",
-      	  character3 = "No Character"
+      	  character1 = "Sin personaje",
+      	  character2 = "Sin personaje",
+      	  character3 = "Sin personaje"
       	}
 	  
       	TriggerClientEvent('menu:setCharacters', source, characters)
@@ -423,7 +423,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 		      
 			if activeName == char1 then
 	          characters = {
-	            character1 = char1 .. " [Active]",
+	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
 	          }	
@@ -432,7 +432,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 			elseif activeName == char2 then
 	          characters = {
 	            character1 = char1,
-		        character2 = char2 .. " [Active]",
+		        character2 = char2 .. " [Activo]",
 		        character3 = char3
 	          }	
 		  
@@ -441,7 +441,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 	          characters = {
 	            character1 = char1,
 		        character2 = char2,
-		        character3 = char3 .. " [Active]"
+		        character3 = char3 .. " [Activo]"
 	          }	
 		  
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
@@ -474,7 +474,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 		      
 			if activeName == char1 then
 	          characters = {
-	            character1 = char1 .. " [Active]",
+	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
 	          }	
@@ -483,7 +483,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 			elseif activeName == char2 then
 	          characters = {
 	            character1 = char1,
-		        character2 = char2 .. " [Active]",
+		        character2 = char2 .. " [Activo]",
 		        character3 = char3
 	          }	
 		  
@@ -517,7 +517,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 		      
 			if activeName == char1 then
 	          characters = {
-	            character1 = char1 .. " [Active]",
+	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
 	          }	
@@ -544,9 +544,9 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 		end)  
 	  else	
 	    characters = {
-	      character1 = "No Character",
-		  character2 = "No Character",
-		  character3 = "No Character"
+	      character1 = "Sin personaje",
+		  character2 = "Sin personaje",
+		  character3 = "Sin personaje"
 	    }  
 		
 		TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)	  
@@ -571,13 +571,13 @@ AddEventHandler('menu:deleteChar1', function(myIdentifiers)
 	if data.firstname ~= '' then
       deleteCharacter(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Delete Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No se ha podido eliminar la identidad!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 1!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No hay ningún personaje en el slot 1!")
 	end
   end)
 end)
@@ -597,13 +597,13 @@ AddEventHandler('menu:deleteChar2', function(myIdentifiers)
 	if data.firstname ~= '' then
       deleteCharacter(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Delete Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No se ha podido eliminar la identidad!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 2!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No hay ningún personaje en el slot 2!")
 	end
   end)
 end)
@@ -625,11 +625,11 @@ AddEventHandler('menu:deleteChar3', function(myIdentifiers)
 	    if callback == true then
 		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Delete Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No se ha podido eliminar la identidad!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 3!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No hay ningún personaje en el slot 3!")
 	end
   end)
 end)
@@ -649,13 +649,13 @@ AddEventHandler('menu:selectChar1', function(myIdentifiers)
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Are Now " .. data.firstname .. " " .. data.lastname .. "!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ahora eres " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Update Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ha fallado la actualización del personaje!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 1!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No hay ningún personaje en el slot 1!")
 	end
   end)
 end)
@@ -675,13 +675,13 @@ AddEventHandler('menu:selectChar2', function(myIdentifiers)
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Are Now " .. data.firstname .. " " .. data.lastname .. "!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ahora eres " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Update Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ha fallado la actualización del personaje!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 2!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No hay ningún personaje en el slot 2!")
 	end
   end)
 end)
@@ -701,13 +701,13 @@ AddEventHandler('menu:selectChar3', function(myIdentifiers)
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "You Are Now " .. data.firstname .. " " .. data.lastname .. "!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ahora eres " .. data.firstname .. " " .. data.lastname .. "!")
 		else
-		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "Failed To Update Identity!")
+		  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "Ha fallado la actualización del personaje!")
 		end
 	  end)
 	else
-	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTITY]", {255, 0, 0}, "No Character In Slot 3!")
+	  TriggerClientEvent('chatMessage', myIdentifiers.playerid, "[IDENTIDAD]", {255, 0, 0}, "No hay ningún personaje en el slot 3!")
 	end
   end)
 end)
