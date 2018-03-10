@@ -66,7 +66,7 @@ AddEventHandler('es_admin:all', function(type)
 				if type == "bring_all" then TriggerClientEvent('es_admin:quick', -1, 'bring', Source) end
 				if type == "slap_all" then TriggerClientEvent('es_admin:quick', -1, 'slap') end
 			else
-				TriggerClientEvent('chatMessage', Source, "SYSTEM", {255, 0, 0}, "You do not have permission to do this")
+				TriggerClientEvent('chatMessage', Source, "SYSTEM", {255, 0, 0}, "No tienes permiso para usar esto.")
 			end
 		end)
 	end)
@@ -178,7 +178,7 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 				end
 			end
 			else
-				TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "superadmin required to do this")
+				TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Necesitas ser superadmin para poder hacer esto")
 			end
 		end)
 	end)
@@ -188,13 +188,13 @@ end)
 AddEventHandler('rconCommand', function(commandName, args)
 	if commandName == 'setadmin' then
 		if #args ~= 2 then
-				RconPrint("Usage: setadmin [user-id] [permission-level]\n")
+				RconPrint("USA: setadmin [user-id] [permission-level]\n")
 				CancelEvent()
 				return
 		end
 
 		if(GetPlayerName(tonumber(args[1])) == nil)then
-			RconPrint("Player not ingame\n")
+			RconPrint("Jugador no encontrado\n")
 			CancelEvent()
 			return
 		end
@@ -212,13 +212,13 @@ AddEventHandler('rconCommand', function(commandName, args)
 		CancelEvent()
 	elseif commandName == 'setgroup' then
 		if #args ~= 2 then
-				RconPrint("Usage: setgroup [user-id] [group]\n")
+				RconPrint("USA: setgroup [user-id] [group]\n")
 				CancelEvent()
 				return
 		end
 
 		if(GetPlayerName(tonumber(args[1])) == nil)then
-			RconPrint("Player not ingame\n")
+			RconPrint("Jugador no encontrado\n")
 			CancelEvent()
 			return
 		end
@@ -234,20 +234,20 @@ AddEventHandler('rconCommand', function(commandName, args)
 					end
 				end)
 			else
-				RconPrint("This group does not exist.\n")
+				RconPrint("Este grupo no existe.\n")
 			end
 		end)
 
 		CancelEvent()
 	elseif commandName == 'giverole' then
 		if #args < 2 then
-				RconPrint("Usage: giverole [user-id] [role]\n")
+				RconPrint("USA: giverole [user-id] [role]\n")
 				CancelEvent()
 				return
 		end
 
 		if(GetPlayerName(tonumber(args[1])) == nil)then
-			RconPrint("Player not ingame\n")
+			RconPrint("Jugador no encontrado\n")
 			CancelEvent()
 			return
 		end
@@ -261,13 +261,13 @@ AddEventHandler('rconCommand', function(commandName, args)
 		CancelEvent()
 	elseif commandName == 'removerole' then
 		if #args < 2 then
-				RconPrint("Usage: removerole [user-id] [role]\n")
+				RconPrint("USA: removerole [user-id] [role]\n")
 				CancelEvent()
 				return
 		end
 
 		if(GetPlayerName(tonumber(args[1])) == nil)then
-			RconPrint("Player not ingame\n")
+			RconPrint("Jugador no encontrado\n")
 			CancelEvent()
 			return
 		end
@@ -281,13 +281,13 @@ AddEventHandler('rconCommand', function(commandName, args)
 		CancelEvent()
 	elseif commandName == 'setmoney' then
 			if #args ~= 2 then
-					RconPrint("Usage: setmoney [user-id] [money]\n")
+					RconPrint("USA: setmoney [user-id] [money]\n")
 					CancelEvent()
 					return
 			end
 
 			if(GetPlayerName(tonumber(args[1])) == nil)then
-				RconPrint("Player not ingame\n")
+				RconPrint("Jugador no encontrado\n")
 				CancelEvent()
 				return
 			end
@@ -297,7 +297,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 					user.setMoney(tonumber(args[2]))
 
 					RconPrint("Money set")
-					TriggerClientEvent('chatMessage', tonumber(args[1]), "CONSOLE", {0, 0, 0}, "Your money has been set to: ^2^*$" .. tonumber(args[2]))
+					TriggerClientEvent('chatMessage', tonumber(args[1]), "CONSOLE", {0, 0, 0}, "Tu dinero se ha modificado: ^2^*$" .. tonumber(args[2]))
 				end
 			end)
 
@@ -395,8 +395,8 @@ TriggerEvent('es:addGroupCommand', 'announce', "admin", function(source, args, u
 	table.remove(args, 1)
 	TriggerClientEvent('chatMessage', -1, "ANNOUNCEMENT", {255, 0, 0}, "" .. table.concat(args, " "))
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
-end, {help = "Announce a message to the entire server", params = {{name = "announcement", help = "The message to announce"}}})
+	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos insuficientes!")
+end, {help = "Announce a message to the entire server", params = {{name = "announcement", help = "El mensaje para anunciar"}}})
 
 -- Freezing
 local frozen = {}

@@ -25,11 +25,13 @@ Locales['es'] = {
   ['citizen_interaction'] = 'Interacción ciudadana',
   ['vehicle_interaction'] = 'Interacción vehículo',
   ['object_spawner'] = 'Colocar objetos',
+  ['animations'] = 'Animaciones',
 
   ['id_card'] = 'Documento de identidad',
   ['search'] = 'Buscar',
+  ['strip'] = 'strip',
   ['handcuff'] = 'Poner/quitar Esposas',
-  ['drag'] = 'escoltar',
+  ['drag'] = 'Escoltar',
   ['put_in_vehicle'] = 'Meter en el vehículo',
   ['out_the_vehicle'] = 'Sacar del vehículo',
   ['fine'] = 'Multa',
@@ -47,7 +49,7 @@ Locales['es'] = {
   ['cash'] = 'Dinero',
   -- ID Card Menu
   ['name'] = 'Nombre : ',
-  ['bac'] = 'Alcoolemia : ',
+  ['bac'] = 'Alcoholemia : ',
   -- Body Search Menu
   ['confiscate_dirty'] = 'Confiscar dinero negro : €',
   ['guns_label'] = '--- Armas ---',

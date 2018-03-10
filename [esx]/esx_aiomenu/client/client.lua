@@ -70,13 +70,13 @@ RegisterNUICallback('toggleEngineOnOff', function()
 	if (GetPedInVehicleSeat(GetVehiclePedIsIn(GetPlayerPed(-1), false), -1) == GetPlayerPed(-1)) then
 	  if IsVehicleEngineOn(GetVehiclePedIsIn(GetPlayerPed(-1), false)) then
 		SetVehicleEngineOn(GetVehiclePedIsIn(GetPlayerPed(-1), false), false)
-		TriggerEvent("chatMessage", "Info", {255, 255, 0}, "Engine is now ^1off^0.")
+		TriggerEvent("chatMessage", "Info", {255, 255, 0}, "El motor ahora está ^1off^0.")
 	  else
 		SetVehicleEngineOn(GetVehiclePedIsIn(GetPlayerPed(-1), false), true)
-		TriggerEvent("chatMessage", "Info", {255, 255, 0}, "Engine is now ^2on^0.")
+		TriggerEvent("chatMessage", "Info", {255, 255, 0}, "El motor ahora está ^2on^0.")
 	  end
 	else 
-	  ShowNotification("You have to be in the driver's seat of a vehicle!")
+	  ShowNotification("Tienes que estar en el asiento del conductor en el vehículo!")
 	end 
   end 
 end)
@@ -96,14 +96,14 @@ RegisterNUICallback('toggleVehicleLocks', function()
     if lockStatus == 0 or lockStatus == 1 then
       SetVehicleDoorsLocked(lastCar, 2)
       SetVehicleDoorsLockedForPlayer(lastCar, PlayerId(), false)
-      TriggerEvent("chatMessage", "Info", {255, 255, 0}, "Door is now ^1locked^0.")
+      TriggerEvent("chatMessage", "Info", {255, 255, 0}, "La puerta ahora está ^1locked^0.")
     elseif lockStatus == 2 then
       SetVehicleDoorsLocked(lastCar, 1)
       SetVehicleDoorsLockedForAllPlayers(vehicle, false)
-      TriggerEvent("chatMessage", "Info", {255, 255, 0}, "Door is now ^2unlocked^0.")
+      TriggerEvent("chatMessage", "Info", {255, 255, 0}, "La puerta ahora está ^2unlocked^0.")
     end
   else
-    TriggerEvent("chatMessage", "Info", {255, 255, 0}, "You don't have a car.")
+    TriggerEvent("chatMessage", "Info", {255, 255, 0}, "No estás en un coche.")
   end
 end)
 
@@ -383,9 +383,9 @@ end)
 RegisterNetEvent("menu:getSteamIdent")
 AddEventHandler("menu:getSteamIdent", function(identity)
   if myIdentifiers.steamidentifier then
-    TriggerEvent("chatMessage", "^1[IDENTITY]", {255, 255, 0}, "Your steam identifier is:" .. myIdentifiers.steamidentifier)
+    TriggerEvent("chatMessage", "^1[IDENTITY]", {255, 255, 0}, "Tu identificación de steam es:" .. myIdentifiers.steamidentifier)
   else
-    TriggerEvent("chatMessage", "^1[IDENTITY]", {255, 255, 0}, "Your steam identifier is nil. Please use /getID")
+    TriggerEvent("chatMessage", "^1[IDENTITY]", {255, 255, 0}, "Su identificación de steam es erróneo, usa /getID")
   end
 end)
 
@@ -472,7 +472,7 @@ RegisterNUICallback('NUInewCharacter', function(data)
   if myIdentity.character3 == "No Character" then
     exports['esx_identity']:openRegistry()
   else
-    TriggerEvent("chatMessage", "^1[IDENTITY]", {255, 255, 0}, "You can only have 3 characters!")
+    TriggerEvent("chatMessage", "^1[IDENTIDAD]", {255, 255, 0}, "Solo puedes tener 3 cuentas distintas!")
   end
 end)
 
