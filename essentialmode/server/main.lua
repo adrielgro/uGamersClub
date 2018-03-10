@@ -11,7 +11,7 @@ _VERSION = '5.0.0'
 PerformHttpRequest("http://fivem.online/version.txt", function(err, rText, headers)
 	print("\nCurrent version: " .. _VERSION)
 	print("Updater version: " .. rText .. "\n")
-	
+
 	if rText ~= _VERSION then
 		print("\nVersion mismatch, you are currently not using the newest stable version of essentialmode. Please update\n")
 		log('Version mismatch was detected, updater version: ' .. rText .. '(' .. _VERSION .. ')')
@@ -66,6 +66,12 @@ end)
 
 AddEventHandler('es:getSessionSetting', function(k, cb)
 	cb(settings.sessionSettings[k])
+end)
+
+
+AddEventHandler('es:invalidCommandHandler', function(source, args, user)
+	TriggerClientEvent('chatMessage', source, "", {0, 0, 200}, "^1^*Comando desconocido^r^0, usa ^2/ayuda^0 para ver la lista.")
+	CancelEvent()
 end)
 
 local firstSpawn = {}
@@ -123,7 +129,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				command.cmd(source, command_args, Users[source])
 				TriggerEvent("es:userCommandRan", source, command_args)
 			end
-			
+
 			TriggerEvent("es:commandRan", source, command_args, Users[source])
 		else
 			TriggerEvent('es:invalidCommandHandler', source, command_args, Users[source])
