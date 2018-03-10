@@ -1051,7 +1051,7 @@ ESX.ShowInventory = function()
   local elements  = {}
 
   table.insert(elements, {
-    label     = '[Cash] $' .. ESX.PlayerData.money,
+    label     = '[Dinero] $' .. ESX.PlayerData.money,
     count     = ESX.PlayerData.money,
     type      = 'item_money',
     value     = 'money',

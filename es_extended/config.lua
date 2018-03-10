@@ -8,6 +8,5 @@ Config.ShowDotAbovePlayer       = false
 Config.DisableWantedLevel       = true
 Config.RemoveInventoryItemDelay = 5 * 60000
 Config.EnableWeaponPickup       = true
-Config.Locale                   = 'en'
+Config.Locale                   = 'es'
 Config.EnableDebug              = false
-

@@ -16,8 +16,8 @@ Locales['es'] = {
   ['remove_object'] = 'remove object',
   ['deposit_object'] = 'deposit object',
   ['invite'] = 'invite',
-  ['dirty_money'] = 'dirty money $',
-  ['inventory'] = 'inventory',
+  ['dirty_money'] = 'dinero sucio $',
+  ['inventory'] = 'inventario',
   ['amount'] = 'amount?',
   ['amount_invalid'] = 'invalid amount',
   ['press_to_exit'] = 'press ~INPUT_CONTEXT~ to exit the property',
@@ -26,6 +26,6 @@ Locales['es'] = {
   ['made_property'] = 'you have made a property',
   ['not_enough'] = 'you do not have enough money',
   ['invalid_quantity'] = 'invalid quantity',
-  ['paid_rent'] = 'you ~g~paid~s~ your rent: ~g~$',
+  ['paid_rent'] = 'has ~g~pagado~s~ de renta: ~g~$',
 
 }
