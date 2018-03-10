@@ -14,7 +14,7 @@ body {
 }
 
 .dialog {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 2px;
   left: 50%;
   margin-top: 250px;
@@ -29,10 +29,13 @@ form {
 }
 
 input[type=text] {
-  border: 1px solid rgb(177, 177, 177);
+  background-color: rgb(186, 186, 186);
+  border: 0;
   border-radius: 3px;
+  color: #FFF;
+  font-weight: bold;
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 12px 10px;
   text-align: center;
   width: 100%;
 }
@@ -40,10 +43,10 @@ input[type=text] {
 button {
   background-color: rgb(185, 11, 11);
   border: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   color: #fff;
   display: block;
-  font-size: 19px;
+  font-size: 18px;
   margin-top: 5px;
   padding: 15px 10px;
   width: 100%;
@@ -51,9 +54,11 @@ button {
 
 h1 {
   border: 0;
-  color: #2b2b2b;
+  color: #494848;
   display: block;
   font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
   margin-top: 5px;
   margin-right: 5px;
   padding: 10px;
