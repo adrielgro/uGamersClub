@@ -14,9 +14,10 @@ body {
 }
 
 .dialog {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 2px;
   left: 50%;
+  margin-top: 250px;
   padding: 15px;
   position: absolute;
   transform: translateX(-50%);
@@ -28,20 +29,22 @@ form {
 }
 
 input[type=text] {
-  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 5px;
   padding: 10px;
   text-align: center;
+  width: 100%;
 }
 
 button {
   background-color: rgb(185, 11, 11);
   border: 0;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   display: block;
-  font-size: 16px;
+  font-size: 19px;
   margin-top: 5px;
-  padding: 25px 10px;
+  padding: 20px 10px;
   width: 100%;
 }
 
