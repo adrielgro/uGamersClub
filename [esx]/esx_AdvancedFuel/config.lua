@@ -51,7 +51,7 @@ hud_form = 1 -- 1 : Vertical | 2 = Horizontal
 hud_x = 0.175
 hud_y = 0.885
 
-text_x = 0.2560
+text_x = 0.2610
 text_y = 0.975
 
 
