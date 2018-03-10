@@ -1,5 +1,8 @@
-body {
+* {
   font-family: 'Lato', sans-serif;
+}
+
+body {
   overflow: hidden;
   display: none;
 }
@@ -11,7 +14,7 @@ body {
 }
 
 .dialog {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 2px;
   left: 50%;
   padding: 15px;
@@ -36,9 +39,9 @@ button {
   border-radius: 2px;
   color: #fff;
   display: block;
-  font-size: 16xp;
+  font-size: 16px;
   margin-top: 5px;
-  padding: 10px 20px;
+  padding: 25px 10px;
   width: 100%;
 }
 
