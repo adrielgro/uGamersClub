@@ -404,7 +404,7 @@ function renderBoxes()
 			if(showText) then
 				local percent = (essence/0.142)*100
 
-				DrawAdvancedText(text_x+3, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
+				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
 			end
 		else
 			if(showBar) then
@@ -416,7 +416,7 @@ function renderBoxes()
 			if(showText) then
 				local percent = (essence/0.142)*100
 
-				DrawAdvancedText(text_x+3, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
+				DrawAdvancedText(text_x, text_y, 0.005, 0.0028, 0.4, "Gas: " .. round(percent,1).."%", 255, 255, 255, 255, 0, 1)
 			end
 		end
 	end
