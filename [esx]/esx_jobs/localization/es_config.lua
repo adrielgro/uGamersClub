@@ -1,6 +1,6 @@
 Config              = {}
 Config.DrawDistance = 1000.0
-Config.Locale       = 'es'
+Config.Locale       = 'en'
 
 Config.Plates = {
   taxi = "TAXI",
@@ -27,7 +27,7 @@ Config.PublicZones = {
     Blip  = false,
     Name  = "San Andreas Times",
     Type  = "teleport",
-    Hint  = "Presiona ~INPUT_PICKUP~ para entrar al edificio.",
+    Hint  = "Press ~INPUT_PICKUP~ to enter the building.",
     Teleport = { x = -139.09838867188, y = -620.74865722656, z = 167.82052612305 }
   },
 
@@ -39,7 +39,7 @@ Config.PublicZones = {
     Blip  = false,
     Name  = "San Andreas Times",
     Type  = "teleport",
-    Hint  = "Presiona ~INPUT_PICKUP~ para salir del edificio.",
+    Hint  = "Press ~INPUT_PICKUP~ to go to the entrance of the building.",
     Teleport = { x = -113.07, y = -604.93, z = 35.28 },
   },
 }

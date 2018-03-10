@@ -5,22 +5,22 @@ lang = "en"
 
 settings = {}
 settings["en"] = {
-	openMenu = "Press ~g~E~w~ to open the menu.",
-	electricError = "~r~You have an electric vehicle.",
-	fuelError = "~r~You're not in the good place.",
-	buyFuel = "buy fuel",
-	liters = "liters",
-	percent = "percent",
-	confirm = "Confirm",
-	fuelStation = "Fuel station",
-	boatFuelStation = "Fuel station | Boat",
-	avionFuelStation = "Fuel station | Plane ",
-	heliFuelStation = "Fuel station | Helicopter",
-	getJerryCan = "Press ~g~E~w~ to buy a Petrol can ("..petrolCanPrice.."$)",
-	refeel = "Press ~g~E~w~ to refeel the car.",
-	YouHaveBought = "You have bought ",
-	fuel = " liters of fuel",
-	price = "price"
+	openMenu = "Presiona ~g~E~w~ para abrir el menú.",
+	electricError = "~r~Tienes un vehículo eléctrico.",
+	fuelError = "~r~No estás en el buen lugar.",
+	buyFuel = "comprar gasolina",
+	liters = "litros",
+	percent = "porciento",
+	confirm = "Confirmar",
+	fuelStation = "Gasolinera",
+	boatFuelStation = "Fuel station | Barco",
+	avionFuelStation = "Fuel station | Avión ",
+	heliFuelStation = "Fuel station | Helicoptero",
+	getJerryCan = "Presiona ~g~E~w~ para comprar una lata de gasolina ("..petrolCanPrice.."$)",
+	refeel = "Presiona ~g~E~w~ para recargar el auto.",
+	YouHaveBought = "Has comprado ",
+	fuel = " litros de gasolina",
+	price = "precio"
 }
 
 settings["fr"] = {
@@ -48,7 +48,7 @@ showText = true
 
 
 hud_form = 1 -- 1 : Vertical | 2 = Horizontal
-hud_x = 0.175 
+hud_x = 0.175
 hud_y = 0.885
 
 text_x = 0.2575

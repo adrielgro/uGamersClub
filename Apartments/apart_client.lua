@@ -60,19 +60,19 @@ local txt = {
   },
 
     ['en'] = {
-        ['fermermenu'] = 'Close menu',
-        ['sonner'] = 'Ring the doorbell',
-        ['gohome'] = 'Go to home',
-        ['vendre'] = 'Sell apartment',
-        ['acheter'] = 'Buy apartment',
-        ['visiter'] = 'Visit the apartment',
-        ['menu'] = 'Press ~g~E~s~ to open menu',
-        ['soon'] = 'This functionality will come soon',
-        ['exit'] = 'Exit',
-        ['retirerargent'] = 'Withdraw clean money',
-        ['retirersale'] = 'Withdraw dirty money',
-        ['deposerargent'] = 'Deposit clean money',
-        ['deposersale'] = 'Deposit dirty money'
+        ['fermermenu'] = 'Cerrar menu',
+        ['sonner'] = 'Toca el timbre',
+        ['gohome'] = 'Ir a casa',
+        ['vendre'] = 'Vender apartmento',
+        ['acheter'] = 'Comprar apartamento',
+        ['visiter'] = 'Visita el apartmento',
+        ['menu'] = 'Presiona ~g~E~s~ para abrir el menú',
+        ['soon'] = 'Esta funcionalidad llegará pronto',
+        ['exit'] = 'Salir',
+        ['retirerargent'] = 'Retirar dinero limpio',
+        ['retirersale'] = 'Retirar dinero sucio',
+        ['deposerargent'] = 'Depositar dinero limpio',
+        ['deposersale'] = 'Depositar dinero sucio'
     }
 }
 
@@ -88,25 +88,25 @@ local depositapart = ""
 distance = 50.5999 -- distance to draw
 timer = 0
 current_int = 0
- 
+
 -- AddEventHandler("playerSpawned", function()
 --   TriggerServerEvent("apart:sendData_s")
 -- end)
- 
+
 -- -- Active this when you restart resource. If you don't want to close the server
 -- TriggerServerEvent("apart:sendData_s")
- 
+
 -- RegisterNetEvent("apart:f_sendData")
 -- AddEventHandler("apart:f_sendData", function(t1)
 --     -- Tyler1 my boy
 --   interiors = t1
 -- end)
- 
+
 RegisterNetEvent("apart:isBuy")
 AddEventHandler("apart:isBuy", function()
   isBuy = 1
 end)
- 
+
 RegisterNetEvent("apart:isNotBuy")
 AddEventHandler("apart:isNotBuy", function()
   isBuy = 0
@@ -148,7 +148,7 @@ function SetBlipTrade(id, text, color, x, y, z)
   AddTextComponentString(text)
   EndTextCommandSetBlipName(Blip)
 end
- 
+
 function drawTxt(text,font,centre,x,y,scale,r,g,b,a)
     SetTextFont(font)
     SetTextProportional(0)
@@ -168,7 +168,7 @@ function MenuInsideAppartement()
 	ped = GetPlayerPed(-1);
     MenuTitle = "Appartement"
     ClearMenu()
- 
+
     for i=1, #interiors do
         if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), interiors[i].xo,interiors[i].yo,interiors[i].zo, true) < 1.599 then
             TriggerServerEvent("apart:getCash", interiors[i].name)
@@ -190,7 +190,7 @@ function MenuInsideAppartement()
         end
     end
 end
-function privetimuseless() 
+function privetimuseless()
 end
 
 function deposerargent(apart)
@@ -277,12 +277,12 @@ function Exit()
 		end
 	end
 end
- 
+
 function MenuAppartement()
     ped = GetPlayerPed(-1);
     MenuTitle = "Appartement"
     ClearMenu()
- 
+
     for i=1, #interiors do
         if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), interiors[i].xe,interiors[i].ye,interiors[i].ze, true) < 1.599 then
             TriggerServerEvent("apart:getAppart", interiors[i].name)
@@ -301,9 +301,9 @@ function MenuAppartement()
         end
     end
 end
- 
+
 function CloseMenu()
-    Menu.hidden = true    
+    Menu.hidden = true
 end
 
 function Sonner()
@@ -327,7 +327,7 @@ function Acheter()
         end
     end
 end
- 
+
 function Visiter(i)
     for i=1, #interiors do
         if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), interiors[i].xe,interiors[i].ye,interiors[i].ze, true) < 1.599 then
@@ -350,7 +350,7 @@ function Visiter(i)
         end
     end
 end
- 
+
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
@@ -383,7 +383,7 @@ Citizen.CreateThread(function()
             end
     end
 end)
- 
+
 Citizen.CreateThread(function()
     while true do
         Wait(1000)

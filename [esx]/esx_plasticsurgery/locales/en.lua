@@ -4,7 +4,7 @@ Locales['en'] = {
     ['yes'] = 'yes',
     ['no'] = 'no',
     ['not_enough_money'] = 'you do not have enough money',
-    ['press_access'] = 'press ~INPUT_CONTEXT~ to access the menu',
+    ['press_access'] = 'presiona ~INPUT_CONTEXT~ para ver el menú',
     ['barber_blip'] = 'FixYourFace3000',
     ['you_paid'] = 'you paid ',
 }

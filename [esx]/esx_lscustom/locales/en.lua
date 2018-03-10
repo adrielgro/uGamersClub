@@ -5,7 +5,7 @@ Locales['en'] = {
 	['already_own'] = 'you already own: ~b~',
 	['not_enough_money'] = 'you do not have enough money!',
 	['purchased'] = 'purchased!',
-	['press_custom'] = 'press ~INPUT_PICKUP~ to personalize your vehicle.',
+	['press_custom'] = 'presiona ~INPUT_PICKUP~ para personalizar el vehiculo.',
 	['level'] = 'level ',
 -- Paint Colors
 	-- Black

@@ -61,7 +61,7 @@ function configLang(lang)
 			menu4 = "Planes",
 			menu5 = "Back",
 			menu6 = "Get",
-			menu7 = "~g~E~s~ to open menu",
+			menu7 = "~g~E~s~ para abrir el menu",
 			menu8 = "~g~E~s~ to sell the plane at 50% of the purchase price",
 			state1 = "Out",
 			state2 = "In",
@@ -88,7 +88,7 @@ function MenuHangar()
     ClearMenu()
     Menu.addButton(lang_string.menu0,"RentrerAvion",nil)
     Menu.addButton(lang_string.menu2,"ListeAvion",nil)
-    Menu.addButton(lang_string.menu3,"CloseMenu",nil) 
+    Menu.addButton(lang_string.menu3,"CloseMenu",nil)
 end
 
 function RentrerAvion()
@@ -100,7 +100,7 @@ function RentrerAvion()
 			TriggerServerEvent('ply_hangars:CheckForPlane',plate)
 		else
 			drawNotification(lang_string.text1)
-		end   
+		end
 	end)
 	CloseMenu()
 end
@@ -111,7 +111,7 @@ function ListeAvion()
     ClearMenu()
     for ind, value in pairs(PLANES) do
             Menu.addButton(tostring(value.plane_name) .. " : " .. tostring(value.plane_state), "OptionAvion", value.id)
-    end    
+    end
     Menu.addButton(lang_string.menu5,"MenuHangar",nil)
 end
 
@@ -180,11 +180,11 @@ Citizen.CreateThread(function()
 					hangarSelected.x = hangar.x
 					hangarSelected.y = hangar.y
 					hangarSelected.z = hangar.z
-					hangarSelected.axe = hangar.axe					
+					hangarSelected.axe = hangar.axe
 					MenuHangar()
-					Menu.hidden = not Menu.hidden 
+					Menu.hidden = not Menu.hidden
 				end
-				Menu.renderGUI() 
+				Menu.renderGUI()
 			end
 		end
 	end
@@ -195,12 +195,12 @@ Citizen.CreateThread(function()
 	while true do
 		local near = false
 		Citizen.Wait(0)
-		for _, hangar in pairs(hangars) do		
-			if (GetDistanceBetweenCoords(hangar.x, hangar.y, hangar.z, GetEntityCoords(LocalPed())) < 10 and near ~= true) then 
-				near = true							
+		for _, hangar in pairs(hangars) do
+			if (GetDistanceBetweenCoords(hangar.x, hangar.y, hangar.z, GetEntityCoords(LocalPed())) < 10 and near ~= true) then
+				near = true
 			end
 		end
-		if near == false then 
+		if near == false then
 			Menu.hidden = true;
 		end
 	end
@@ -246,7 +246,7 @@ Citizen.CreateThread(function()
 					TriggerServerEvent('ply_hangars:CheckForSelPlane',platecaissei)
 				else
 					drawNotification(lang_string.text1)
-				end  
+				end
 			end
 		end
 	end
@@ -281,7 +281,7 @@ AddEventHandler('ply_hangars:SpawnPlane', function(plane, plate, state, primaryc
 		Citizen.Wait(1000)
 		local caisseo = GetClosestVehicle(hangarSelected.x, hangarSelected.y, hangarSelected.z, 10.000, 0, 16386)
 		if DoesEntityExist(caisseo) then
-			drawNotification(lang_string.text2) 
+			drawNotification(lang_string.text2)
 		else
 			if state == lang_string.state1 then
 				drawNotification(lang_string.text3)
@@ -306,8 +306,8 @@ AddEventHandler('ply_hangars:SpawnPlane', function(plane, plate, state, primaryc
 				SetNetworkIdCanMigrate(id, true)
 				SetVehicleColours(veh, primarycolor, secondarycolor)
 				SetVehicleExtraColours(veh, pearlescentcolor, wheelcolor)
-				SetEntityInvincible(veh, false) 
-				drawNotification(lang_string.text4)				
+				SetEntityInvincible(veh, false)
+				drawNotification(lang_string.text4)
 				TriggerServerEvent('ply_hangars:SetPlaneOut', plane, plate)
    				TriggerServerEvent("ply_hangars:CheckHangarForPlane")
 			end
