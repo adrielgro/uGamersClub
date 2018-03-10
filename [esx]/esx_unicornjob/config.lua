@@ -6,7 +6,7 @@ Config.EnableSocietyOwnedVehicles = false
 Config.EnableVaultManagement      = true
 Config.EnableHelicopters          = false
 Config.MaxInService               = -1
-Config.Locale                     = 'fr'
+Config.Locale                     = 'es'
 
 Config.MissCraft                  = 10 -- %
 
@@ -16,7 +16,7 @@ Config.AuthorizedVehicles = {
 }
 
 Config.Blips = {
-    
+
     Blip = {
       Pos     = { x = 129.246, y = -1299.363, z = 29.501 },
       Sprite  = 121,

@@ -92,14 +92,14 @@ end)
 
 
 TriggerEvent('es:addGroupCommand', 'revive', 'admin', function(source, args, user)
-  print('revive by /revive')
+  print('revivido por el comando /revive')
   if args[1] ~= nil then
     TriggerClientEvent('esx_ambulancejob:revive', tonumber(args[1]))
   else
     TriggerClientEvent('esx_ambulancejob:revive', source)
   end
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos insuficientes.")
 end, {help = _U('revive_help'), params = {{name = 'id'}}})
 
 ESX.RegisterUsableItem('medikit', function(source)

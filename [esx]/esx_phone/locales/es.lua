@@ -1,11 +1,11 @@
-Locales['en'] = {
-  ['new_message'] = '~b~New message:~s~ %s',
-  ['press_take_call'] = ' - Press ~INPUT_CONTEXT~ to take the call',
-  ['taken_call'] = ' has taken the call',
-  ['gps_position'] = 'destination entered into the GPS',
-  ['message_sent'] = 'message sent',
-  ['cannot_add_self'] = 'you can not add yourself',
-  ['number_in_contacts'] = 'this number is alraedy in your contact list',
-  ['contact_added'] = 'contact added',
-  ['number_not_assigned'] = 'this number is not assigned...',
+Locales['es'] = {
+  ['new_message'] = '~b~Nuevo mensaje:~s~ %s',
+  ['press_take_call'] = ' - Presiona ~INPUT_CONTEXT~ para contestar',
+  ['taken_call'] = ' has contestado',
+  ['gps_position'] = 'destino ingresado en el GPS',
+  ['message_sent'] = 'mensaje enviado',
+  ['cannot_add_self'] = 'no puedes agregarte a ti mismo',
+  ['number_in_contacts'] = 'este número ya está en su lista de contactos',
+  ['contact_added'] = 'contacto añadido',
+  ['number_not_assigned'] = 'este número no existe...',
 }

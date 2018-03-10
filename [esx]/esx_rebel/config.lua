@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = false -- turn this on if you want custom ped
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = false
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.MafiaStations = {
 
@@ -46,7 +46,7 @@ Config.MafiaStations = {
 	  { name = 'WEAPON_REVOLVER',         price = 6000 },
 	  { name = 'WEAPON_POOLCUE',          price = 100 },
 	  { name = 'WEAPON_GUSENBERG',        price = 17500 },
-	  
+
     },
 
 	  AuthorizedVehicles = {
@@ -74,7 +74,7 @@ Config.MafiaStations = {
         Heading    = 90.0,
       }
     },
-	
+
 	Helicopters = {
       {
         Spawner    = { x = 20.312, y = 535.667, z = 173.627 },

@@ -10,7 +10,7 @@ Locales['es'] = {
   ['specops_wear'] = 'Ropa GEO',
   ['open_cloackroom'] = 'Presionar ~INPUT_CONTEXT~ para abrir la taquilla',
   -- Armory
-  ['get_weapon'] = 'Coger arma',
+  ['get_weapon'] = 'tomar arma',
   ['put_weapon'] = 'Depositar arma',
   ['buy_weapons'] = 'Comprar armas',
   ['armory'] = 'Arsenal',

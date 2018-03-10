@@ -6,7 +6,7 @@ states.frozenPos = nil
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
-		
+
 		if (IsControlJustPressed(1, 212) and IsControlJustPressed(1, 213)) then
 			if group ~= "user" then
 				SetNuiFocus(true, true)
@@ -42,19 +42,19 @@ RegisterNetEvent('es_admin:quick')
 AddEventHandler('es_admin:quick', function(t, target)
 	if t == "slay" then SetEntityHealth(PlayerPedId(), 0) end
 	if t == "goto" then SetEntityCoords(PlayerPedId(), GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(target)))) end
-	if t == "bring" then 
+	if t == "bring" then
 		states.frozenPos = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(target)))
-		SetEntityCoords(PlayerPedId(), GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(target)))) 
+		SetEntityCoords(PlayerPedId(), GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(target))))
 	end
-	if t == "crash" then 
+	if t == "crash" then
 		Citizen.Trace("You're being crashed, so you know. This server sucks.\n")
 		Citizen.CreateThread(function()
 			while true do end
-		end) 
+		end)
 	end
 	if t == "slap" then ApplyForceToEntity(PlayerPedId(), 1, 9500.0, 3.0, 7100.0, 1.0, 0.0, 0.0, 1, false, true, false, false) end
 	if t == "noclip" then
-		local msg = "disabled"
+		local msg = "desactivado"
 		if(noclip == false)then
 			noclip_pos = GetEntityCoords(GetPlayerPed(-1), false)
 		end
@@ -62,10 +62,10 @@ AddEventHandler('es_admin:quick', function(t, target)
 		noclip = not noclip
 
 		if(noclip)then
-			msg = "enabled"
+			msg = "activado"
 		end
 
-		TriggerEvent("chatMessage", "SYSTEM", {255, 0, 0}, "Noclip has been ^2^*" .. msg)
+		TriggerEvent("chatMessage", "SYSTEM", {255, 0, 0}, "Noclip ha sido ^2^*" .. msg)
 	end
 	if t == "freeze" then
 		local player = PlayerId()
@@ -240,7 +240,7 @@ end)
 
 RegisterNetEvent("es_admin:noclip")
 AddEventHandler("es_admin:noclip", function(t)
-	local msg = "disabled"
+	local msg = "desactivado"
 	if(noclip == false)then
 		noclip_pos = GetEntityCoords(GetPlayerPed(-1), false)
 	end
@@ -248,10 +248,10 @@ AddEventHandler("es_admin:noclip", function(t)
 	noclip = not noclip
 
 	if(noclip)then
-		msg = "enabled"
+		msg = "activado"
 	end
 
-	TriggerEvent("chatMessage", "SYSTEM", {255, 0, 0}, "Noclip has been ^2^*" .. msg)
+	TriggerEvent("chatMessage", "SYSTEM", {255, 0, 0}, "Noclip ha sido ^2^*" .. msg)
 end)
 
 function getPlayers()

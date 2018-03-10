@@ -8,7 +8,7 @@ AddEventHandler('onClientMapStart', function()
 
     while display do
       Citizen.Wait(1)
-      ShowInfo('~y~notify.~w~ press ~INPUT_CONTEXT~ to close.', 0)
+      ShowInfo('~y~notify.~w~ presiona ~INPUT_CONTEXT~ para cerrar.', 0)
       if (GetTimeDifference(GetGameTimer(), startTime) > delay) then
         display = false
         TriggerEvent('disclaimer:display', false)

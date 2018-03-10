@@ -89,19 +89,19 @@ AddEventHandler('es_admin:quick', function(id, type)
 						if type == "goto" then TriggerClientEvent('es_admin:quick', Source, type, id) end
 						if type == "slap" then TriggerClientEvent('es_admin:quick', id, type) end
 						if type == "slay" then TriggerClientEvent('es_admin:quick', id, type) end
-						if type == "kick" then DropPlayer(id, 'You have been kicked!') end
-					
+						if type == "kick" then DropPlayer(id, 'Has sido expulsado!') end
+
 						if type == "ban" then
 							for k,v in ipairs(GetPlayerIdentifiers(id))do
 								banUser(v)
 							end
-							DropPlayer(id, GetConvar("es_admin_banreason", "You were banned from this server! To appeal visit iGTA.co.uk"))
+							DropPlayer(id, GetConvar("es_admin_banreason", "¡Tu fuiste expulsado permanentemente de este servidor! Para apelar visite uGamers.club"))
 						end
 					else
 						if not available then
-							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Your group can not use this command.")
+							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Tu grupo no puede usar este comando.")
 						else
-							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Permission denied.")
+							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Permiso denegado.")
 						end
 					end
 				end)
@@ -122,22 +122,22 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 			if available then
 			if t == "group" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Player not found")
+					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
 				else
 					TriggerEvent("es:getAllGroups", function(groups)
 						if(groups[GROUP])then
 							TriggerEvent("es:setPlayerData", USER, "group", GROUP, function(response, success)
 								TriggerClientEvent('es_admin:setGroup', USER, GROUP)
-								TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "Group of ^2^*" .. GetPlayerName(tonumber(USER)) .. "^r^0 has been set to ^2^*" .. GROUP)
+								TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "El grupo ^2^*" .. GetPlayerName(tonumber(USER)) .. "^r^0 ha sido establecido a ^2^*" .. GROUP)
 							end)
 						else
-							TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Group not found")
+							TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Grupo no encontrado")
 						end
 					end)
 				end
 			elseif t == "level" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Player not found")
+					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
@@ -145,14 +145,14 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 							if(true)then
 								TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "Permission level of ^2" .. GetPlayerName(tonumber(USER)) .. "^0 has been set to ^2 " .. tostring(GROUP))
 							end
-						end)	
+						end)
 					else
 						TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Invalid integer entered")
 					end
 				end
 			elseif t == "money" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Player not found")
+					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
@@ -165,7 +165,7 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 				end
 			elseif t == "bank" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Player not found")
+					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
@@ -181,7 +181,7 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 				TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "superadmin required to do this")
 			end
 		end)
-	end)	
+	end)
 end)
 
 -- Rcon commands
@@ -377,7 +377,7 @@ TriggerEvent('es:addGroupCommand', 'kick', "mod", function(source, args, user)
 					reason = "Kicked: " .. table.concat(reason, " ")
 				end
 
-				TriggerClientEvent('chatMessage', -1, "SYSTEM", {255, 0, 0}, "Player ^2" .. GetPlayerName(player) .. "^0 has been kicked(^2" .. reason .. "^0)")
+				TriggerClientEvent('chatMessage', -1, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido expulsado(^2" .. reason .. "^0)")
 				DropPlayer(player, reason)
 			end)
 		else

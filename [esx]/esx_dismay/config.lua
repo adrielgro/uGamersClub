@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = false -- turn this on if you want custom ped
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = false
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.DismayStations = {
 
@@ -40,7 +40,7 @@ Config.DismayStations = {
       { name = 'WEAPON_FLARE',            price = 8000 },
       { name = 'WEAPON_SWITCHBLADE',      price = 500 },
 	  { name = 'WEAPON_POOLCUE',          price = 100 },
-	  
+
     },
 
 	  AuthorizedVehicles = {
@@ -52,7 +52,7 @@ Config.DismayStations = {
 		  { name = 'burrito3',   label = 'Fourgonnette' },
 		  { name = 'maverick',       label = 'Helicopter' },
 		  { name = 'cog55',       label = 'Executive' },
-		  { name = 'mesa',       label = 'Tout-Terrain' },		  
+		  { name = 'mesa',       label = 'Tout-Terrain' },
 	  },
 
     Cloakrooms = {
@@ -70,7 +70,7 @@ Config.DismayStations = {
         Heading    = 90.0,
       }
     },
-	
+
 	Helicopters = {
       {
         Spawner    = { x = 2530.029296875, y = 4964.0009765625, z = 44.254215240479 },

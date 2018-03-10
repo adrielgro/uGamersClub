@@ -2,7 +2,7 @@ Locales['en'] = {
 
   ['sex'] = 'sexo',
   ['face'] = 'cara',
-  ['skin'] = 'skin',
+  ['skin'] = 'piel',
   ['wrinkles'] = 'arrugas',
   ['wrinkle_thickness'] = 'grosor de la arruga',
   ['beard_type'] = 'tipo de barba',
@@ -21,10 +21,10 @@ Locales['en'] = {
   ['makeup_thickness'] = 'espesor de maquillaje',
   ['makeup_color_1'] = 'color de maquillaje 1',
   ['makeup_color_2'] = 'color de maquillaje 2',
-  ['lipstick_type'] = 'lápiz labial',
-  ['lipstick_thickness'] = 'espesor del lápiz labial',
-  ['lipstick_color_1'] = 'color de lápiz labial 1',
-  ['lipstick_color_2'] = 'color de lápiz labial 2',
+  ['lipstick_type'] = 'tipo de labios',
+  ['lipstick_thickness'] = 'espesor de labios',
+  ['lipstick_color_1'] = 'color de labios 1',
+  ['lipstick_color_2'] = 'color de labios 2',
   ['ear_accessories'] = 'accesorios para el oído',
   ['ear_accessories_color'] = 'color de accesorios para el oído',
   ['tshirt_1'] = 'camiseta 1',
@@ -48,7 +48,7 @@ Locales['en'] = {
   ['helmet_2'] = 'casco 2',
   ['glasses_1'] = 'lentes 1',
   ['glasses_2'] = 'lentes 2',
-  ['bag'] = 'bolso',
-  ['bag_color'] = 'color de bolso',
+  ['bag'] = 'mochila',
+  ['bag_color'] = 'color de mochila',
 
 }

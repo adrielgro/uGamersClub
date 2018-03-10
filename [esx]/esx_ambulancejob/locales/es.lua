@@ -37,10 +37,10 @@ Locales['es'] = {
   ['yes'] = 'oui',
   ['please_wait'] = 'Por favor, espere ~b~',
   ['minutes'] = ' minutos ',
-  ['seconds_fine'] = ' segundos ~w~para re-aparecer \nReapareciendo ahora por ~g~€',
-  ['seconds'] = ' segundos ~w~para re-aparecer.',
+  ['seconds_fine'] = ' segundos ~w~para reaparecer \nReapareciendo ahora por ~g~€',
+  ['seconds'] = ' segundos ~w~para reaparecer.',
   ['press_respawn_fine'] = '~w~ [Pulsa ~b~E~w~]',
-  ['press_respawn'] = 'presione [~b~E~w~] para re-aparecer.',
+  ['press_respawn'] = 'presione [~b~E~w~] para reaparecer.',
   -- Revive
   ['revive_help'] = 'revive un jugador',
 }

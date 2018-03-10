@@ -7,6 +7,7 @@ server_scripts {
   '@es_extended/locale.lua',
   'config.lua',
   'locales/en.lua',
+  'locales/es.lua',
   'locales/fr.lua',
   'server/main.lua',
   'server/commands.lua',

@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = false -- turn this on if you want custom ped
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = false
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.RodriguezStations = {
 
@@ -40,7 +40,7 @@ Config.RodriguezStations = {
       { name = 'WEAPON_FLARE',            price = 8000 },
       { name = 'WEAPON_SWITCHBLADE',      price = 500 },
 	  { name = 'WEAPON_POOLCUE',          price = 100 },
-	  
+
     },
 
 	  AuthorizedVehicles = {
@@ -68,7 +68,7 @@ Config.RodriguezStations = {
         Heading    = 90.0,
       }
     },
-	
+
 	Helicopters = {
       {
         Spawner    = { x = -766.46746826172, y = 140.3091583252, z = 67.474113464355 },

@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = false -- turn this on if you want custom ped
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = false
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.BishopsStations = {
 
@@ -40,7 +40,7 @@ Config.BishopsStations = {
       { name = 'WEAPON_FLARE',            price = 8000 },
       { name = 'WEAPON_SWITCHBLADE',      price = 500 },
 	  { name = 'WEAPON_POOLCUE',          price = 100 },
-	  
+
     },
 
 	  AuthorizedVehicles = {
@@ -68,7 +68,7 @@ Config.BishopsStations = {
         Heading    = 90.0,
       }
     },
-	
+
 	Helicopters = {
       {
         Spawner    = { x = 1.966269493103, y = 6312.2241210938, z = 31.226146697998 },
