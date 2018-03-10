@@ -30,13 +30,14 @@ em {
 }
 
 .chat-window {
+  border-radius: 1px;
   position: absolute;
   top: 15px;
   left: 15px;
   width: 38%;
   height: 240px;
 
-  background-color: rgba(94, 52, 52, 0.7);
+  background-color: rgba(138, 24, 24, 0.7) !important;
   -webkit-animation-duration: 2s;
 }
 
@@ -70,18 +71,19 @@ em {
 }
 
 textarea {
-  font-size: 1.1rem;
-  display: block;
+  background-color: rgba(138, 24, 24, 0.9);
+  border-width: 0;
+  border-radius: 2px;
   box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 1.1rem;
+  overflow: hidden;
   padding: 5px;
   padding-left: 27px;
-  color: white;
-  background-color: rgba(94, 52, 52, 1.0);
-  width: 100%;
-  border-width: 0;
-  height: 34px;
-  overflow: hidden;
   resize: none;
+  height: 34px;
+  width: 100%;
 }
 
 textarea:focus, input:focus {
@@ -105,7 +107,7 @@ textarea:focus, input:focus {
   font-size: 1.1rem;
   box-sizing: border-box;
   color: white;
-  background-color: rgba(94, 52, 52, 1.0);
+  background-color: rgba(138, 24, 24, 1.0);
   width: 100%;
 }
 
