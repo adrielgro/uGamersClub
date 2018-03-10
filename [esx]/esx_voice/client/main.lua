@@ -19,7 +19,7 @@ function drawLevel(r, g, b, a)
   SetTextOutline()
   SetTextEntry("STRING")
   AddTextComponentString("~y~Voz:~s~ " .. voice.level)
-  DrawText(0.175, 0.40)
+  DrawText(0.175, 0.98)
 end
 
 AddEventHandler('onClientMapStart', function()

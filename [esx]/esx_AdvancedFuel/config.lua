@@ -52,7 +52,7 @@ hud_x = 0.175
 hud_y = 0.885
 
 text_x = 0.2700
-text_y = 1.5
+text_y = 0.95
 
 
 electricityPrice = 1 -- NOT RANOMED !!
