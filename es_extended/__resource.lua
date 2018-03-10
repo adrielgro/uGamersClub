@@ -13,6 +13,7 @@ server_scripts {
   'locales/br.lua',
   'locales/fr.lua',
   'locales/en.lua',
+  'locales/es.lua',
   'config.weapons.lua',
   'server/common.lua',
   'server/classes/player.lua',
