@@ -70,7 +70,7 @@ end)
 
 
 AddEventHandler('es:invalidCommandHandler', function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "ERROR", {30, 30, 30}, "^0^*El comando que has intentado utilizar es incorrecto^r^0, usa ^4/ayuda^0 para ver la lista.")
+	TriggerClientEvent('chatMessage', source, "ERROR", {30, 30, 30}, "^0^*El comando que has intentado utilizar es incorrecto.")
 	CancelEvent()
 end)
 
