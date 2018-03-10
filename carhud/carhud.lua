@@ -13,7 +13,7 @@ local HUD = {
 
 	DamageSystem 	= true,
 
-	SpeedIndicator 	= true,
+	SpeedIndicator 	= false,
 
 	ParkIndicator 	= false,
 
