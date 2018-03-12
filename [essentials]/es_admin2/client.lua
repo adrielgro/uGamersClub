@@ -217,9 +217,9 @@ end)
 RegisterNetEvent('es_admin:givePosition')
 AddEventHandler('es_admin:givePosition', function()
 	local pos = GetEntityCoords(GetPlayerPed(-1))
-	local string = "{ ['x'] = " .. pos.x .. ", ['y'] = " .. pos.y .. ", ['z'] = " .. pos.z .. " },\n"
-	TriggerServerEvent('es_admin:givePos', string)
-	TriggerEvent('chatMessage', 'SYSTEM', {255, 0, 0}, 'Posición guardada correctamente.')
+	--local string = "{ ['x'] = " .. pos.x .. ", ['y'] = " .. pos.y .. ", ['z'] = " .. pos.z .. " },\n"
+	--TriggerServerEvent('es_admin:givePos', string)
+	TriggerEvent('chatMessage', 'SYSTEM', {255, 0, 0}, 'Posición: X: ' .. pos.x .. ", Y: " .. pos.y .. ", Z: " .. pos.z)
 end)
 
 RegisterNetEvent('es_admin:kill')

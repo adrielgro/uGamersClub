@@ -569,7 +569,7 @@ TriggerEvent('es:addGroupCommand', 'pos', "superadmin", function(source, args, u
 	TriggerClientEvent('es_admin:givePosition', source)
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Guardar posición en un archivo"})
+end, {help = "Obtener la posición actual"})
 
 function stringsplit(inputstr, sep)
 	if sep == nil then
