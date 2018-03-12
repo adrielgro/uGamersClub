@@ -52,7 +52,7 @@ AddEventHandler('es:firstJoinProper', function()
 		end
 
 		if not id then
-			DropPlayer(Source, "Couldn't find SteamID please re-launch the game while Steam is open")
+			DropPlayer(Source, "No se pudo encontrar SteamID. Reinicia el juego mientras Steam está abierto.")
 		else
 			registerUser(id, Source)
 			justJoined[Source] = true
@@ -118,7 +118,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				if(Users[source].getPermissions() >= command.perm or groups[Users[source].getGroup()]:canTarget(command.group))then
 					command.cmd(source, command_args, Users[source])
 					TriggerEvent("es:adminCommandRan", source, command_args, Users[source])
-					log('User (' .. GetPlayerName(Source) .. ') ran admin command ' .. command_args[1] .. ', with parameters: ' .. table.concat(command_args, ' '))
+					log('El usuario (' .. GetPlayerName(Source) .. ') usó el comando de admin ' .. command_args[1] .. ', con los parametros: ' .. table.concat(command_args, ' '))
 				else
 					command.callbackfailed(source, command_args, Users[source])
 					TriggerEvent("es:adminCommandFailed", source, command_args, Users[source])
@@ -127,8 +127,8 @@ AddEventHandler('chatMessage', function(source, n, message)
 						TriggerClientEvent('chatMessage', source, "", {0,0,0}, defaultSettings.permissionDenied)
 					end
 
-					log('User (' .. GetPlayerName(Source) .. ') tried to execute command without having permission: ' .. command_args[1])
-					debugMsg("Non admin (" .. GetPlayerName(Source) .. ") attempted to run admin command: " .. command_args[1])
+					log('El usuario (' .. GetPlayerName(Source) .. ') intentó utilizar el comando sin tener permisos: ' .. command_args[1])
+					debugMsg("El jugador (" .. GetPlayerName(Source) .. ") intentó ejecutar un comando de admin: " .. command_args[1])
 				end
 			else
 				command.cmd(source, command_args, Users[source])
@@ -165,7 +165,7 @@ function addCommand(command, callback, suggestion)
 		callback(source, args, Users[source])
 	end, false)
 
-	debugMsg("Command added: " .. command)
+	debugMsg("Comando añadido: " .. command)
 end
 
 AddEventHandler('es:addCommand', function(command, callback, suggestion)
