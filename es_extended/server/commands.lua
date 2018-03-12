@@ -12,7 +12,8 @@ end, {
     {name = "X", help = "Posición X"},
     {name = "Y", help = "Posición Y"},
     {name = "Z", help = "Posición Z"}
-  })
+  }
+})
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
   if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
