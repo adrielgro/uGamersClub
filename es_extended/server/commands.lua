@@ -11,11 +11,19 @@ end, function(source, args, user)
 end)
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  local xPlayer = ESX.GetPlayerFromId(args[2])
-  xPlayer.setJob(args[3], tonumber(args[4]))
+  --[[local xPlayer = ESX.GetPlayerFromId(args[2])
+  xPlayer.setJob(args[3], tonumber(args[4]))]]
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Prueba!")
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = _U('setjob'), params = {{name = "id", help = _U('id_param')}, {name = "job", help = _U('setjob_param2')}, {name = "grade_id", help = _U('setjob_param3')}}})
+end, {
+  help = _U('setjob'),
+  params = {
+    {name = "id", help = _U('id_param')},
+    {name = "job", help = _U('setjob_param2')},
+    {name = "grade_id", help = _U('setjob_param3')}
+  }
+})
 
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
   TriggerClientEvent('esx:loadIPL', -1, args[2])
