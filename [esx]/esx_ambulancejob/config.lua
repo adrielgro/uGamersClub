@@ -6,13 +6,13 @@ local second = 1000
 local minute = 60 * second
 
 -- How much time before auto respawn at hospital
-Config.RespawnDelayAfterRPDeath   = 3 * minute
+Config.RespawnDelayAfterRPDeath   = 4 * minute
 
 -- How much time before a menu opens to ask the player if he wants to respawn at hospital now
 -- The player is not obliged to select YES, but he will be auto respawn
 -- at the end of RespawnDelayAfterRPDeath just above.
 Config.RespawnToHospitalMenuTimer   = true
-Config.MenuRespawnToHospitalDelay   = 3 * minute
+Config.MenuRespawnToHospitalDelay   = 4 * minute
 
 Config.EnablePlayerManagement       = true
 Config.EnableSocietyOwnedVehicles   = false
@@ -27,8 +27,8 @@ Config.ShowDeathTimer               = true
 -- Will allow to respawn at any time, don't use RespawnToHospitalMenuTimer at the same time !
 Config.EarlyRespawn                 = false
 -- The player can have a fine (on bank account)
-Config.RespawnFine                  = false
-Config.RespawnFineAmount            = 500
+Config.RespawnFine                  = true
+Config.RespawnFineAmount            = 250
 
 Config.Locale                       = 'es'
 
@@ -48,7 +48,7 @@ Config.HelicopterSpawner = {
 Config.Zones = {
 
   HospitalInteriorEntering1 = { -- ok
-    Pos  = { x = 294.6, y = -1448.01, z = 28.9 },
+    Pos  = { x = -384.395, y = 6123.327, z = 31.479 },
     Size = { x = 1.5, y = 1.5, z = 0.4 },
     Type = 1
   },
@@ -60,7 +60,7 @@ Config.Zones = {
   },
 
   HospitalInteriorOutside1 = { -- ok
-    Pos  = { x = 295.8, y = -1446.5, z = 28.9 },
+    Pos  = { x = -382.63754272461, y = 6121.6098632813, z = 31.47954750061 },
     Size = { x = 1.5, y = 1.5, z = 1.0 },
     Type = -1
   },

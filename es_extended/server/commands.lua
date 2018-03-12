@@ -4,13 +4,17 @@ TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
     y = tonumber(args[2]),
     z = tonumber(args[3])
   })
-
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
-end)
+end, {
+  help = "Teletransportarte a una posición.",
+  params = {
+    {name = "X", help = "Posición X"},
+    {name = "Y", help = "Posición Y"},
+    {name = "Z", help = "Posición Z"}
+  })
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-
   if #args == 3 then
     local xPlayer = ESX.GetPlayerFromId(args[1])
     xPlayer.setJob(args[2], tonumber(args[3]))

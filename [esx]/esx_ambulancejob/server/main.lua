@@ -91,8 +91,8 @@ AddEventHandler('esx_ambulancejob:giveItem', function(item)
 end)
 
 
-TriggerEvent('es:addGroupCommand', 'revive', 'admin', function(source, args, user)
-  print('revivido por el comando /revive')
+TriggerEvent('es:addGroupCommand', 'revivir', 'admin', function(source, args, user)
+  print('Has sido reevivido por un administrador.')
   if args[1] ~= nil then
     TriggerClientEvent('esx_ambulancejob:revive', tonumber(args[1]))
   else
