@@ -11,9 +11,9 @@ end, function(source, args, user)
 end)
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  --[[local xPlayer = ESX.GetPlayerFromId(args[2])
-  xPlayer.setJob(args[3], tonumber(args[4]))]]
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Prueba!")
+  local xPlayer = ESX.GetPlayerFromId(args[2])
+  --xPlayer.setJob(args[3], tonumber(args[4]))
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Argumento 2: " .. args[2])
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {
