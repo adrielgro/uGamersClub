@@ -1,4 +1,4 @@
-AddEventHandler("firstJoinProper", function(spawn)
+AddEventHandler("firstSpawn", function(source)
   TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Bienvenido a ^0uGamers^0.CLUB")
   TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Ingresa al teamspeak: ^0ts3.mancos.club")
   TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Recuerda seguir las normas de la comunidad.")

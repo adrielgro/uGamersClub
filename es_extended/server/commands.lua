@@ -1,5 +1,4 @@
 TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
-
   TriggerClientEvent("esx:teleport", source, {
     x = tonumber(args[1]),
     y = tonumber(args[2]),
