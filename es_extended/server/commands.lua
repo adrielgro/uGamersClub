@@ -15,7 +15,7 @@ end, {
   })
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  if #args == 3 then
+  if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
     local xPlayer = ESX.GetPlayerFromId(args[1])
     xPlayer.setJob(args[2], tonumber(args[3]))
   else
