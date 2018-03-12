@@ -1,3 +1,10 @@
+function try(f, catch_f)
+  local status, excepction = pcall(f)
+  if no status then
+    catch_f(excepction)
+  end
+end
+
 TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
 
   TriggerClientEvent("esx:teleport", source, {
@@ -7,7 +14,7 @@ TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
   })
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end)
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
@@ -15,12 +22,15 @@ TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
   if args[1] == nil or args[2] == nil or args[3] == nil then
     TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Utiliza: /setjob [ID del Jugador] [Nombre del Trabajo] [ID de Rango]")
   else
-    local xPlayer = ESX.GetPlayerFromId(args[1])
-    xPlayer.setJob(args[2], tonumber(args[3]))
+    try(function()
+      local xPlayer = ESX.GetPlayerFromId(args[1])
+      xPlayer.setJob(args[2], tonumber(args[3]))
+    end, function (e)
+    end)
   end
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {
   help = _U('setjob'),
   params = {
@@ -33,50 +43,50 @@ end, {
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
   TriggerClientEvent('esx:loadIPL', -1, args[2])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('load_ipl')})
 
 TriggerEvent('es:addGroupCommand', 'unloadipl', 'admin', function(source, args, user)
   TriggerClientEvent('esx:unloadIPL', -1, args[2])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('unload_ipl')})
 
 TriggerEvent('es:addGroupCommand', 'playanim', 'admin', function(source, args, user)
   TriggerClientEvent('esx:playAnim', -1, args[2], args[3])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('play_anim')})
 
 TriggerEvent('es:addGroupCommand', 'playemote', 'admin', function(source, args, user)
   TriggerClientEvent('esx:playEmote', -1, args[2])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('play_emote')})
 
 TriggerEvent('es:addGroupCommand', 'car', 'admin', function(source, args, user)
   TriggerClientEvent('esx:spawnVehicle', source, args[1])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('spawn_car'), params = {{name = "car", help = _U('spawn_car_param')}}})
 
 TriggerEvent('es:addGroupCommand', 'dv', 'admin', function(source, args, user)
   TriggerClientEvent('esx:deleteVehicle', source)
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('delete_vehicle'), params = {{name = "car", help = _U('delete_veh_param')}}})
 
 
 TriggerEvent('es:addGroupCommand', 'spawnped', 'admin', function(source, args, user)
   TriggerClientEvent('esx:spawnPed', source, args[1])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('spawn_ped'), params = {{name = "name", help = _U('spawn_ped_param')}}})
 
 TriggerEvent('es:addGroupCommand', 'spawnobject', 'admin', function(source, args, user)
   TriggerClientEvent('esx:spawnObject', source, args[1])
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('spawn_object'), params = {{name = "name"}}})
 
 TriggerEvent('es:addGroupCommand', 'givemoney', 'admin', function(source, args, user)
@@ -92,7 +102,7 @@ TriggerEvent('es:addGroupCommand', 'givemoney', 'admin', function(source, args, 
   end
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('givemoney'), params = {{name = "id", help = _U('id_param')}, {name = "amount", help = _U('money_amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
@@ -113,7 +123,7 @@ TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source,
   end
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param')}, {name = "account", help = _U('account')}, {name = "amount", help = _U('money_amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
@@ -134,7 +144,7 @@ TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, u
   end
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
@@ -145,5 +155,5 @@ TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args,
   xPlayer.addWeapon(weaponName, 1000)
 
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveweapon'), params = {{name = "id", help = _U('id_param')}, {name = "weapon", help = _U('weapon')}}})
