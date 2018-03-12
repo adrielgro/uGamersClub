@@ -329,7 +329,7 @@ end, {help = "Report a player or an issue", params = {{name = "report", help = "
 
 -- Append a message
 function appendNewPos(msg)
-	local file = io.open('resources/[essential]/es_admin/positions.txt', "a")
+	local file = io.open('resources/[essential]/es_admin2/positions.txt', "a")
 	newFile = msg
 	file:write(newFile)
 	file:flush()
@@ -339,7 +339,7 @@ end
 -- Do them hashes
 function doHashes()
   lines = {}
-  for line in io.lines("resources/[essential]/es_admin/input.txt") do
+  for line in io.lines("resources/[essential]/es_admin2/input.txt") do
   	lines[#lines + 1] = line
   end
 
