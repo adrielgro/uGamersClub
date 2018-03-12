@@ -52,12 +52,12 @@ Citizen.CreateThread(function()
 						red = 0
 						green = 0
 						blue = 255
-						DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. GetPlayerName(GetPlayerServerId(id)))
+						DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. (GetPlayerName(id)))
 					else
 						red = 255
 						green = 255
 						blue = 255
-						DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. GetPlayerName(GetPlayerServerId(id)))
+						DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. (GetPlayerName(id)))
 					end
                 end
 
@@ -67,12 +67,12 @@ Citizen.CreateThread(function()
 							red = 0
 							green = 0
 							blue = 255
-							DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. GetPlayerName(GetPlayerServerId(id)))
+							DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. (GetPlayerName(id)))
 						else
 							red = 255
 							green = 255
 							blue = 255
-							DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. GetPlayerName(GetPlayerServerId(id)))
+							DrawText3D(x2, y2, z2 + displayIDHeight, "ID: " .. GetPlayerServerId(id) .. " | " .. (GetPlayerName(id)))
 						end
                     end
                 end

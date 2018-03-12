@@ -565,7 +565,7 @@ end, function(source, args, user)
 end, {help = "Crash a user, no idea why this still exists", params = {{name = "userid", help = "The ID of the player"}}})
 
 -- Position
-TriggerEvent('es:addGroupCommand', 'pos', "owner", function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'pos', "superadmin", function(source, args, user)
 	TriggerClientEvent('es_admin:givePosition', source)
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
