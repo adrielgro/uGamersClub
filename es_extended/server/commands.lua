@@ -11,8 +11,7 @@ end, function(source, args, user)
 end)
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-
-  if args[1] == nil or args[2] == nil or args[3] == nil then
+  if #args ~= 3 then
     TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Utiliza: /setjob [ID del Jugador] [Nombre del Trabajo] [ID de Rango]")
   else
     local xPlayer = ESX.GetPlayerFromId(args[1])
