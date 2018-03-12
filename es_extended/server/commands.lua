@@ -1,9 +1,9 @@
 TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
 
   TriggerClientEvent("esx:teleport", source, {
-    x = tonumber(args[2]),
-    y = tonumber(args[3]),
-    z = tonumber(args[4])
+    x = tonumber(args[1]),
+    y = tonumber(args[2]),
+    z = tonumber(args[3])
   })
 
 end, function(source, args, user)
@@ -11,9 +11,14 @@ end, function(source, args, user)
 end)
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  local xPlayer = ESX.GetPlayerFromId(args[1])
-  xPlayer.setJob(args[2], tonumber(args[3]))
-  --TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Argumento 2: " .. args[2])
+
+  if args[1] == nil or args[2] == nil or args[3] == nil then
+    TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Utiliza: /setjob [ID del Jugador] [Nombre del Trabajo] [ID de Rango]")
+  else
+    local xPlayer = ESX.GetPlayerFromId(args[1])
+    xPlayer.setJob(args[2], tonumber(args[3]))
+  end
+
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {
@@ -50,7 +55,7 @@ end, function(source, args, user)
 end, {help = _U('play_emote')})
 
 TriggerEvent('es:addGroupCommand', 'car', 'admin', function(source, args, user)
-  TriggerClientEvent('esx:spawnVehicle', source, args[2])
+  TriggerClientEvent('esx:spawnVehicle', source, args[1])
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = _U('spawn_car'), params = {{name = "car", help = _U('spawn_car_param')}}})
@@ -63,13 +68,13 @@ end, {help = _U('delete_vehicle'), params = {{name = "car", help = _U('delete_ve
 
 
 TriggerEvent('es:addGroupCommand', 'spawnped', 'admin', function(source, args, user)
-  TriggerClientEvent('esx:spawnPed', source, args[2])
+  TriggerClientEvent('esx:spawnPed', source, args[1])
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = _U('spawn_ped'), params = {{name = "name", help = _U('spawn_ped_param')}}})
 
 TriggerEvent('es:addGroupCommand', 'spawnobject', 'admin', function(source, args, user)
-  TriggerClientEvent('esx:spawnObject', source, args[2])
+  TriggerClientEvent('esx:spawnObject', source, args[1])
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = _U('spawn_object'), params = {{name = "name"}}})
@@ -77,8 +82,8 @@ end, {help = _U('spawn_object'), params = {{name = "name"}}})
 TriggerEvent('es:addGroupCommand', 'givemoney', 'admin', function(source, args, user)
 
   local _source = source
-  local xPlayer = ESX.GetPlayerFromId(args[2])
-  local amount  = tonumber(args[3])
+  local xPlayer = ESX.GetPlayerFromId(args[1])
+  local amount  = tonumber(args[2])
 
   if amount ~= nil then
     xPlayer.addMoney(amount)
@@ -93,9 +98,9 @@ end, {help = _U('givemoney'), params = {{name = "id", help = _U('id_param')}, {n
 TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
 
   local _source = source
-  local xPlayer = ESX.GetPlayerFromId(args[2])
-  local account = args[3]
-  local amount  = tonumber(args[4])
+  local xPlayer = ESX.GetPlayerFromId(args[1])
+  local account = args[2]
+  local amount  = tonumber(args[3])
 
   if amount ~= nil then
     if xPlayer.getAccount(account) ~= nil then
@@ -114,9 +119,9 @@ end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param
 TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
 
   local _source = source
-  local xPlayer = ESX.GetPlayerFromId(args[2])
-  local item    = args[3]
-  local count   = (args[4] == nil and 1 or tonumber(args[4]))
+  local xPlayer = ESX.GetPlayerFromId(args[1])
+  local item    = args[2]
+  local count   = (args[3] == nil and 1 or tonumber(args[3]))
 
   if count ~= nil then
     if xPlayer.getInventoryItem(item) ~= nil then
@@ -134,8 +139,8 @@ end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {na
 
 TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
 
-  local xPlayer    = ESX.GetPlayerFromId(args[2])
-  local weaponName = string.upper(args[3])
+  local xPlayer    = ESX.GetPlayerFromId(args[1])
+  local weaponName = string.upper(args[2])
 
   xPlayer.addWeapon(weaponName, 1000)
 
