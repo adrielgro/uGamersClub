@@ -1,4 +1,4 @@
---[[TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
   TriggerClientEvent("esx:teleport", source, {
     x = tonumber(args[1]),
     y = tonumber(args[2]),
@@ -13,9 +13,9 @@ end, {
     {name = "Y", help = "Posición Y"},
     {name = "Z", help = "Posición Z"}
   }
-})]]
+})
 
---[[TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
   local xPlayer = ESX.GetPlayerFromId(args[1])
   xPlayer.setJob(args[2], tonumber(args[3]))
 end, function(source, args, user)
@@ -27,15 +27,7 @@ end, {
     {name = "job", help = _U('setjob_param2')},
     {name = "grade_id", help = _U('setjob_param3')}
   }
-})]]
-
-TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  local xPlayer = ESX.GetPlayerFromId(args[1])
-  xPlayer.setJob(args[2], tonumber(args[3]))
-end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = _U('setjob'), params = {{name = "id", help = _U('id_param')}, {name = "job", help = _U('setjob_param2')}, {name = "grade_id", help = _U('setjob_param3')}}})
-
+})
 
 TriggerEvent('es:addGroupCommand', 'fixcar', 'mod', function(source, args, user)
   TriggerClientEvent('wk:fixVehicle', source)

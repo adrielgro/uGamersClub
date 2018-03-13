@@ -64,11 +64,11 @@ end)
 
 RegisterServerEvent('esx_status:update')
 AddEventHandler('esx_status:update', function(status)
-	
+
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	
-	xPlayer.set('status', status)
+
+	--xPlayer.set('status', status) --Causa problemas
 
 end)
 
@@ -89,7 +89,7 @@ function SaveData()
 		 		['@identifier'] = xPlayer.identifier
 		 	}
 		)
-	
+
 	end
 
 	SetTimeout(10 * 60 * 1000, SaveData)
