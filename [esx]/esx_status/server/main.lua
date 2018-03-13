@@ -69,6 +69,16 @@ AddEventHandler('esx_status:update', function(status)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
 	--xPlayer.set('status', status) --Causa problemas
+	local data   = {}
+	local status = xPlayer.get('status')
+
+	MySQL.Async.execute(
+		'UPDATE users SET status = @status WHERE identifier = @identifier',
+		{
+			['@status']     = json.encode(status),
+			['@identifier'] = xPlayer.identifier
+		}
+	)
 
 end)
 
