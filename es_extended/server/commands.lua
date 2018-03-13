@@ -16,14 +16,14 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
-  local xPlayer
 
-  if #args == 3 then
-    xPlayer = ESX.GetPlayerFromId(args[1])
-    xPlayer.setJob(args[2], tonumber(args[3]))
-  else
+  if #args ~= 3 then
     TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Utiliza: /setjob [ID del Jugador] [Nombre del Trabajo] [ID de Rango]")
+    return
   end
+
+  local xPlayer = ESX.GetPlayerFromId(args[1])
+  xPlayer.setJob(args[2], tonumber(args[3]))
 
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
