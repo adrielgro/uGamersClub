@@ -68,8 +68,9 @@ AddEventHandler('esx_status:update', function(status)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
-	--xPlayer.set('status', status) --Causa problemas
+	--xPlayer.set('status', status) --Causa problemas, deberia obtener los datos de mysql
 
+	-- Guardar datos del jugador en el servidor
 	local status = xPlayer.get('status')
 
 	MySQL.Async.execute(
