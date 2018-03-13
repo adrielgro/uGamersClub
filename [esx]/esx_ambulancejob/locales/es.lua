@@ -1,12 +1,12 @@
 Locales['es'] = {
   -- Cloakroom
   ['cloakroom'] = 'Guardarropa',
-  ['ems_clothes_civil'] = 'Camiseta',
+  ['ems_clothes_civil'] = 'Ropa de civil',
   ['ems_clothes_ems'] = 'Equipo de ambulancia',
 -- Vehicles
   ['veh_menu'] = 'vehículo',
   ['veh_spawn'] = 'Presione ~INPUT_CONTEXT~ para sacar un vehículo',
-  ['store_veh'] = 'Presione ~INPUT_CONTEXT~ para alamcenar un vehículo',
+  ['store_veh'] = 'Presione ~INPUT_CONTEXT~ para almacenar un vehículo',
   ['ambulance'] = 'Ambulancia',
   ['helicopter'] = 'helicóptero',
   -- Action Menu
@@ -34,10 +34,10 @@ Locales['es'] = {
   ['alert_ambulance'] = 'Alerta de ambulancia',
   -- Death
   ['respawn_at_hospital'] = '¿Quieres ser transportado al hospital?',
-  ['yes'] = 'oui',
+  ['yes'] = 'Sí, por favor',
   ['please_wait'] = 'Por favor, espere ~b~',
   ['minutes'] = ' minutos ',
-  ['seconds_fine'] = ' segundos ~w~para reaparecer \nReapareciendo ahora por ~g~€',
+  ['seconds_fine'] = ' segundos ~w~para reaparecer \nPuedes reaparecer ahora por ~g~€',
   ['seconds'] = ' segundos ~w~para reaparecer.',
   ['press_respawn_fine'] = '~w~ [Pulsa ~b~E~w~]',
   ['press_respawn'] = 'presione [~b~E~w~] para reaparecer.',
