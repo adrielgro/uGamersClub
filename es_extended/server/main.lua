@@ -12,7 +12,7 @@ AddEventHandler('es:playerLoaded', function(source, _player)
     lastPosition = nil
   }
 
-  TriggerClientEvent("chatMessage", "", { 255, 255, 255 }, "• Bienvenido " .. userData.playerName .. " a ^0uGamers^0.CLUB")
+  TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Bienvenido " .. userData.playerName .. " a ^0uGamers^0.CLUB")
   TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Ingresa al teamspeak: ^0ts3.mancos.club")
   TriggerEvent("chatMessage", "", { 255, 255, 255 }, "• Recuerda seguir las normas de la comunidad.")
 
