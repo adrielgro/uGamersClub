@@ -92,7 +92,8 @@ end)
 
 
 TriggerEvent('es:addGroupCommand', 'revivir', 'admin', function(source, args, user)
-  print('Has sido reevivido por un administrador.')
+  TriggerClientEvent('chatMessage', source, "uGamers", {255, 0, 0}, "^rHas revivido a un jugador.")
+  TriggerClientEvent('chatMessage', user, "uGamers", {255, 0, 0}, "^rHas sido revivido por un administrador.")
   if args[1] ~= nil then
     TriggerClientEvent('esx_ambulancejob:revive', tonumber(args[1]))
   else
