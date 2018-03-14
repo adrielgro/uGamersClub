@@ -28188,10 +28188,15 @@
   </RemoveFromWorld>
   <Markers />
   <Metadata>
-    <Creator>matixto</Creator>
-    <Name>paletofin1</Name>
-    <Description />
+    <Creator>Matixto</Creator>
+    <Name>Paleto</Name>
+    <Description>Mapa de Paleto uGamers</Description>
     <LoadingPoint xsi:nil="true" />
-    <TeleportPoint xsi:nil="true" />
+    <TeleportPoint>
+      <X>-727.001</X>
+      <Y>6158.646</Y>
+      <Z>22.246</Z>
+      <Heading>-54.802</Heading>
+    </TeleportPoint>
   </Metadata>
 </Map>
