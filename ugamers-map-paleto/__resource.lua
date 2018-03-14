@@ -1,7 +1,7 @@
 local function object_entry(data)
 	dependency 'object-loader'
 
-	file(data)
+	files(data)
 	object_file(data)
 end
 
