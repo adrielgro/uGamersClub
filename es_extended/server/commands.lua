@@ -16,16 +16,20 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'dartrabajo', 'mod', function(source, args, user)
-  local xPlayer = ESX.GetPlayerFromId(args[1])
-  xPlayer.setJob(args[2], tonumber(args[3]))
+  if #args ~= 3
+    TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Utiliza: /dartrabajo [ID Jugador] [Trabajo] [Rango]")
+  else
+    local xPlayer = ESX.GetPlayerFromId(args[1])
+    xPlayer.setJob(args[2], tonumber(args[3]))
+  end
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {
   help = _U('setjob'),
   params = {
     {name = "id", help = _U('id_param')},
-    {name = "job", help = _U('setjob_param2')},
-    {name = "grade_id", help = _U('setjob_param3')}
+    {name = "trabajo", help = _U('setjob_param2')},
+    {name = "rango", help = _U('setjob_param3')}
   }
 })
 
@@ -145,12 +149,14 @@ end, function(source, args, user)
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'dararma', 'admin', function(source, args, user)
+  if #args ~= 2
+    TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Utiliza: /dartrabajo [ID Jugador] [Arma]")
+  else
+    local xPlayer    = ESX.GetPlayerFromId(args[1])
+    local weaponName = string.upper(args[2])
 
-  local xPlayer    = ESX.GetPlayerFromId(args[1])
-  local weaponName = string.upper(args[2])
-
-  xPlayer.addWeapon(weaponName, 1000)
-
+    xPlayer.addWeapon(weaponName, 1000)
+  end
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveweapon'), params = {{name = "id", help = _U('id_param')}, {name = "weapon", help = _U('weapon')}}})
