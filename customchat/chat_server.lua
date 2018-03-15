@@ -9,7 +9,7 @@ AddEventHandler('chatMessageEntered', function(name, color, message)
     TriggerEvent('chatMessage', source, name, message)
 
     if not WasEventCanceled() then
-        TriggerClientEvent('chatMessage', -1, name, color, "dice:" .. message)
+        TriggerClientEvent('chatMessage', -1, name, color, message)
     end
 
     print(name .. ': ' .. message)
@@ -25,7 +25,7 @@ AddEventHandler('rconCommand', function(commandName, args)
     if commandName == "say" then
         local msg = table.concat(args, ' ')
 
-        TriggerClientEvent('chatMessage', -1, 'console', { 0, 0x99, 255 }, "dice: " .. msg)
+        TriggerClientEvent('chatMessage', -1, 'console', { 0, 0x99, 255 }, msg)
         RconPrint('console: ' .. msg .. "\n")
 
         CancelEvent()
