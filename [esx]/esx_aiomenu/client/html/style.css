@@ -30,7 +30,7 @@ button:hover {
 	height: 700px;
 	/*background: ;*/
 	color: white;
-	min-width: 800px;
+	min-width: 200px;
 	width: 20%;
 	position: absolute;
 	top: 50%;

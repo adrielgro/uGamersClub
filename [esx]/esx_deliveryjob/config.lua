@@ -11,7 +11,7 @@ Config.Trucks = {
 
 Config.Cloakroom = {
 	CloakRoom = {
-			Pos   = {x = 706.9879, y = -960.5827, z = 29.3},
+			Pos   = {x = -421.0467, y = 6136.3007, z = 31.8773},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1
