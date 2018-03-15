@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
 		end
 		if sitting then
 			headsUp('Presiona ~INPUT_VEH_DUCK~ para levantarte.')
-			if IsControlJustPressed(0, Keys['X']) then
+			if IsControlJustPressed(0, Keys['U']) then
 				ClearPedTasks(ped)
 				sitting = false
 				SetEntityCoords(ped, lastPos)

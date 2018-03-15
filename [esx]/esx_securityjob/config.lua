@@ -2,11 +2,11 @@ Config              = {}
 Config.DrawDistance = 100.0
 Config.MaxDelivery	= 10
 Config.TruckPrice	= 30
-Config.Locale       = 'en'
+Config.Locale       = 'es'
 
 Config.Trucks = {
 	"dilettante2",
-	--"packer"	
+	--"packer"
 }
 
 Config.Cloakroom = {
@@ -125,7 +125,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 1000
 		},
-------------------------------------------- 2nd Patrol 
+------------------------------------------- 2nd Patrol
 	-- Palomino Noose HQ
 	Delivery1BC = {
 			Pos   = {x = 2448.21, y = -398.78, z = 92.99},
@@ -216,7 +216,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 700
 		},
-	
+
 	RetourCamion = {
 			Pos   = {x = 462.18, y = -3055.15, z = 4.07},
 			Color = {r = 204, g = 204, b = 0},
@@ -225,7 +225,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 0
 		},
-	
+
 	AnnulerMission = {
 			Pos   = {x = 462.18, y = -3055.15, z = 4.07},
 			Color = {r = 204, g = 204, b = 0},

@@ -2,11 +2,11 @@ Config              = {}
 Config.DrawDistance = 100.0
 Config.MaxDelivery	= 10
 Config.TruckPrice	= 300
-Config.Locale       = 'en'
+Config.Locale       = 'es'
 
 Config.Trucks = {
 	"burrito3",
-	"enduro"	
+	"enduro"
 }
 
 Config.Cloakroom = {
@@ -44,7 +44,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 375
 		},
-	-- a coté des flic
+	-- a cotï¿½ des flic
 	Delivery2LS = {
 			Pos   = {x = 451.4836, y = -899.0954, z = 27.5},
 			Color = {r = 204, g = 204, b = 0},
@@ -216,7 +216,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 900
 		},
-	
+
 	RetourCamion = {
 			Pos   = {x = 54.4964, y = 118.4247, z = 78.0},
 			Color = {r = 204, g = 204, b = 0},
@@ -225,7 +225,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 0
 		},
-	
+
 	AnnulerMission = {
 			Pos   = {x = 72.7394, y = 90.5667, z = 77.7},
 			Color = {r = 204, g = 204, b = 0},

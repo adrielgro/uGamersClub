@@ -4,7 +4,7 @@ Config.DrawDistance = 100.0
 Config.ZoneSize     = {x = 10.0, y = 10.0, z = 5.0}
 Config.MarkerColor  = {r = 100, g = 204, b = 100}
 Config.RequiredCopsPearl = 0
-Config.Locale = 'en'
+Config.Locale = 'es'
 
 -- Change coordinates !!!
 Config.Zones = {

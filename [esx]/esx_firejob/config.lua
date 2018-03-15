@@ -10,7 +10,7 @@ Config.EnableNonFreemodePeds      = true -- turn this on if you want custom peds
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = true
 Config.MaxInService               = -1
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.FireStations = {
 
@@ -33,11 +33,11 @@ Config.FireStations = {
     AuthorizedVehicles = {
 	  { name = 'ambulance', label = 'Ambulance' },
 	  { name = 'firetruk', label = 'Fire Truck' },
-	  { name = 'emscar', label = 'EMS Car' },	  
-	  { name = 'emscar2', label = 'EMS Car' },	  
-	  { name = 'emsvan', label = 'EMS Van' },	  
-	  { name = 'emssuv', label = 'EMS SUV' },	  
-	  { name = 'ambulance2', label = 'Ambulance 2' },	  
+	  { name = 'emscar', label = 'EMS Car' },
+	  { name = 'emscar2', label = 'EMS Car' },
+	  { name = 'emsvan', label = 'EMS Van' },
+	  { name = 'emssuv', label = 'EMS SUV' },
+	  { name = 'ambulance2', label = 'Ambulance 2' },
     },
 
     Cloakrooms = {

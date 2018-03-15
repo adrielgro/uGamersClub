@@ -17,9 +17,9 @@ function getIdentity(source, callback)
         height		= result[1]['height'],
 		phonenumber = result[1]['phone_number']
       }
-			
+
       callback(data)
-    else	
+    else
       local data = {
         identifier 	= '',
         firstname 	= '',
@@ -29,7 +29,7 @@ function getIdentity(source, callback)
         height 		= '',
 		phonenumber = ''
       }
-			
+
       callback(data)
     end
   end)
@@ -240,9 +240,9 @@ function getID(steamid, callback)
         height		= result[1]['height'],
 		phonenumber = result[1]['phone_number']
       }
-			
+
       callback(data)
-    else	
+    else
       local data = {
         identifier 	= '',
         firstname 	= '',
@@ -252,7 +252,7 @@ function getID(steamid, callback)
         height 		= '',
 		phonenumber = ''
       }
-			
+
       callback(data)
     end
   end)
@@ -281,16 +281,16 @@ RegisterServerEvent('menu:characters')
 AddEventHandler('menu:characters', function(callback)
   getCharacters(source, function(data)
     if data.firstname1 ~= '' and data.firstname2 ~= '' and data.firstname3 ~= '' then
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 1: " .. data.firstname1 .. " " .. data.firstname1)
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 2: " .. data.firstname2 .. " " .. data.lastname2)
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 3: " .. data.firstname3 .. " " .. data.lastname3)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 1: " .. data.firstname1 .. " " .. data.firstname1)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 2: " .. data.firstname2 .. " " .. data.lastname2)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 3: " .. data.firstname3 .. " " .. data.lastname3)
 	elseif data.firstname1 ~= '' and data.firstname2 ~= '' and data.firstname3 == '' then
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 1: " .. data.firstname1 .. " " .. data.firstname1)
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 2: " .. data.firstname2 .. " " .. data.lastname2)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 1: " .. data.firstname1 .. " " .. data.firstname1)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 2: " .. data.firstname2 .. " " .. data.lastname2)
 	elseif data.firstname1 ~= '' and data.firstname2 == '' and data.firstname3 == '' then
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Character 1: " .. data.firstname1 .. " " .. data.firstname1)
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "Personaje 1: " .. data.firstname1 .. " " .. data.firstname1)
 	elseif data.firstname1 == '' and data.firstname2 == '' and data.firstname3 == '' then
-      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "You have no characters.")
+      TriggerClientEvent('chatMessage', -1, '', {217, 217, 217}, "No tienes personajes.")
 	end
   end)
 end)
@@ -309,101 +309,101 @@ end
 
 AddEventHandler('es:playerLoaded', function(source)
   local steamid = GetPlayerIdentifiers(source)[1]
-  
+
   getCharacters(source, function(data)
     if data ~= nil then
       if data.firstname1 ~= '' and data.firstname2 ~= '' and data.firstname3 ~= '' then
 	    local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
 	    local char2 = tostring(data.firstname2) .. " " .. tostring(data.lastname2)
 	    local char3 = tostring(data.firstname3) .. " " .. tostring(data.lastname3)
-		
+
 		identification = {
 		  steamidentifier = steamid,
 		  playerid        = source
 		}
-		
+
 	    characters = {
 	      character1         = char1,
 		  character2         = char2,
 		  character3         = char3,
 	    }
-		  
-		TriggerClientEvent('menu:setCharacters', source, characters)	
+
+		TriggerClientEvent('menu:setCharacters', source, characters)
 		TriggerClientEvent('menu:setIdentifier', source, identification)
-		
+
       elseif data.firstname1 ~= '' and data.firstname2 ~= '' and data.firstname3 == '' then
 	    local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
 	    local char2 = tostring(data.firstname2) .. " " .. tostring(data.lastname2)
 	    local char3 = "No Character"
-		
+
 		identification = {
 		  steamidentifier = steamid,
 		  playerid        = source
 		}
-		
+
 	    characters = {
 	      character1         = char1,
 		  character2         = char2,
 		  character3         = char3,
 	    }
-		  
-		TriggerClientEvent('menu:setCharacters', source, characters)	
+
+		TriggerClientEvent('menu:setCharacters', source, characters)
 		TriggerClientEvent('menu:setIdentifier', source, identification)
-		
+
       elseif data.firstname1 ~= '' and data.firstname2 == '' and data.firstname3 == '' then
       	local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
       	local char2 = "No Character"
       	local char3 = "No Character"
-		
+
 		identification = {
 		  steamidentifier = steamid,
 		  playerid        = source
 		}
-		
+
 	    characters = {
 	      character1         = char1,
 		  character2         = char2,
 		  character3         = char3,
 	    }
-		  
-		TriggerClientEvent('menu:setCharacters', source, characters)	
+
+		TriggerClientEvent('menu:setCharacters', source, characters)
 		TriggerClientEvent('menu:setIdentifier', source, identification)
-		
+
       elseif data.firstname1 == '' and data.firstname2 == '' and data.firstname3 == '' then
       	local char1 = "No Character"
 	    local char2 = "No Character"
       	local char3 = "No Character"
-		
+
 		identification = {
 		  steamidentifier = steamid,
 		  playerid        = source
 		}
-		
+
 	    characters = {
 	      character1         = char1,
 		  character2         = char2,
 		  character3         = char3,
 	    }
-		  
-		TriggerClientEvent('menu:setCharacters', source, characters)	
+
+		TriggerClientEvent('menu:setCharacters', source, characters)
 		TriggerClientEvent('menu:setIdentifier', source, identification)
-		
+
       else
-	  
+
 	    identification = {
 		  steamidentifier = steamid,
 		  playerid        = source
 		}
-		
+
       	characters = {
       	  character1 = "Sin personaje",
       	  character2 = "Sin personaje",
       	  character3 = "Sin personaje"
       	}
-	  
+
       	TriggerClientEvent('menu:setCharacters', source, characters)
-        TriggerClientEvent('menu:setIdentifier', source, identification)			
-		
+        TriggerClientEvent('menu:setIdentifier', source, identification)
+
       end
     end
   end)
@@ -411,7 +411,7 @@ end)
 
 RegisterServerEvent('menu:setChars')
 AddEventHandler('menu:setChars', function(myIdentifiers)
-  getChars(myIdentifiers.steamidentifier, function(data)	
+  getChars(myIdentifiers.steamidentifier, function(data)
     if data ~= nil then
 	  if data.firstname1 ~= '' and data.firstname2 ~= '' and data.firstname3 ~= '' then
 	    getID(myIdentifiers.steamidentifier, function(result)
@@ -420,30 +420,30 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 	        local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
 	        local char2 = tostring(data.firstname2) .. " " .. tostring(data.lastname2)
 	        local char3 = tostring(data.firstname3) .. " " .. tostring(data.lastname3)
-		      
+
 			if activeName == char1 then
 	          characters = {
 	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			elseif activeName == char2 then
 	          characters = {
 	            character1 = char1,
 		        character2 = char2 .. " [Activo]",
 		        character3 = char3
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			elseif activeName == char3 then
 	          characters = {
 	            character1 = char1,
 		        character2 = char2,
 		        character3 = char3 .. " [Activo]"
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 		    else
 			  characters = {
@@ -451,7 +451,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 			    character2 = char2,
 			    character3 = char3
 		      }
-				
+
 			  TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			end
 		  else
@@ -460,7 +460,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 			  character2 = char2,
 			  character3 = char3
 		    }
-				
+
 			TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 		  end
 		end)
@@ -471,22 +471,22 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 	        local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
 	        local char2 = tostring(data.firstname2) .. " " .. tostring(data.lastname2)
 	        local char3 = "No Character"
-		      
+
 			if activeName == char1 then
 	          characters = {
 	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			elseif activeName == char2 then
 	          characters = {
 	            character1 = char1,
 		        character2 = char2 .. " [Activo]",
 		        character3 = char3
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			else
 			  characters = {
@@ -494,7 +494,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 				character2 = char2,
 				character3 = char3
 		      }
-				
+
 			  TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			end
 		  else
@@ -503,7 +503,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 		      character2 = char2,
 		      character3 = char3
 		    }
-				
+
 			TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 		  end
 		end)
@@ -514,14 +514,14 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 	        local char1 = tostring(data.firstname1) .. " " .. tostring(data.lastname1)
 	        local char2 = "No Character"
 	        local char3 = "No Character"
-		      
+
 			if activeName == char1 then
 	          characters = {
 	            character1 = char1 .. " [Activo]",
 		        character2 = char2,
 		        character3 = char3
-	          }	
-		  
+	          }
+
               TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			else
 			  characters = {
@@ -529,7 +529,7 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 				character2 = char2,
 				character3 = char3
 			  }
-				
+
 			  TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 			end
 		  else
@@ -538,18 +538,18 @@ AddEventHandler('menu:setChars', function(myIdentifiers)
 			  character2 = char2,
 			  character3 = char3
 		    }
-				
+
 			TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 		  end
-		end)  
-	  else	
+		end)
+	  else
 	    characters = {
 	      character1 = "Sin personaje",
 		  character2 = "Sin personaje",
 		  character3 = "Sin personaje"
-	    }  
-		
-		TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)	  
+	    }
+
+		TriggerClientEvent('menu:setCharacters', myIdentifiers.playerid, characters)
 	  end
 	end
   end)
@@ -567,7 +567,7 @@ AddEventHandler('menu:deleteChar1', function(myIdentifiers)
       sex      = data.sex1,
       height    = data.height1
     }
-	
+
 	if data.firstname ~= '' then
       deleteCharacter(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -593,7 +593,7 @@ AddEventHandler('menu:deleteChar2', function(myIdentifiers)
       sex      = data.sex2,
       height    = data.height2
     }
-	
+
 	if data.firstname ~= '' then
       deleteCharacter(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -619,7 +619,7 @@ AddEventHandler('menu:deleteChar3', function(myIdentifiers)
       sex      = data.sex3,
       height    = data.height3
     }
-	
+
 	if data.firstname ~= '' then
       deleteCharacter(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -645,7 +645,7 @@ AddEventHandler('menu:selectChar1', function(myIdentifiers)
       sex      = data.sex1,
       height    = data.height1
     }
-	
+
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -671,7 +671,7 @@ AddEventHandler('menu:selectChar2', function(myIdentifiers)
       sex      = data.sex2,
       height    = data.height2
     }
-	
+
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -697,7 +697,7 @@ AddEventHandler('menu:selectChar3', function(myIdentifiers)
       sex      = data.sex3,
       height    = data.height3
     }
-	
+
 	if data.firstname ~= '' then
       updateIdentity(myIdentifiers.steamidentifier, data, function(callback)
 	    if callback == true then
@@ -761,8 +761,8 @@ TriggerEvent('es:addCommand', 'getID', function(source, args, user)
     steamidentifier = GetPlayerIdentifiers(source)[1],
 	playerid        = source
   }
-		
-  TriggerClientEvent('menu:setIdentifier', source, identification)	
+
+  TriggerClientEvent('menu:setIdentifier', source, identification)
 end)
 
 --===============================================

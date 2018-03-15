@@ -2,12 +2,12 @@ Config              = {}
 Config.DrawDistance = 100.0
 Config.MaxDelivery	= 10
 Config.TruckPrice	= 30
-Config.Locale       = 'en'
+Config.Locale       = 'es'
 
 Config.Trucks = {
 	"trash",
 	"trash2",
-	"biff",	
+	"biff",
 	--"scrap"
 }
 
@@ -127,7 +127,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 400
 		},
-------------------------------------------- 2nd Patrol 
+------------------------------------------- 2nd Patrol
 	-- Palomino Noose HQ
 	Delivery1BC = {
 			Pos   = {x = 317.53698730469, y = -737.95416259766, z = 29.278547286987},
@@ -218,7 +218,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 300
 		},
-		
+
 	RetourCamion = {
 			Pos   = {x = -335.26095581055, y = -1529.5614013672, z = 27.565467834473},
 			Color = {r = 204, g = 204, b = 0},
@@ -227,7 +227,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 0
 		},
-	
+
 	AnnulerMission = {
 			Pos   = {x = -314.62796020508, y = -1514.5662841797, z = 27.677434921265},
 			Color = {r = 204, g = 204, b = 0},

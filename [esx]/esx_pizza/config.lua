@@ -2,11 +2,11 @@ Config              = {}
 Config.DrawDistance = 100.0
 Config.MaxDelivery	= 10
 Config.TruckPrice	= 200
-Config.Locale       = 'en'
+Config.Locale       = 'es'
 
 Config.Trucks = {
 	"faggio",
-	--"packer"	
+	--"packer"
 }
 
 Config.Cloakroom = {
@@ -44,7 +44,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 1000
 		},
-	-- a coté des flic
+	-- a cotï¿½ des flic
 	Delivery2LS = {
 			Pos   = {x = -408.10067749023, y = 342.2233581543, z = 108.90744018555},
 			Color = {r = 204, g = 204, b = 0},
@@ -216,7 +216,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 1000
 		},
-	
+
 	RetourCamion = {
 			Pos   = {x = 235.91499328613, y = -40.914516448975, z = 69.721870422363},
 			Color = {r = 204, g = 204, b = 0},
@@ -225,7 +225,7 @@ Config.Livraison = {
 			Type  = 1,
 			Paye = 0
 		},
-	
+
 	AnnulerMission = {
 			Pos   = {x = 231.03507995605, y = -41.948207855225, z = 69.65306854248},
 			Color = {r = 204, g = 204, b = 0},

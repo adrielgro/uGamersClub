@@ -6,7 +6,7 @@ Config.EnablePvCommand            = true
 Config.EnableOwnedVehicles        = true
 Config.EnableSocietyOwnedVehicles = false
 Config.ResellPercentage           = 50
-Config.Locale                     = 'en'
+Config.Locale                     = 'es'
 
 Config.Zones = {
 
