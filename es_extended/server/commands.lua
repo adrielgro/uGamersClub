@@ -48,9 +48,9 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
-  --local ped = GetPlayerPed(source)
-  --local _source = source
-  local xPlayer = GetPlayerFromServerId(source)
+  --local xPlayer = GetPlayerFromServerId(source)
+  local _source = source
+  local xPlayer = ESX.GetPlayerFromId(source)
 
   if xPlayer ~= nil then
     local vehicle = GetVehiclePedIsIn(xPlayer, false)
