@@ -16,7 +16,7 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'dartrabajo', 'mod', function(source, args, user)
-  if #args ~= 3
+  if #args ~= 3 then
     TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Utiliza: /dartrabajo [ID Jugador] [Trabajo] [Rango]")
   else
     local xPlayer = ESX.GetPlayerFromId(args[1])
@@ -149,7 +149,7 @@ end, function(source, args, user)
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'dararma', 'admin', function(source, args, user)
-  if #args ~= 2
+  if #args ~= 2 then
     TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Utiliza: /dartrabajo [ID Jugador] [Arma]")
   else
     local xPlayer    = ESX.GetPlayerFromId(args[1])
