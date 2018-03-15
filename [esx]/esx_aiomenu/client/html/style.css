@@ -17,7 +17,7 @@ button {
 	border: 1px solid whitesmoke;
 	color: whitesmoke;
     background-color: #ad1212;
-    border-radius: 5px;
+    border-radius: 8px;
 
 }
 
@@ -26,7 +26,8 @@ button {
 	height: 700px;
 	background: ;
 	color: white;
-	width: 800px;
+	min-width: 800px;
+	width: 25%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
