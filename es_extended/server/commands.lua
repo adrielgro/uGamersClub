@@ -48,12 +48,14 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
-  local ped = GetPlayerPed(source)
+  --local ped = GetPlayerPed(source)
+  local _source = source
+  local xPlayer = ESX.GetPlayerFromId(source)
 
-  if ped ~= nil then
-    if (DoesEntityExist(ped) and not IsEntityDead(ped)) then
-        if (IsPedSittingInAnyVehicle(ped)) then
-            local vehicle = GetVehiclePedIsIn(ped, false)
+  if xPlayer ~= nil then
+    if (DoesEntityExist(xPlayer) and not IsEntityDead(xPlayer)) then
+        if (IsPedSittingInAnyVehicle(xPlayer)) then
+            local vehicle = GetVehiclePedIsIn(xPlayer, false)
             SetVehicleFuelLevel(vehicle, 99)
             --SetVehicleEngineOn(vehicle, true, true)
         else
