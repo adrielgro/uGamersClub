@@ -1,15 +1,13 @@
 
 RegisterNetEvent('sendProximityMessage')
 AddEventHandler('sendProximityMessage', function(id, name, message)
-  --getIdentity(source, function(data)
-    local myId = PlayerId()
-    local pid = GetPlayerFromServerId(id)
-    if pid == myId then
-      TriggerEvent('chatMessage', "^0" .. name .. " dice", {0, 153, 204}, " " .. message)
-    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
-      TriggerEvent('chatMessage', "^0" .. name .. " dice", {0, 153, 204}, " " .. message)
-    end
-  --end)
+  local myId = PlayerId()
+  local pid = GetPlayerFromServerId(id)
+  if pid == myId then
+    TriggerEvent('chatMessage', "^0" .. name .. " dice", {0, 153, 204}, " " .. message)
+  elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
+    TriggerEvent('chatMessage', "^0" .. name .. " dice", {0, 153, 204}, " " .. message)
+  end
 end)
 
 RegisterNetEvent('sendProximityMessageMe')
