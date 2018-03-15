@@ -48,16 +48,20 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
+  local ped = GetPlayerPed(source)
 
-  local ped = GetPlayerPed( -1 )
-
-  if (DoesEntityExist(ped) and not IsEntityDead(ped)) then
-      if (IsPedSittingInAnyVehicle(ped)) then
-          local vehicle = GetVehiclePedIsIn(ped, false)
-
-          SetVehicleFuelLevel(vehicle, 99)
-          SetVehicleEngineOn(vehicle, true, true)
-      end
+  if ped ~= nil then
+    if (DoesEntityExist(ped) and not IsEntityDead(ped)) then
+        if (IsPedSittingInAnyVehicle(ped)) then
+            local vehicle = GetVehiclePedIsIn(ped, false)
+            SetVehicleFuelLevel(vehicle, 99)
+            --SetVehicleEngineOn(vehicle, true, true)
+        else
+          TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "No estas en un vehículo!")
+        end
+    end
+  else
+    TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Hubo un problema con tu personaje.")
   end
 
 end, function(source, args, user)
