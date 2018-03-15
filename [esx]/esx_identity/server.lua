@@ -257,10 +257,13 @@ TriggerEvent('es:addGroupCommand', 'ayuda', "user", function(source, args, user)
   TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/charselect 1,2,3 - Cambiar personaje")
   TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/delchar 1,2,3 - Borrar personaje")]]--
 
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F1 ^0para ver ...")
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F2 ^0para ver ...")
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F3 ^0para ver ...")
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F4 ^0para ver ...")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F1 ^0para ver el sistema de control del vehículo.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F2 ^0para ver su inventario.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F3 ^0para ver las animaciones.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F5 ^0para ver acciones generales.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F6 ^0para ver acciones de su trabajo.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F7 ^0para ver sus facturas.")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F9 ^0para ver acciones de sus mascotas.")
 
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Permisos Insuficientes!")
