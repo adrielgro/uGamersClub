@@ -1,16 +1,14 @@
   AddEventHandler('chatMessage', function(source, name, message)
-    if string.sub(message, 1, string.len("/")) ~= "/" then
-      getIdentity(source, function(data)
-        local name = GetPlayerName(source)
-        TriggerClientEvent("sendProximityMessage", -1, source, name, message)
-      end)
-    end
-    CancelEvent()
+      if string.sub(message, 1, string.len("/")) ~= "/" then
+          local name = GetPlayerName(source)
+		TriggerClientEvent("sendProximityMessage", -1, source, name, message)
+      end
+      CancelEvent()
   end)
 
   RegisterCommand('me', function(source, args, user)
       local name = GetPlayerName(source)
-      TriggerClientEvent("sendProximityMessageMe", -1, source, "* " .. name, table.concat(args, " "))
+      TriggerClientEvent("sendProximityMessageMe", -1, source, name, table.concat(args, " "))
   end, false)
 
   RegisterCommand('do', function(source, args, user)
@@ -46,32 +44,4 @@ function stringsplit(inputstr, sep)
 		i = i + 1
 	end
 	return t
-end
-
-function getIdentity(source, callback)
-  local identifier = GetPlayerIdentifiers(source)[1]
-  MySQL.Async.fetchAll("SELECT * FROM `users` WHERE `identifier` = @identifier", {['@identifier'] = identifier},
-  function(result)
-    if result[1]['firstname'] ~= nil then
-      local data = {
-        identifier    = result[1]['identifier'],
-        firstname     = result[1]['firstname'],
-        lastname      = result[1]['lastname'],
-        dateofbirth   = result[1]['dateofbirth'],
-        sex           = result[1]['sex'],
-        height        = result[1]['height']
-      }
-      callback(data)
-    else
-      local data = {
-        identifier    = '',
-        firstname     = '',
-        lastname      = '',
-        dateofbirth   = '',
-        sex           = '',
-        height        = ''
-      }
-      callback(data)
-    end
-  end)
 end
