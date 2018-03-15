@@ -9,7 +9,7 @@ local timer = false
 
 local blips = {
   {name="Hospital", id=80, x= 338.85, y= -1394.56, z= 31.51, color= 1},
-  {name="Hospital", id=80, x= -449.67, y= -340.83, z= 33.50, color= 1},
+  {name="Hospital", id=80, x= -449.67, y= -340.83, z= 31.51, color= 1},
 }
 
 
