@@ -35,13 +35,14 @@ function getIdentity(source, callback)
 end
 
   AddEventHandler('chatMessage', function(source, name, message)
-    if string.sub(message, 1, string.len("/")) ~= "/" then
-      getIdentity(source, function(data)
+    getIdentity(source, function(data)
+      if string.sub(message, 1, string.len("/")) ~= "/" then
         --local name = GetPlayerName(source)
-        TriggerClientEvent("sendProximityMessage", -1, source, data.firstname, message)
-      end)
-    end
-    CancelEvent()
+        local name = "Adriel Guerrero"
+        TriggerClientEvent("sendProximityMessage", -1, source, name, message)
+      end
+      CancelEvent()
+    end)
   end)
 
   RegisterCommand('me', function(source, args, user)
