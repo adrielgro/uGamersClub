@@ -24,8 +24,11 @@ th, td {
 	padding-left: 25px;
 }
 
-tr td:first-child,
 tr td:last-child {
+    text-align: center;
+}
+
+tr:last-child {
     text-align: center;
 }
 

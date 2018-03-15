@@ -1,4 +1,4 @@
-AddEventHandler("es:firstSpawn", function(source)
+AddEventHandler("es:playerLoaded", function(source)
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Bienvenido a ^0uGamers.CLUB")
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Ingresa al teamspeak: ^0ts3.mancos.club")
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Recuerda seguir las normas de la comunidad.")
