@@ -155,7 +155,11 @@ TriggerEvent('es:addGroupCommand', 'dararma', 'admin', function(source, args, us
     local xPlayer    = ESX.GetPlayerFromId(args[1])
     local weaponName = string.upper(args[2])
 
-    xPlayer.addWeapon(weaponName, 1000)
+    if xPlayer ~= nil then
+      xPlayer.addWeapon(weaponName, 1000)
+    else
+      TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Jugador no encontrado!")
+    end
   end
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
