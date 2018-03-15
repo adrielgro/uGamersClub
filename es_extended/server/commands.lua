@@ -47,12 +47,23 @@ end, {
   help = "Arreglar un vehículo"
 })
 
-TriggerEvent('es:addGroupCommand', 'testt', 'mod', function(source, args, user)
-  SetVehicleFuelLevel(GetVehiclePedIsIn(GetPlayerPed(-1)),round(100))
+TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
+
+  local ped = GetPlayerPed( -1 )
+
+  if (DoesEntityExist(ped) and not IsEntityDead(ped)) then
+      if (IsPedSittingInAnyVehicle(ped)) then
+          local vehicle = GetVehiclePedIsIn(ped, false)
+
+          SetVehicleFuelLevel(vehicle, 99)
+          SetVehicleEngineOn(vehicle, true, true)
+      end
+  end
+
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {
-  help = "Arreglar un vehículo"
+  help = "Rellenar un vehículo de gasolina"
 })
 
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
