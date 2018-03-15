@@ -49,19 +49,12 @@ end, {
 
 TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
   --local ped = GetPlayerPed(source)
-  local _source = source
-  local xPlayer = ESX.GetPlayerFromId(source)
+  --local _source = source
+  local xPlayer = GetPlayerFromServerId(source)
 
   if xPlayer ~= nil then
-    if (DoesEntityExist(xPlayer) and not IsEntityDead(xPlayer)) then
-        if (IsPedSittingInAnyVehicle(xPlayer)) then
-            local vehicle = GetVehiclePedIsIn(xPlayer, false)
-            SetVehicleFuelLevel(vehicle, 99)
-            --SetVehicleEngineOn(vehicle, true, true)
-        else
-          TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "No estas en un vehículo!")
-        end
-    end
+    local vehicle = GetVehiclePedIsIn(xPlayer, false)
+    SetVehicleFuelLevel(vehicle, 99)
   else
     TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Hubo un problema con tu personaje.")
   end
