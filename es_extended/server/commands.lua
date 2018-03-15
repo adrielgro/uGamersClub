@@ -48,17 +48,7 @@ end, {
 })
 
 TriggerEvent('es:addGroupCommand', 'refill', 'mod', function(source, args, user)
-  --local xPlayer = GetPlayerFromServerId(source)
-  local _source = source
-  local xPlayer = ESX.GetPlayerFromId(source)
-
-  if xPlayer ~= nil then
-    local vehicle = GetVehiclePedIsIn(xPlayer, false)
-    SetVehicleFuelLevel(vehicle, 99)
-  else
-    TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Hubo un problema con tu personaje.")
-  end
-
+  TriggerClientEvent('vehicule:refillFuel', source)
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {

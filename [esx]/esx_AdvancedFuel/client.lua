@@ -684,6 +684,19 @@ AddEventHandler("vehicule:sendFuel", function(bool, ess)
 
 end)
 
+RegisterNetEvent("vehicule:refillFuel")
+AddEventHandler("vehicule:refillFuel", function()
+
+	local ped = GetPlayerPed(-1)
+
+  if ped ~= nil then
+    local vehicle = GetVehiclePedIsUsing(ped)
+    SetVehicleFuelLevel(vehicle, 99)
+  else
+    TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Hubo un problema con tu personaje.")
+  end
+end)
+
 function GetPedVehicleSeat(ped)
     local vehicle = GetVehiclePedIsIn(ped, false)
     for i=-2,GetVehicleMaxNumberOfPassengers(vehicle) do
