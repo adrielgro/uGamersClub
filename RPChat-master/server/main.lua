@@ -1,7 +1,7 @@
 --===============================================
 --==     Get The Player's Identification       ==
 --===============================================
-function getIdentity(source, callback)
+function getIdentity(source)
   local identifier = GetPlayerIdentifiers(source)[1]
     MySQL.Async.fetchAll("SELECT * FROM `users` WHERE `identifier` = @identifier",
   {
@@ -18,7 +18,7 @@ function getIdentity(source, callback)
         height    = result[1]['height']
       }
 
-      callback(data)
+      return data
     else
       local data = {
         identifier   = '',
@@ -29,7 +29,7 @@ function getIdentity(source, callback)
         height     = ''
       }
 
-      callback(data)
+      return data
     end
   end)
 end
