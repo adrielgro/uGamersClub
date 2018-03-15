@@ -5,10 +5,10 @@
       end
       CancelEvent()
   end)
-  
+
   RegisterCommand('me', function(source, args, user)
       local name = GetPlayerName(source)
-      TriggerClientEvent("sendProximityMessageMe", -1, source, name, table.concat(args, " "))
+      TriggerClientEvent("sendProximityMessageMe", -1, source, "* " .. name, table.concat(args, " "))
   end, false)
 
   RegisterCommand('do', function(source, args, user)
