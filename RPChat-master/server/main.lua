@@ -1,61 +1,12 @@
---===============================================
---==     Get The Player's Identification       ==
---===============================================
-function getIdentity(source)
-  local identifier = GetPlayerIdentifiers(source)[1]
-    MySQL.Async.fetchAll("SELECT * FROM `users` WHERE `identifier` = @identifier",
-  {
-    ['@identifier'] = identifier
-  },
-  function(result)
-    if result[1]['firstname'] ~= nil then
-      local data = {
-        identifier  = result[1]['identifier'],
-        firstname  = result[1]['firstname'],
-        lastname  = result[1]['lastname'],
-        dateofbirth  = result[1]['dateofbirth'],
-        sex      = result[1]['sex'],
-        height    = result[1]['height']
-      }
-
-      return data
-    else
-      local data = {
-        identifier   = '',
-        firstname   = '',
-        lastname   = '',
-        dateofbirth = '',
-        sex     = '',
-        height     = ''
-      }
-
-      return data
-    end
-  end)
-end
-
   AddEventHandler('chatMessage', function(source, name, message)
-    --getIdentity(source, function(data)
-      if string.sub(message, 1, string.len("/")) ~= "/" then
+    if string.sub(message, 1, string.len("/")) ~= "/" then
+      getIdentity(source, function(data)
         local name = GetPlayerName(source)
-        --local name = "Adriel Guerrero"
         TriggerClientEvent("sendProximityMessage", -1, source, name, message)
-      end
-      CancelEvent()
-    --end)
+      end)
+    end
+    CancelEvent()
   end)
-
-  TriggerEvent('es:addGroupCommand', 'prueba', "user", function(source, args, user)
-    getIdentity(source, function(data)
-      if data.firstname == '' then
-        TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "No tienes ningún personaje activo.")
-      else
-        TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "Personaje activo: " .. data.firstname .. " " .. data.lastname)
-      end
-    end)
-  end, function(source, args, user)
-    TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-  end, {help = "Lista de personajes activos"})
 
   RegisterCommand('me', function(source, args, user)
       local name = GetPlayerName(source)
@@ -95,4 +46,32 @@ function stringsplit(inputstr, sep)
 		i = i + 1
 	end
 	return t
+end
+
+function getIdentity(source, callback)
+  local identifier = GetPlayerIdentifiers(source)[1]
+  MySQL.Async.fetchAll("SELECT * FROM `users` WHERE `identifier` = @identifier", {['@identifier'] = identifier},
+  function(result)
+    if result[1]['firstname'] ~= nil then
+      local data = {
+        identifier    = result[1]['identifier'],
+        firstname     = result[1]['firstname'],
+        lastname      = result[1]['lastname'],
+        dateofbirth   = result[1]['dateofbirth'],
+        sex           = result[1]['sex'],
+        height        = result[1]['height']
+      }
+      callback(data)
+    else
+      local data = {
+        identifier    = '',
+        firstname     = '',
+        lastname      = '',
+        dateofbirth   = '',
+        sex           = '',
+        height        = ''
+      }
+      callback(data)
+    end
+  end)
 end

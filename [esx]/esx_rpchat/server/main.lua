@@ -44,7 +44,7 @@ end)
 TriggerEvent('es:addCommand', 'me', function(source, args, user)
     table.remove(args, 1)
     getIdentity(source, function(data)
-      TriggerClientEvent("sendProximityMessageMe", -1, source, .. data.firstname, table.concat(args, " "))
+      TriggerClientEvent("sendProximityMessageMe", -1, source, data.firstname, table.concat(args, " "))
     end)
 end)
 
