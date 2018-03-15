@@ -65,6 +65,15 @@ TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
   TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source), {128, 128, 128}, table.concat(args, " "))
 end, {help = 'Envíe un mensaje de fuera del jugador a todo el servidor.'})
 
+TriggerEvent('es:addCommand', 'ad', function(source, args, user)
+  TriggerClientEvent('chatMessage', -1, "^1[ANUNCIO]: " .. data.firstname, {255,215,0}, table.concat(args, " "))
+end, {help = 'Mandar un anuncio IC.'})
+
+TriggerEvent('es:addCommand', 'intentar', function(source, args, user)
+  num = math.random(0, 10)
+  TriggerClientEvent("sendProximityMessageRoll", -1, source, data.firstname, num, table.concat(args, " "))
+end, {help = 'Intentar realizar una acción que depende de la suerte.'})
+
 function stringsplit(inputstr, sep)
   if sep == nil then
     sep = "%s"
