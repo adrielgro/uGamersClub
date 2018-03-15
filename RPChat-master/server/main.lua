@@ -37,13 +37,25 @@ end
   AddEventHandler('chatMessage', function(source, name, message)
     --getIdentity(source, function(data)
       if string.sub(message, 1, string.len("/")) ~= "/" then
-        --local name = GetPlayerName(source)
-        local name = "Adriel Guerrero"
+        local name = GetPlayerName(source)
+        --local name = "Adriel Guerrero"
         TriggerClientEvent("sendProximityMessage", -1, source, name, message)
       end
       CancelEvent()
     --end)
   end)
+
+  TriggerEvent('es:addGroupCommand', 'prueba', "user", function(source, args, user)
+    getIdentity(source, function(data)
+      if data.firstname == '' then
+        TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "No tienes ningún personaje activo.")
+      else
+        TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "Personaje activo: " .. data.firstname .. " " .. data.lastname)
+      end
+    end)
+  end, function(source, args, user)
+    TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
+  end, {help = "Lista de personajes activos"})
 
   RegisterCommand('me', function(source, args, user)
       local name = GetPlayerName(source)
