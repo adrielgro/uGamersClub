@@ -75,7 +75,7 @@ AddEventHandler('es:getSessionSetting', function(k, cb)
 end)
 
 AddEventHandler('es:invalidCommandHandler', function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "ERROR", {32, 32, 32}, "^0El comando que has intentado utilizar es incorrecto.")
+	TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "^0El comando que has intentado utilizar es incorrecto.")
 	CancelEvent()
 end)
 

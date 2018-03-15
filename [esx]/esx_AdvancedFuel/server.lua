@@ -15,7 +15,7 @@ end)
 AddEventHandler("playerDropped", function(reason)
 	local _source = source
 	local newPlayers = {}
-	
+
 	for _,k in pairs(players) do
 		if(k~=_source) then
 			table.insert(newPlayers, k)
@@ -60,10 +60,10 @@ AddEventHandler("essence:buy", function(amount, index,e)
 	if(e) then
 		price = index
 	end
-	
+
 	local toPay = round(amount*price,2)
 	if(toPay > xPlayer.getMoney()) then
-		TriggerClientEvent("showErrorNotif", _source, "You don't have enought money.")
+		TriggerClientEvent("showErrorNotif", _source, "No tienes suficiente dinero.")
 	else
 		xPlayer.removeMoney(toPay)
 		TriggerClientEvent("essence:hasBuying", _source, amount)
@@ -150,4 +150,3 @@ function searchByModelAndPlate(plate, model)
 
 	return false, -1
 end
-

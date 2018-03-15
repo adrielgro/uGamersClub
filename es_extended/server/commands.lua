@@ -20,7 +20,13 @@ TriggerEvent('es:addGroupCommand', 'dartrabajo', 'mod', function(source, args, u
     TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Utiliza: /dartrabajo [ID Jugador] [Trabajo] [Rango]")
   else
     local xPlayer = ESX.GetPlayerFromId(args[1])
-    xPlayer.setJob(args[2], tonumber(args[3]))
+
+    if xPlayer ~= nil then
+      xPlayer.setJob(args[2], tonumber(args[3]))
+    else
+      TriggerClientEvent('chatMessage', source, "ERROR", {255, 0, 0}, "Jugador no encontrado!")
+    end
+
   end
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
@@ -35,6 +41,14 @@ end, {
 
 TriggerEvent('es:addGroupCommand', 'repararveh', 'mod', function(source, args, user)
   TriggerClientEvent('wk:fixVehicle', source)
+end, function(source, args, user)
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
+end, {
+  help = "Arreglar un vehículo"
+})
+
+TriggerEvent('es:addGroupCommand', 'testt', 'mod', function(source, args, user)
+  SetVehicleFuelLevel(GetVehiclePedIsIn(GetPlayerPed(-1)),round(100))
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {
