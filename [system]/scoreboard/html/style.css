@@ -28,10 +28,6 @@ tr td:last-child {
     text-align: center;
 }
 
-tr:last-child {
-    text-align: center;
-}
-
 th {
 	padding-top: 10px;
 	height: 40px;

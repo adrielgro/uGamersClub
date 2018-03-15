@@ -4,7 +4,7 @@ $(function()
     {
         var item = event.data;
         var buf = $('#wrap');
-        buf.find('table').append("<tr class=\"heading\"><th>ID</th><th>Nombre</th><th>Nivel</th></tr>");
+        buf.find('table').append("<tr class=\"heading\"><th>ID</th><th>Nombre</th><th style='text-align: center'>Nivel</th></tr>");
         if (item.meta && item.meta == 'close')
         {
             document.getElementById("ptbl").innerHTML = "";
