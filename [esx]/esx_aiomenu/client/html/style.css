@@ -9,25 +9,29 @@ button {
 	margin: 10px auto;
 	padding: 10px 24px;
 	cursor: pointer;
-	width: 30%;
+	width: 100%;
 	display: block;
 	text-transform: uppercase;
-    font-family: 'Unica One', cursive;
+	font-family: 'Unica One', cursive;
 	font-size: 12px;
 	border: 1px solid whitesmoke;
 	color: whitesmoke;
-    background-color: #ad1212;
-    border-radius: 8px;
-
+	background-color: #ad1212;
+	border-radius: 8px;
 }
+
+button:hover {
+	background-color: #9a0000;
+}
+
 
 .general {
 	font-family: 'Roboto', sans-serif;
 	height: 700px;
-	background: ;
+	/*background: ;*/
 	color: white;
 	min-width: 800px;
-	width: 25%;
+	width: 30%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -184,11 +188,7 @@ button {
 	position: relative;
 	top: 26%;
 	left: 43.7%;
-
 }
-
-
-
 
 #close {
 	display: inline-block;
@@ -196,10 +196,4 @@ button {
 	padding: 5px;
 	padding-right: 10px;
 	color: rgb(255, 0, 0);
-}
-
-
-/* change look of buttons when hovering over them */
-button:hover {
-	background-color: #005c99;
 }

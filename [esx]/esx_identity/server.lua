@@ -251,11 +251,17 @@ end)
 --==      /charlist - Show Your Characters     ==
 --===============================================
 TriggerEvent('es:addGroupCommand', 'ayuda', "user", function(source, args, user)
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "uGamers Comandos")
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/register - Registrar un nuevo personaje")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "========[ uGamers Comandos ]========")
+  --[[TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/register - Registrar un nuevo personaje")
   TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/charlist - Lista de personajes")
   TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/charselect 1,2,3 - Cambiar personaje")
-  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/delchar 1,2,3 - Borrar personaje")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/delchar 1,2,3 - Borrar personaje")]]--
+
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F1 ^0para ver ...")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F2 ^0para ver ...")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F3 ^0para ver ...")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "^0Usa la tecla ^4F4 ^0para ver ...")
+
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Permisos Insuficientes!")
 end, {help = "Lista de jugadores"})
