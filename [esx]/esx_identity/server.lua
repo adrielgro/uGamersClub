@@ -250,15 +250,15 @@ end)
 --===============================================
 --==      /charlist - Show Your Characters     ==
 --===============================================
-TriggerEvent('es:addGroupCommand', 'idhelp', "user", function(source, args, user)
-  TriggerClientEvent('chatMessage', source, 'IDHelp', {255, 0, 0}, "ESX_IDENTITY Commands")
-  TriggerClientEvent('chatMessage', source, 'IDHelp', {255, 0, 0}, "/register - Register A New Character")
-  TriggerClientEvent('chatMessage', source, 'IDHelp', {255, 0, 0}, "/charlist - List Your Characters")
-  TriggerClientEvent('chatMessage', source, 'IDHelp', {255, 0, 0}, "/charselect 1,2,3 - Change Your Active Character")
-  TriggerClientEvent('chatMessage', source, 'IDHelp', {255, 0, 0}, "/delchar 1,2,3 - Delete A Character")
+TriggerEvent('es:addGroupCommand', 'ayuda', "user", function(source, args, user)
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "uGamers Comandos")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/register - Registrar un nuevo personaje")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/charlist - Lista de personajes")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/charselect 1,2,3 - Cambiar personaje")
+  TriggerClientEvent('chatMessage', source, 'AYUDA', {255, 0, 0}, "/delchar 1,2,3 - Borrar personaje")
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "IDHelp", {255, 0, 0}, "Insufficienct permissions!")
-end, {help = "List Your Characters"})
+  TriggerClientEvent('chatMessage', source, "AYUDA", {255, 0, 0}, "Permisos Insuficientes!")
+end, {help = "Lista de jugadores"})
 
 
 --===============================================
@@ -267,7 +267,7 @@ end, {help = "List Your Characters"})
 TriggerEvent('es:addCommand', 'register', function(source, args, user)
   getCharacters(source, function(data)
     if data.firstname3 ~= '' then
-      TriggerClientEvent('chatMessage', source, 'REGISTER', {255, 0, 0}, "You Can Only Have 3 Characters.")
+      TriggerClientEvent('chatMessage', source, 'REGISTER', {255, 0, 0}, "Sólo puedes tener 3 personajes.")
     else
       TriggerClientEvent('esx_identity:showRegisterIdentity', source, {})
     end
@@ -280,14 +280,14 @@ end)
 TriggerEvent('es:addGroupCommand', 'char', "user", function(source, args, user)
   getIdentity(source, function(data)
     if data.firstname == '' then
-      TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "You Have No Active Character.")
+      TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "No tienes ningún personaje activo.")
     else
-      TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "Active Character: " .. data.firstname .. " " .. data.lastname)
+      TriggerClientEvent('chatMessage', source, 'CHAR', {255, 0, 0}, "Personaje activo: " .. data.firstname .. " " .. data.lastname)
     end
   end)
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
-end, {help = "List Your Current Active Character"})
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
+end, {help = "Lista de personajes activos"})
 
 --===============================================
 --==      /charlist - Show Your Characters     ==
@@ -303,11 +303,11 @@ TriggerEvent('es:addGroupCommand', 'charlist', "user", function(source, args, us
         end
       end
     else
-      TriggerClientEvent('chatMessage', source, 'CHARLIST', {255, 0, 0}, "You Have No Characters. Please use the /register command.")
+      TriggerClientEvent('chatMessage', source, 'CHARLIST', {255, 0, 0}, "No tienes personajes. Utiliza el comando /register.")
     end
   end)
 end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
+  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
 end, {help = "List Your Characters"})
 
 --===============================================
@@ -330,13 +330,13 @@ TriggerEvent('es:addCommand', 'charselect', function(source, args, user)
       if data.firstname ~= '' then
         updateIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
           if callback == true then
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Updated your active character to " .. data.firstname .. " " .. data.lastname .. "!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Cambiaste de personaje a " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Failed To Update Identity!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Error al cambiar de personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "You don\'t have a character in slot 1!")
+        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "¡No tienes un personaje en la ranura 1!")
       end
     elseif charNumber == 2 then
       local data = {
@@ -352,13 +352,13 @@ TriggerEvent('es:addCommand', 'charselect', function(source, args, user)
         updateIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
 
           if callback == true then
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Updated your active character to " .. data.firstname .. " " .. data.lastname .. "!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Cambiaste de personaje a " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Failed To Update Identity!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Error al cambiar de personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "You don\'t have a character in slot 2!")
+        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "¡No tienes un personaje en la ranura 2!")
       end
     elseif charNumber == 3 then
       local data = {
@@ -373,16 +373,16 @@ TriggerEvent('es:addCommand', 'charselect', function(source, args, user)
       if data.firstname ~= '' then
         updateIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
           if callback == true then
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Updated your active character to " .. data.firstname .. " " .. data.lastname .. "!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Cambiaste de personaje a " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Failed To Update Identity!")
+            TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Error al cambiar de personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "You don\'t have a character in slot 3!")
+        TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "¡No tienes un personaje en la ranura 2!")
       end
     else
-      TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Failed To Update Identity!")
+      TriggerClientEvent('chatMessage', source, "CHARSELECT", {255, 0, 0}, "Error al cambiar de personaje!")
     end
   end)
 end)
@@ -406,13 +406,13 @@ TriggerEvent('es:addCommand', 'delchar', function(source, args, user)
       if data.firstname ~= '' then
         deleteIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
           if callback == true then
-          TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
+          TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Has borrado el personaje " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Failed To Delete Identity!")
+            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Error al intentar borrar el personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You don\'t have a character in slot 1!")
+        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "¡No tienes un personaje en la ranura 1!")
       end
     elseif charNumber == 2 then
       local data = {
@@ -426,13 +426,13 @@ TriggerEvent('es:addCommand', 'delchar', function(source, args, user)
       if data.firstname ~= '' then
         deleteIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
           if callback == true then
-            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
+            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Has borrado el personaje " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Failed To Delete Identity!")
+            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Error al intentar borrar el personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You don\'t have a character in slot 2!")
+        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "¡No tienes un personaje en la ranura 2!")
       end
     elseif charNumber == 3 then
       local data = {
@@ -446,16 +446,16 @@ TriggerEvent('es:addCommand', 'delchar', function(source, args, user)
       if data.firstname ~= '' then
         deleteIdentity(GetPlayerIdentifiers(source)[1], data, function(callback)
           if callback == true then
-            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You Have Deleted " .. data.firstname .. " " .. data.lastname .. "!")
+            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Has borrado el personaje " .. data.firstname .. " " .. data.lastname .. "!")
           else
-            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Failed To Delete Identity!")
+            TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Error al intentar borrar el personaje!")
           end
         end)
       else
-        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "You don\'t have a character in slot 3!")
+        TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "¡No tienes un personaje en la ranura 3!")
       end
     else
-      TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Failed To Delete Identity!")
+      TriggerClientEvent('chatMessage', source, "DELCHAR", {255, 0, 0}, "Error al intentar borrar el personaje!")
     end
   end)
 end)

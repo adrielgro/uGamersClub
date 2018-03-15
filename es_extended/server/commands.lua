@@ -15,7 +15,7 @@ end, {
   }
 })
 
-TriggerEvent('es:addGroupCommand', 'setjob', 'mod', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dartrabajo', 'mod', function(source, args, user)
   local xPlayer = ESX.GetPlayerFromId(args[1])
   xPlayer.setJob(args[2], tonumber(args[3]))
 end, function(source, args, user)
@@ -29,7 +29,7 @@ end, {
   }
 })
 
-TriggerEvent('es:addGroupCommand', 'fixcar', 'mod', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'repararveh', 'mod', function(source, args, user)
   TriggerClientEvent('wk:fixVehicle', source)
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
@@ -61,7 +61,7 @@ end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('play_emote')})
 
-TriggerEvent('es:addGroupCommand', 'car', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'sveh', 'admin', function(source, args, user)
   TriggerClientEvent('esx:spawnVehicle', source, args[1])
 end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
@@ -86,7 +86,7 @@ end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('spawn_object'), params = {{name = "name"}}})
 
-TriggerEvent('es:addGroupCommand', 'givemoney', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dardinero', 'admin', function(source, args, user)
 
   local _source = source
   local xPlayer = ESX.GetPlayerFromId(args[1])
@@ -102,7 +102,7 @@ end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('givemoney'), params = {{name = "id", help = _U('id_param')}, {name = "amount", help = _U('money_amount')}}})
 
-TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dardinerocuenta', 'admin', function(source, args, user)
 
   local _source = source
   local xPlayer = ESX.GetPlayerFromId(args[1])
@@ -123,7 +123,7 @@ end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param')}, {name = "account", help = _U('account')}, {name = "amount", help = _U('money_amount')}}})
 
-TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'daritem', 'admin', function(source, args, user)
 
   local _source = source
   local xPlayer = ESX.GetPlayerFromId(args[1])
@@ -144,7 +144,7 @@ end, function(source, args, user)
   TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insfucientes.")
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
-TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dararma', 'admin', function(source, args, user)
 
   local xPlayer    = ESX.GetPlayerFromId(args[1])
   local weaponName = string.upper(args[2])

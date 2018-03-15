@@ -34,6 +34,7 @@ function DrawText3D(x,y,z, text)
 end
 
 Citizen.CreateThread(function()
+  getIdentity(source, function(data)
     while true do
         for i=0,99 do
             N_0x31698aa80e0223f8(i)
@@ -80,4 +81,5 @@ Citizen.CreateThread(function()
         end
         Citizen.Wait(0)
     end
+  end)
 end)
