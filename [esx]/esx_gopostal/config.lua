@@ -227,7 +227,7 @@ Config.Livraison = {
 		},
 
 	AnnulerMission = {
-			Pos   = {x = 72.7394, y = 90.5667, z = 77.7},
+			Pos   = {x = -430.7446, y = 6134.1982, z = 31.4783},
 			Color = {r = 204, g = 204, b = 0},
 			Size  = {x = 5.0, y = 5.0, z = 3.0},
 			Color = {r = 204, g = 204, b = 0},

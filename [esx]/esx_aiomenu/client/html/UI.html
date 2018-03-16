@@ -1,33 +1,32 @@
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" type="text/css" />
-		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+  		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
 
-		<style>
-		.general {display: none;}
-		.esx {display: none;}
-		.jobs {display: none;}
-		.vehicles {display: none;}
-		.ambulance {display: none;}
-		.police {display: none;}
-		.taxi {display: none;}
-		.mechanic {display: none;}
-		.fire {display: none;}
-		.billing {display: none;}
-		.characters {display: none;}
-		.animations {display: none;}
-		.phone {display: none;}
-		.inventory {display: none;}
-		.vehicle {display: none;}
-		.doors {display: none;}
-		.windows {display: none;}
+  		<style>
+    		.general {display: none;}
+    		.esx {display: none;}
+    		.jobs {display: none;}
+    		.vehicles {display: none;}
+    		.ambulance {display: none;}
+    		.police {display: none;}
+    		.taxi {display: none;}
+    		.mechanic {display: none;}
+    		.fire {display: none;}
+    		.billing {display: none;}
+    		.characters {display: none;}
+    		.animations {display: none;}
+    		.phone {display: none;}
+    		.inventory {display: none;}
+    		.vehicle {display: none;}
+    		.doors {display: none;}
+    		.windows {display: none;}
         .listChar {display: none;}
         .changeChar {display: none;}
         .deleteChar {display: none;}
-
-		</style>
-
+  		</style>
 	<script>
+
 	$(function() {
 		/* open the UI for user */
 		window.addEventListener('message', function(event) {
@@ -959,9 +958,9 @@
 		$('.doors').css('display', 'none')
 		$('.windows').css('display', 'none')
 		$('.characters').css('display', 'none')
-        $('.listChar').css('display', 'none')
-        $('.changeChar').css('display', 'none')
-        $('.deleteChar').css('display', 'none')
+    $('.listChar').css('display', 'none')
+    $('.changeChar').css('display', 'none')
+    $('.deleteChar').css('display', 'none')
 		$.post('http://esx_aiomenu/NUIlistCharacters', JSON.stringify({}));
 	});
 
