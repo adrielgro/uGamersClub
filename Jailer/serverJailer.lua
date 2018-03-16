@@ -1,6 +1,6 @@
 --Coded by Albo1125.
 
-local jailPassword = "win7" --change this password to your liking and don't share it with the criminals ;-)
+local jailPassword = "gx" --change this password to your liking and don't share it with the criminals ;-)
 local defaultsecs = 180
 local maxsecs = 5400
 
@@ -13,15 +13,15 @@ AddEventHandler('chatMessage', function(source, n, message)
 		CancelEvent()
 		local jT = defaultsecs
 		if cm[2] ~= nil then
-			jT = tonumber(cm[2])				
+			jT = tonumber(cm[2])
 		end
 		if jT > maxsecs then
 			jT = maxsecs
 		end
-		
-		print("Jailing ".. GetPlayerName(source) .. " for ".. jT .." secs")
+
+		print("Jailing ".. GetPlayerName(source) .. " por ".. jT .." segundos")
 		TriggerClientEvent("JP", source, jT)
-		TriggerClientEvent('chatMessage', -1, 'JUDGE', { 0, 0, 0 }, GetPlayerName(source) ..' jailed for '.. jT ..' secs')
+		TriggerClientEvent('chatMessage', -1, 'JUDGE', { 0, 0, 0 }, GetPlayerName(source) ..' ha sido encarcelado por '.. jT ..' por segundos')
     elseif cm[1] == "/unjail" then
 		CancelEvent()
 		if cm[2] == jailPassword then
@@ -41,7 +41,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 				local jT = defaultsecs
 				if tablelength(cm) > 3 then
 					if cm[4] ~= nil then
-						jT = tonumber(cm[4])				
+						jT = tonumber(cm[4])
 					end
 				end
 				if jT > maxsecs then
@@ -59,7 +59,6 @@ AddEventHandler('chatMessage', function(source, n, message)
 	end
 end)
 
-print('Jailer by Albo1125 (LUA, FXServer, FiveM).')
 function stringsplit(inputstr, sep)
     if sep == nil then
         sep = "%s"

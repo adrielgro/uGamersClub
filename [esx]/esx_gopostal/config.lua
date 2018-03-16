@@ -11,7 +11,7 @@ Config.Trucks = {
 
 Config.Cloakroom = {
 	CloakRoom = {
-			Pos   = {x = 78.899, y = 111.934, z = 80.1},
+			Pos   = {x = -421.0467, y = 6136.3007, z = 31.8773},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1
@@ -20,14 +20,14 @@ Config.Cloakroom = {
 
 Config.Zones = {
 	VehicleSpawner = {
-			Pos   = {x = 69.0792, y = 125.886, z = 78.1},
+			Pos   = {x = -438.9501, y = 6147.5297, z = 31.4782},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1
 		},
 
 	VehicleSpawnPoint = {
-			Pos   = {x = 59.30062, y = 99.9231, z = 78.9},
+			Pos   = {x = -443.6816, y = 6145.2871, z = 31.47833},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Type  = -1
 		},

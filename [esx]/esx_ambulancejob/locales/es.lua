@@ -20,6 +20,7 @@ Locales['es'] = {
   -- oss Menu
   ['deposit_society'] = 'depositar dinero',
   ['withdraw_society'] = 'retirar dinero',
+  ['boss_actions'] = 'boss Actions',
   -- Misc
   ['invalid_amount'] = '~r~cantidad no válida',
   ['open_menu'] = 'Presione ~INPUT_CONTEXT~ para abrir el menú',

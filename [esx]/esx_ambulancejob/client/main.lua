@@ -679,7 +679,7 @@ AddEventHandler('esx_ambulancejob:hasEnteredMarker', function(zone)
     TeleportFadeEffect(GetPlayerPed(-1), Config.Zones.HospitalInteriorOutside1.Pos)
   end
 
-  if zone == 'HospitalInteriorEntering2' then
+  --[[if zone == 'HospitalInteriorEntering2' then
         local heli = Config.HelicopterSpawner
 
         if not IsAnyVehicleNearPoint(heli.SpawnPoint.x, heli.SpawnPoint.y, heli.SpawnPoint.z, 3.0)
@@ -707,7 +707,7 @@ AddEventHandler('esx_ambulancejob:hasEnteredMarker', function(zone)
 
     if zone == 'ParkingDoorGoInOutside' then
         TeleportFadeEffect(GetPlayerPed(-1), Config.Zones.ParkingDoorGoInInside.Pos)
-    end
+    end]]--
 
     if zone == 'StairsGoTopBottom' then
         CurrentAction     = 'fast_travel_goto_top'

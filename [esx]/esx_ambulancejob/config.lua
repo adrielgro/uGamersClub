@@ -33,7 +33,7 @@ Config.RespawnFineAmount            = 250
 Config.Locale                       = 'es'
 
 Config.Blip = {
-  Pos     = { x = 307.76, y = -1433.47, z = 28.97 },
+  Pos  = { x = -382.637, y = 6121.20, z = 30.279 },
   Sprite  = 61,
   Display = 4,
   Scale   = 1.2,
@@ -96,25 +96,25 @@ Config.Zones = {
   },
 
   AmbulanceActions = { -- CLOACKROOM
-    Pos  = { x = 268.4, y = -1363.330, z = 23.5 },
+    Pos  = { x = -371.69244, y = 6100.98144, z = 30.9625 },
     Size = { x = 1.5, y = 1.5, z = 0.4 },
     Type = 1
   },
 
   VehicleSpawner = {
-    Pos  = { x = 307.76, y = -1433.47, z = 28.97 },
+    Pos  = { x = -355.4300, y = 6111.0292, z = 30.91900 },
     Size = { x = 1.5, y = 1.5, z = 0.4 },
     Type = 1
   },
 
   VehicleSpawnPoint = {
-    Pos  = { x = 304.87, y = -1437.69, z = 28.80 },
+    Pos  = { x = -342.8294, y = 6117.6030, z = 30.9127 },
     Size = { x = 1.5, y = 1.5, z = 1.0 },
     Type = -1
   },
 
   VehicleDeleter = {
-    Pos  = { x = 327.67, y = -1481.1, z = 28.83 },
+    Pos  = { x = -349.1679, y = 6105.2592, z = 30.91822 },
     Size = { x = 3.0, y = 3.0, z = 0.4 },
     Type = 1
   },
