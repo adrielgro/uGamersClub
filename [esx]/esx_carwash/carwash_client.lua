@@ -35,8 +35,9 @@ Citizen.CreateThread(function ()
 				garageCoords2 = vehicleWashStation[i]
 				DrawMarker(1, garageCoords2[1], garageCoords2[2], garageCoords2[3], 0, 0, 0, 0, 0, 0, 5.0, 5.0, 2.0, 0, 157, 0, 155, 0, 0, 2, 0, 0, 0, 0)
 				if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), garageCoords2[1], garageCoords2[2], garageCoords2[3], true ) < 5 then
-					DrawSpecialText("Tryk enter for at vaske bilen") -- danish
-					DrawSpecialText("Press enter to wash the car")
+					--DrawSpecialText("Tryk enter for at vaske bilen") -- danish
+					--DrawSpecialText("Press enter to wash the car")
+					DrawSpecialText("Presiona ENTER para lavar el vehículo.")
 					if(IsControlJustPressed(1, Key)) then
 						TriggerServerEvent('carwash:checkmoney')
 					end
@@ -50,7 +51,8 @@ RegisterNetEvent('carwash:success')
 AddEventHandler('carwash:success', function(price)
 	SetVehicleDirtLevel(GetVehiclePedIsIn(GetPlayerPed(-1),  false),  0.0000000001)
 	SetVehicleUndriveable(GetVehiclePedIsUsing(GetPlayerPed(-1)), false)
-	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "Your car has been washed for " .. price .. "$")
+	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "Tu vehículo ha sido limpiado por " .. price .. "$")
+	--TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "Your car has been washed for " .. price .. "$")
 	--TriggerEvent('chatMessage', 'Bilvasken', {255, 0, 0}, "Din bil er blevet vasket for " .. price .. "kr") -- danish
 	DrawSpecialText(msg, 5000)
 	Wait(5000)
@@ -59,7 +61,8 @@ end)
 RegisterNetEvent('carwash:notenoughmoney')
 AddEventHandler('carwash:notenoughmoney', function(moneyleft)
 --	TriggerEvent('chatMessage', 'Bilvasken', {255, 0, 0}, "Du har ikke penge nok, du mangler " .. moneyleft .. "kr") -- danish
-	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "You do not have enough money you're missing " .. moneyleft .. "$") 
+	--TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "You do not have enough money you're missing " .. moneyleft .. "$") 
+	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "No tienes suficiente dinero, necesitas " .. moneyleft .. "$ más.") 
 	DrawSpecialText(msg, 5000)
 	Wait(5000)
 end)
@@ -69,7 +72,8 @@ AddEventHandler('carwash:free', function()
 	SetVehicleDirtLevel(GetVehiclePedIsUsing(GetPlayerPed(-1)))
 	SetVehicleUndriveable(GetVehiclePedIsUsing(GetPlayerPed(-1)), false)
 	-- TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "bilvasken er gratis" .. price .. "kr")  -- danish
-	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "carwash its free" .. price .. "$") 
+	--TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "carwash its free" .. price .. "$") 
+	TriggerEvent('chatMessage', 'carwash', {255, 0, 0}, "El lavado es gratis: " .. price .. "$") 
 	DrawSpecialText(msg, 5000)
 	Wait(5000)
 end)
