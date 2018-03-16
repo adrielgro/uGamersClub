@@ -218,7 +218,7 @@ Config.Livraison = {
 		},
 
 	RetourCamion = {
-			Pos   = {x = 54.4964, y = 118.4247, z = 78.0},
+			Pos   = {x = -430.7446, y = 6134.1982, z = 31.4783},
 			Color = {r = 204, g = 204, b = 0},
 			Size  = {x = 5.0, y = 5.0, z = 3.0},
 			Color = {r = 204, g = 204, b = 0},
