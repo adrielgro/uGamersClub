@@ -26,14 +26,14 @@ Config.SpeedLimits = {
 Config.Zones = {
 
   DMVSchool = {
-    Pos   = {x = 239.471, y = -1380.960, z = 32.741},
+    Pos   = {x = -228.7969, y = 6332.9755, z = 30},
     Size  = {x = 1.5, y = 1.5, z = 1.0},
     Color = {r = 204, g = 204, b = 0},
     Type  = 1
   },
 
   VehicleSpawnPoint = {
-    Pos   = {x = 249.409, y = -1407.230, z = 30.4094},
+    Pos   = {x = -214.3243, y = 6341.5214, z = 29},
     Size  = {x = 1.5, y = 1.5, z = 1.0},
     Color = {r = 204, g = 204, b = 0},
     Type  = -1
