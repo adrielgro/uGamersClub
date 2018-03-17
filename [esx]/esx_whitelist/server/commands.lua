@@ -1,5 +1,5 @@
 function displayPermissionIssue ()
-  TriggerClientEvent('chatMessage', source, 'SYSTEM', { 255, 0, 0 }, 'Insufficienct permissions!')
+  TriggerClientEvent('chatMessage', source, 'SERVIDOR', { 255, 0, 0 }, '¡Permisos insuficientes!')
 end
 
 TriggerEvent('es:addGroupCommand', 'whitelist:load', 'admin', function (source, args, user)
@@ -20,4 +20,4 @@ TriggerEvent('es:addGroupCommand', 'whitelist:add', 'admin', function (source, a
   )
 end, function (source, args, user)
   displayPermissionIssue(source)
-end, { help = _U('help_whitelist_add'), params = { steam = 'SteamID', help = 'SteamID formated to hex' }})
+end, { help = _U('help_whitelist_add'), params = { steam = 'SteamID', help = 'SteamID en formato HEX' }})
