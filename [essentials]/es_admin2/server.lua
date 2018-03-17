@@ -447,7 +447,7 @@ TriggerEvent('es:addGroupCommand', 'bring', "mod", function(source, args, user)
 				TriggerClientEvent('es_admin:teleportUser', target.get('source'), user.getCoords().x, user.getCoords().y, user.getCoords().z)
 
 				TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "Has sido teletransportado por ^2" .. GetPlayerName(source))
-				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido teletransportado)
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido teletransportado")
 			end)
 		else
 			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
