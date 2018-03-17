@@ -49,7 +49,7 @@ end
 AddEventHandler('playerConnecting', function(user, set)
 	for k,v in ipairs(GetPlayerIdentifiers(source))do
 		if isBanned(v) then
-			set(GetConvar("es_admin_banreason", "You're banned from this server"))
+			set(GetConvar("es_admin_banreason", "Estás baneado del servidor, puedes recurrir en https://ugamers.club"))
 			CancelEvent()
 			break
 		end
@@ -66,7 +66,7 @@ AddEventHandler('es_admin:all', function(type)
 				if type == "bring_all" then TriggerClientEvent('es_admin:quick', -1, 'bring', Source) end
 				if type == "slap_all" then TriggerClientEvent('es_admin:quick', -1, 'slap') end
 			else
-				TriggerClientEvent('chatMessage', Source, "SYSTEM", {255, 0, 0}, "No tienes permiso para usar esto.")
+				TriggerClientEvent('chatMessage', Source, "SERVIDOR", {255, 0, 0}, "No tienes permiso para usar esto.")
 			end
 		end)
 	end)
@@ -95,13 +95,13 @@ AddEventHandler('es_admin:quick', function(id, type)
 							for k,v in ipairs(GetPlayerIdentifiers(id))do
 								banUser(v)
 							end
-							DropPlayer(id, GetConvar("es_admin_banreason", "¡Tu fuiste expulsado permanentemente de este servidor! Para apelar visite uGamers.club"))
+							DropPlayer(id, GetConvar("es_admin_banreason", "Estás baneado del servidor, puedes recurrir en https://ugamers.club"))
 						end
 					else
 						if not available then
-							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Tu grupo no puede usar este comando.")
+							TriggerClientEvent('chatMessage', Source, 'SERVIDOR', {255, 0, 0}, "Tu grupo no puede usar este comando.")
 						else
-							TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "Permiso denegado.")
+							TriggerClientEvent('chatMessage', Source, 'SERVIDOR', {255, 0, 0}, "Permiso denegado.")
 						end
 					end
 				end)
@@ -122,37 +122,37 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 			if available then
 			if t == "group" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
+					TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Jugador no encontrado.")
 				else
 					TriggerEvent("es:getAllGroups", function(groups)
 						if(groups[GROUP])then
 							TriggerEvent("es:setPlayerData", USER, "group", GROUP, function(response, success)
 								TriggerClientEvent('es_admin:setGroup', USER, GROUP)
-								TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "El grupo ^2^*" .. GetPlayerName(tonumber(USER)) .. "^r^0 ha sido establecido a ^2^*" .. GROUP)
+								TriggerClientEvent('chatMessage', -1, "SERVIDOR", {0, 0, 0}, "El grupo de ^2^*" .. GetPlayerName(tonumber(USER)) .. "^r^0 ha sido establecido a ^2^*" .. GROUP)
 							end)
 						else
-							TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Grupo no encontrado")
+							TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Grupo no encontrado.")
 						end
 					end)
 				end
 			elseif t == "level" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
+					TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Jugador no encontrado.")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
 						TriggerEvent("es:setPlayerData", USER, "permission_level", GROUP, function(response, success)
 							if(true)then
-								TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "Permission level of ^2" .. GetPlayerName(tonumber(USER)) .. "^0 has been set to ^2 " .. tostring(GROUP))
+								TriggerClientEvent('chatMessage', -1, "SERVIDOR", {0, 0, 0}, "El nivel de permisos de ^2" .. GetPlayerName(tonumber(USER)) .. "^0 ha sido establecido en ^2 " .. tostring(GROUP))
 							end
 						end)
 					else
-						TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Invalid integer entered")
+						TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Ha ocurrido un error, revisa el comando introducido.")
 					end
 				end
 			elseif t == "money" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
+					TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Jugador no encontrado.")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
@@ -160,12 +160,12 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 							target.setMoney(GROUP)
 						end)
 					else
-						TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Invalid integer entered")
+						TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Ha ocurrido un error, revisa el comando introducido.")
 					end
 				end
 			elseif t == "bank" then
 				if(GetPlayerName(USER) == nil)then
-					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Jugador no encontrado")
+					TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Jugador no encontrado.")
 				else
 					GROUP = tonumber(GROUP)
 					if(GROUP ~= nil and GROUP > -1)then
@@ -173,12 +173,12 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 							target.setBankBalance(GROUP)
 						end)
 					else
-						TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Invalid integer entered")
+						TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Ha ocurrido un error, revisa el comando introducido")
 					end
 				end
 			end
 			else
-				TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Necesitas ser superadmin para poder hacer esto")
+				TriggerClientEvent('chatMessage', source, 'SERVIDOR', {255, 0, 0}, "Necesitas ser superadmin para poder hacer esto.")
 			end
 		end)
 	end)
@@ -205,7 +205,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 			if(true)then
 				print(args[1] .. " " .. args[2])
 				TriggerClientEvent('es:setPlayerDecorator', tonumber(args[1]), 'rank', tonumber(args[2]), true)
-				TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "Permission level of ^2" .. GetPlayerName(tonumber(args[1])) .. "^0 has been set to ^2 " .. args[2])
+				TriggerClientEvent('chatMessage', -1, "SERVIDOR", {0, 0, 0}, "El nivel de permisos de ^2" .. GetPlayerName(tonumber(args[1])) .. "^0 ha sido establecido en ^2 " .. args[2])
 			end
 		end)
 
@@ -230,7 +230,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 
 					if(true)then
 						TriggerClientEvent('es:setPlayerDecorator', tonumber(args[1]), 'group', tonumber(args[2]), true)
-						TriggerClientEvent('chatMessage', -1, "CONSOLE", {0, 0, 0}, "Group of ^2^*" .. GetPlayerName(tonumber(args[1])) .. "^r^0 has been set to ^2^*" .. args[2])
+						TriggerClientEvent('chatMessage', -1, "SERVIDOR", {0, 0, 0}, "El grupo de ^2^*" .. GetPlayerName(tonumber(args[1])) .. "^r^0 ha sido establecido en ^2^*" .. args[2])
 					end
 				end)
 			else
@@ -255,7 +255,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 			TriggerEvent("es:getPlayerFromId", tonumber(args[1]), function(user)
 				table.remove(args, 1)
 				user.giveRole(table.concat(args, " "))
-				TriggerClientEvent("chatMessage", user.get('source'), "SYSTEM", {255, 0, 0}, "Te han dado un rol: ^2" .. table.concat(args, " "))
+				TriggerClientEvent("chatMessage", user.get('source'), "SERVIDOR", {255, 0, 0}, "Te han dado un rol: ^2" .. table.concat(args, " "))
 			end)
 
 		CancelEvent()
@@ -275,7 +275,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 			TriggerEvent("es:getPlayerFromId", tonumber(args[1]), function(user)
 				table.remove(args, 1)
 				user.removeRole(table.concat(args, " "))
-				TriggerClientEvent("chatMessage", user.get('source'), "SYSTEM", {255, 0, 0}, "Se eliminó un rol: ^2" .. table.concat(args, " "))
+				TriggerClientEvent("chatMessage", user.get('source'), "SERVIDOR", {255, 0, 0}, "Se eliminó un rol: ^2" .. table.concat(args, " "))
 			end)
 
 		CancelEvent()
@@ -297,7 +297,7 @@ AddEventHandler('rconCommand', function(commandName, args)
 					user.setMoney(tonumber(args[2]))
 
 					RconPrint("Money set")
-					TriggerClientEvent('chatMessage', tonumber(args[1]), "CONSOLE", {0, 0, 0}, "Tu dinero se ha modificado: ^2^*$" .. tonumber(args[2]))
+					TriggerClientEvent('chatMessage', tonumber(args[1]), "SERVIDOR", {0, 0, 0}, "Tu dinero ha sido modificado: ^2^*$" .. tonumber(args[2]))
 				end
 			end)
 
@@ -307,25 +307,25 @@ end)
 
 -- Default commands
 TriggerEvent('es:addCommand', 'admin', function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Nivel: ^*^2 " .. tostring(user.get('permission_level')))
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Grupo: ^*^2 " .. user.getGroup())
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "Nivel: ^*^2 " .. tostring(user.get('permission_level')))
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "Grupo: ^*^2 " .. user.getGroup())
 end, {help = "Muestra qué nivel de administrador eres y en qué grupo te encuentras"})
 
 -- Default commands
 TriggerEvent('es:addCommand', 'report', function(source, args, user)
 	--table.remove(args, 1) --Remover el argumento 1
-	TriggerClientEvent('chatMessage', source, "REPORTE", {255, 0, 0}, " (^2" .. GetPlayerName(source) .." | "..source.."^0) " .. table.concat(args, " "))
+	TriggerClientEvent('chatMessage', source, "REPORTE RECIBIDO", {255, 0, 0}, " (^2" .. GetPlayerName(source) .." | "..source.."^0) " .. table.concat(args, " "))
 
 	TriggerEvent("es:getPlayers", function(pl)
 		for k,v in pairs(pl) do
 			TriggerEvent("es:getPlayerFromId", k, function(user)
 				if(user.getPermissions() > 0 and k ~= source)then
-					TriggerClientEvent('chatMessage', k, "REPORTE", {255, 0, 0}, " (^2" .. GetPlayerName(source) .." | "..source.."^0) " .. table.concat(args, " "))
+					TriggerClientEvent('chatMessage', k, "REPORTE RECIBIDO", {255, 0, 0}, " (^2" .. GetPlayerName(source) .." | "..source.."^0) " .. table.concat(args, " "))
 				end
 			end)
 		end
 	end)
-end, {help = "Report a player or an issue", params = {{name = "report", help = "Lo que deseas reportar"}}})
+end, {help = "Comando para contactar con la administración", params = {{name = "report", help = "Detalla el problema o la infracción"}}})
 
 -- Append a message
 function appendNewPos(msg)
@@ -356,8 +356,8 @@ end)
 TriggerEvent('es:addGroupCommand', 'noclip', "admin", function(source, args, user)
 	TriggerClientEvent("es_admin:noclip", source)
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Enable or disable noclip"})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Activa o desactiva el noclip."})
 
 -- Kicking
 TriggerEvent('es:addGroupCommand', 'kick', "mod", function(source, args, user)
@@ -372,31 +372,31 @@ TriggerEvent('es:addGroupCommand', 'kick', "mod", function(source, args, user)
 				table.remove(reason, 1)
 				table.remove(reason, 1)
 				if(#reason == 0)then
-					reason = "Kicked: Has sido kickeado del servidor."
+					reason = "Expulsado: Has sido expulsado del servidor."
 				else
-					reason = "Kicked: " .. table.concat(reason, " ")
+					reason = "Expulsado: " .. table.concat(reason, " ")
 				end
 
-				TriggerClientEvent('chatMessage', -1, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido expulsado(^2" .. reason .. "^0)")
+				TriggerClientEvent('chatMessage', -1, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido expulsado(^2" .. reason .. "^0)")
 				DropPlayer(player, reason)
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
 end, {help = "Kick a user with the specified reason or no reason", params = {{name = "userid", help = "El ID del jugador"}, {name = "reason", help = "The reason as to why you kick this player"}}})
 
 -- Announcing
 TriggerEvent('es:addGroupCommand', 'announce', "admin", function(source, args, user)
-	table.remove(args, 1)
-	TriggerClientEvent('chatMessage', -1, "ANNOUNCEMENT", {255, 0, 0}, "" .. table.concat(args, " "))
+	-- table.remove(args, 1)
+	TriggerClientEvent('chatMessage', -1, "ADMINISTRACIÓN", {255, 0, 0}, "" .. table.concat(args, " "))
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos insuficientes!")
-end, {help = "Announce a message to the entire server", params = {{name = "announcement", help = "El mensaje para anunciar"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "Permisos insuficientes.")
+end, {help = "Envía un mensaje administrativo a todos los jugadores", params = {{name = "announcement", help = "Contenido del mensaje"}}})
 
 -- Freezing
 local frozen = {}
@@ -421,18 +421,18 @@ TriggerEvent('es:addGroupCommand', 'freeze', "mod", function(source, args, user)
 					state = "congelado"
 				end
 
-				TriggerClientEvent('chatMessage', player, "SYSTEM", {255, 0, 0}, "Has sido " .. state .. " por ^2" .. GetPlayerName(source))
-				TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido " .. state)
+				TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "Has sido " .. state .. " por ^2" .. GetPlayerName(source))
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido " .. state)
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Freeze or unfreeze a user", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Congela o descongela al jugador", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Bring
 local frozen = {}
@@ -446,18 +446,18 @@ TriggerEvent('es:addGroupCommand', 'bring', "mod", function(source, args, user)
 
 				TriggerClientEvent('es_admin:teleportUser', target.get('source'), user.getCoords().x, user.getCoords().y, user.getCoords().z)
 
-				TriggerClientEvent('chatMessage', player, "SYSTEM", {255, 0, 0}, "You have brought by ^2" .. GetPlayerName(source))
-				TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Player ^2" .. GetPlayerName(player) .. "^0 has been brought")
+				TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "Has sido teletransportado por ^2" .. GetPlayerName(source))
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido teletransportado)
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Teleport a user to you", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Teletransportas a un jugador a tu posición", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Bring
 local frozen = {}
@@ -471,18 +471,18 @@ TriggerEvent('es:addGroupCommand', 'slap', "admin", function(source, args, user)
 
 				TriggerClientEvent('es_admin:slap', player)
 
-				TriggerClientEvent('chatMessage', player, "SYSTEM", {255, 0, 0}, "Has sido golpeado por ^2" .. GetPlayerName(source))
-				TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido golpeado")
+				TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "Has sido golpeado por ^2" .. GetPlayerName(source))
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido golpeado")
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Slap a user", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Golpea a un usuario", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Freezing
 local frozen = {}
@@ -497,25 +497,25 @@ TriggerEvent('es:addGroupCommand', 'ira', "mod", function(source, args, user)
 
 					TriggerClientEvent('es_admin:teleportUser', source, target.getCoords().x, target.getCoords().y, target.getCoords().z)
 
-					--TriggerClientEvent('chatMessage', player, "SYSTEM", {255, 0, 0}, "You have been teleported to by ^2" .. GetPlayerName(source))
-					TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Te has teletransportado a ^2" .. GetPlayerName(player) .. "")
+					--TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "You have been teleported to by ^2" .. GetPlayerName(source))
+					TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "Te has teletransportado a ^2" .. GetPlayerName(player) .. "")
 				end
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Teleport to a user", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Teletranspórtate a un usuario", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Kill yourself
 TriggerEvent('es:addCommand', 'die', function(source, args, user)
 	TriggerClientEvent('es_admin:kill', source)
 	TriggerClientEvent('chatMessage', source, "", {0,0,0}, "^1^*Te mataste.")
-end, {help = "Suicide"})
+end, {help = "Te suicidas si utilizas este comando, ¡cuidado!"})
 
 -- Killing
 TriggerEvent('es:addGroupCommand', 'slay', "admin", function(source, args, user)
@@ -528,18 +528,18 @@ TriggerEvent('es:addGroupCommand', 'slay', "admin", function(source, args, user)
 
 				TriggerClientEvent('es_admin:kill', player)
 
-				TriggerClientEvent('chatMessage', player, "SYSTEM", {255, 0, 0}, "Has sido asesinado por ^2" .. GetPlayerName(source))
-				TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido asesinado.")
+				TriggerClientEvent('chatMessage', player, "SERVIDOR", {255, 0, 0}, "Has sido asesinado por ^2" .. GetPlayerName(source))
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido asesinado.")
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Slay a user", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Mata a un usuario", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Crashing
 TriggerEvent('es:addGroupCommand', 'crash', "superadmin", function(source, args, user)
@@ -552,23 +552,23 @@ TriggerEvent('es:addGroupCommand', 'crash', "superadmin", function(source, args,
 
 				TriggerClientEvent('es_admin:crash', player)
 
-				TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido crasheado.")
+				TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "El jugador ^2" .. GetPlayerName(player) .. "^0 ha sido crasheado.")
 			end)
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+			TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "ID del Jugador Incorrecto!")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡ID del jugador incorrecto!")
 	end
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
-end, {help = "Crashear un usuario", params = {{name = "userid", help = "El ID del jugador"}}})
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
+end, {help = "Crashear (PUTEAR) a un usuario, usar SOLO con fines justificados", params = {{name = "userid", help = "El ID del jugador"}}})
 
 -- Position
 TriggerEvent('es:addGroupCommand', 'pos', "superadmin", function(source, args, user)
 	TriggerClientEvent('es_admin:givePosition', source)
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Permisos Insuficientes!")
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
 end, {help = "Obtener la posición actual"})
 
 function stringsplit(inputstr, sep)
