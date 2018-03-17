@@ -37,11 +37,13 @@ VK.tips.list = [ // Tips list
     "¡Presiona la tecla \"T\" para escribir en el chat del servidor!",
     "¡Presiona la tecla \"P\" para visualizar el mapa!",
     "¡Mantén pulsada la tecla \"Z\" para ver los jugadores conectados!",
+	"¡Escribe en el chat \"/ayuda\" para ver los comandos de ayuda del servidor ",
+	"¡Si te tarda en cargar esta pantalla y ves que no se mueve la barra blanca reinicia el cliente!"
 ];
 
-VK.music.url = "music3.ogg"; // Music url, can be on local or distant(http://....) ("NONE" to desactive music)
+VK.music.url = "music.ogg"; // Music url, can be on local or distant(http://....) ("NONE" to desactive music)
 VK.music.volume = 0.2; // Music volume (0-1)
-VK.music.title = "CG1974 - Sleepwalking"; // Music title ("NONE" to desactive)
+VK.music.title = "NONE"; // Music title ("NONE" to desactive)
 VK.music.submitedBy = "NONE"; // Music submited by... ("NONE" to desactive)
 
 VK.info.logo = "https://ugamers.club/ext/planetstyles/flightdeck/store/Headerlogo800x300-01.png"; // Logo, can be on local or distant(http://....) ("NONE" to desactive)
