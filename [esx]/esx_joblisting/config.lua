@@ -6,5 +6,5 @@ Config.MarkerType   = 1
 Config.Locale = 'es'
 
 Config.Zones = {
-	{x = -389.9728, y = 6050.4394, z = 31.5001}
+	{x = -389.9728, y = 6050.4394, z = 30}
 }
