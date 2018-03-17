@@ -8,7 +8,7 @@ Config = {
 }
 
 Config.Garages = {
-	Garage_Centre = {	
+	--[[Garage_Centre = {	
 		Pos = {x=215.800, y=-810.057, z=29.727},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
@@ -25,7 +25,7 @@ Config.Garages = {
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
 		}, 	
-	},
+	},--]]
 	Garage_Paleto = {	
 		Pos = {x=105.359, y=6613.586, z=31.3973},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
@@ -44,7 +44,25 @@ Config.Garages = {
 			Marker = 1
 		}, 	
 	},
-	Garage_Grove = {	
+	--[[ SIN PONER TODAVÍA Garage_SandyShores = {	
+		Pos = {x=105.359, y=6613.586, z=31.3973},
+		Size  = {x = 3.0, y = 3.0, z = 1.0},
+		Color = {r = 204, g = 204, b = 0},
+		Marker = 1,
+		SpawnPoint = {
+			Pos = {x=128.7822, y= 6622.9965, z= 30.7828},
+			Color = {r=0,g=255,b=0},
+			Size  = {x = 3.0, y = 3.0, z = 1.0},
+			Marker = 1
+		},
+		DeletePoint = {
+			Pos = {x=126.3572, y=6608.4150, z=30.8565},
+			Color = {r=255,g=0,b=0},
+			Size  = {x = 3.0, y = 3.0, z = 1.0},
+			Marker = 1
+		}, 	
+	},--]]
+	--[[Garage_Grove = {	
 		Pos = {x=2463.1662597656, y=5015.55078125, z=45.550029754639},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
@@ -63,23 +81,23 @@ Config.Garages = {
 		}, 	
 	},
 	Garage_Dock = {	
-		Pos = {x=-705.95446777344, y=-1322.6416015625, z=5.1068658828735},
-		Size  = {x = 3.0, y = 3.0, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Marker = 1,
-		SpawnPoint = {
-			Pos = {x=-716.81903076172, y= -1338.7073974609, z= -0.38541260361671},
-			Color = {r=0,g=255,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-		DeletePoint = {
+		--Pos = {x=-705.95446777344, y=-1322.6416015625, z=5.1068658828735},
+		--Size  = {x = 3.0, y = 3.0, z = 1.0},
+		--Color = {r = 204, g = 204, b = 0},
+		--Marker = 1,
+		--SpawnPoint = {
+			--Pos = {x=-716.81903076172, y= -1338.7073974609, z= -0.38541260361671},
+			--Color = {r=0,g=255,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+		--DeletePoint = {
 			Pos = {x=-718.50177001953, y=-1354.9753417969, z=-0.47470563650131},
 			Color = {r=255,g=0,b=0},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
 		}, 	
-	},
+	},--]]
 
 
 }
