@@ -26,19 +26,19 @@ Config.Garages = {
 			Marker = 1
 		}, 	
 	},--]]
-	Garage_Paleto = {	
-		Pos = {x=105.359, y=6613.586, z=31.3973},
+	Garaje Paleto = {	
+		Pos = {x= -285.4097, y= 6127.80615, z=30.86138},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
 		Marker = 1,
 		SpawnPoint = {
-			Pos = {x=128.7822, y= 6622.9965, z= 30.7828},
+			Pos = {x= -294.28680, y= 6111.88525, z= 31.02309},
 			Color = {r=0,g=255,b=0},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
 		},
 		DeletePoint = {
-			Pos = {x=126.3572, y=6608.4150, z=30.8565},
+			Pos = {x=-305.675262, y=6123.465820, z=30.9855480},
 			Color = {r=255,g=0,b=0},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
@@ -78,8 +78,7 @@ Config.Garages = {
 			Color = {r=255,g=0,b=0},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
-		}, 	
-	},
+		}, 		},
 	Garage_Dock = {	
 		--Pos = {x=-705.95446777344, y=-1322.6416015625, z=5.1068658828735},
 		--Size  = {x = 3.0, y = 3.0, z = 1.0},
