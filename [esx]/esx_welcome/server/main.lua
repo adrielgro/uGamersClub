@@ -1,5 +1,5 @@
 AddEventHandler("es:playerLoaded", function(source)
-  TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Bienvenido a ^0uG Life^4 de uGamers Club")
+  TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Bienvenido a ^0uG Life^4 de uGamers Club.")
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Ingresa al Teamspeak: ^0ts3.ugamers.club")
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Recuerda seguir las normas de la comunidad.")
   TriggerClientEvent('chatMessage', source, 'uGamers', {255, 0, 0}, "^4• Utiliza ^0/ayuda^4 para ver la lista de comandos.")
