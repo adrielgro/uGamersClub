@@ -26,7 +26,7 @@ TriggerEvent('es:addGroupCommand', 'spectate', "admin", function(source, args, u
 		TriggerClientEvent('es_camera:spectate', source, target)
 
 	elseif target == source then
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Vous ne pouvez pas vous spec vous-même !")
+		TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "No puedes espectarte a ti mismo.")
 	else
 
 		local found = false
@@ -47,7 +47,7 @@ TriggerEvent('es:addGroupCommand', 'spectate', "admin", function(source, args, u
 	end
 
 end, function(source, args, user)
-	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
+	TriggerClientEvent('chatMessage', source, "SERVIDOR", {255, 0, 0}, "¡Permisos insuficientes!")
 end, {help = 'Spectate', params = {{name = 'id'}}})
 
 AddEventHandler('playerDropped', function()
