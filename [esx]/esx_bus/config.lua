@@ -33,7 +33,7 @@ Config.Zones = {
 		},
 }
 
-Config.Livraison = {
+Config.Livraison = { --[[
 -------------------------------------------Los Santos
 	-- Strawberry avenue et Davis avenue
 	Delivery1LS = {
@@ -124,7 +124,7 @@ Config.Livraison = {
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1,
 			Paye = 800
-		},
+		},--]]
 ------------------------------------------- Blaine County
 	-- panorama drive
 	Delivery1BC = {
