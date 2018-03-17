@@ -11,7 +11,7 @@ AddEventHandler('bank:deposit', function(amount)
 
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	if amount == nil or amount <= 0 or amount > xPlayer.getMoney() then
-		TriggerClientEvent('chatMessage', _source, "Cantidad invalida")
+		TriggerClientEvent('chatMessage', _source, "Cantidad inválida.")
 	else
 		xPlayer.removeMoney(amount)
 		xPlayer.addAccountMoney('bank', tonumber(amount))
@@ -27,7 +27,7 @@ AddEventHandler('bank:withdraw', function(amount)
 	amount = tonumber(amount)
 	base = xPlayer.getAccount('bank').money
 	if amount == nil or amount <= 0 or amount > base then
-		TriggerClientEvent('chatMessage', _source, "Cantidad invalida")
+		TriggerClientEvent('chatMessage', _source, "Cantidad inválida.")
 	else
 		xPlayer.removeAccountMoney('bank', amount)
 		xPlayer.addMoney(amount)
@@ -54,7 +54,7 @@ AddEventHandler('bank:transfer', function(to, amountt)
 	zbalance = zPlayer.getAccount('bank').money
 
 	if tonumber(_source) == tonumber(to) then
-		TriggerClientEvent('chatMessage', _source, "No puedes transferirte a ti mismo")
+		TriggerClientEvent('chatMessage', _source, "No puedes transferirte a ti mismo.")
 	else
 		if balance <= 0 or balance < tonumber(amountt) then
 			TriggerClientEvent('chatMessage', _source, "No tienes suficiente dinero en el banco.")
