@@ -75,30 +75,6 @@ if (VK.info.website != "NONE") {
     document.querySelector(".website").style.display = "none";
 }
 
-
-if (VK.players.enable === true) {
-    $.ajaxSetup({
-        crossOrigin: true,
-        proxy: "proxy.php"
-    });
-    $.getJSON("http://runtime.fivem.net/api/servers/", function (data) {
-        for (var i = 0; i < data.length; i++) {
-            if (data[i]['EndPoint'] == VK.info.ip) {
-                VK.server = data[i].Data;
-                if (VK.server.players.length > 1) {
-                    document.querySelector(".onlinePlayers .label").innerHTML = VK.players.multiplePlayersOnline.replace("@players", VK.server.players.length);
-                } else if (VK.server.players.length == 1) {
-                    document.querySelector(".onlinePlayers .label").innerHTML = VK.players.onePlayerOnline;
-                } else if (VK.server.players.length < 1) {
-                    document.querySelector(".onlinePlayers .label").innerHTML = VK.players.noPlayerOnline;
-                }
-            }
-        }
-    });
-} else {
-    document.querySelector(".onlinePlayers").style.display = "none";
-}
-
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }

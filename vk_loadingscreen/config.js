@@ -29,7 +29,7 @@ VK.backgrounds.list = [ // Backgrounds list, can be on local or distant(http://.
     "img/3.jpg",
     "img/4.jpg",
 ];
-VK.backgrounds.duration = 5000; // Background duration (in ms) before transition (the transition lasts 1/3 of this time)
+VK.backgrounds.duration = 3000; // Background duration (in ms) before transition (the transition lasts 1/3 of this time)
 
 VK.tips.enable = true; //Enable tips (true : enable, false : prevent)
 VK.tips.list = [ // Tips list
@@ -41,9 +41,9 @@ VK.tips.list = [ // Tips list
 	"¡Si te tarda en cargar esta pantalla y ves que no se mueve la barra blanca reinicia el cliente!"
 ];
 
-VK.music.url = "music.ogg"; // Music url, can be on local or distant(http://....) ("NONE" to desactive music)
+VK.music.url = "NONE"; // Music url, can be on local or distant(http://....) ("NONE" to desactive music)
 VK.music.volume = 0.2; // Music volume (0-1)
-VK.music.title = "NONE"; // Music title ("NONE" to desactive)
+VK.music.title = "Radio 24/7 uGamers"; // Music title ("NONE" to desactive)
 VK.music.submitedBy = "NONE"; // Music submited by... ("NONE" to desactive)
 
 VK.info.logo = "https://ugamers.club/ext/planetstyles/flightdeck/store/Headerlogo800x300-01.png"; // Logo, can be on local or distant(http://....) ("NONE" to desactive)
@@ -57,7 +57,7 @@ VK.social.facebook = "/uGamersClub"; // Facebook url ("NONE" to desactive)
 VK.social.youtube = "NONE"; // Youtube url ("NONE" to desactive)
 VK.social.twitch = "/uGamersClub"; // Twitch url ("NONE" to desactive)
 
-VK.players.enable = true; // Enable the players count of the server (true : enable, false : prevent)
+VK.players.enable = false; // Enable the players count of the server (true : enable, false : prevent)
 VK.players.multiplePlayersOnline = "@players jugadores en línea."; // @players equals the players count
 VK.players.onePlayerOnline = "1 jugador en línea"; // Text when only one player is on the server
 VK.players.noPlayerOnline = "Ningún jugador en línea."; // Text when the server is empty

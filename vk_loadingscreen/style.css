@@ -218,36 +218,6 @@ body {
     max-width: 600px;
 }
 
-.onlinePlayers {
-    position: absolute;
-
-    height: 40px;
-    line-height: 40px;
-    top: 100px;
-    right: 0;
-    
-    border-right: 5px solid #ff2600;
-
-    display: inline-flex;
-}
-
-.onlinePlayers .icon {
-    width: 40px;
-    height: 40px;
-}
-
-.onlinePlayers .icon *{
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.onlinePlayers .label {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-    padding: 0px 10px;
-}
 
 .progess-bar {   
     position: absolute;

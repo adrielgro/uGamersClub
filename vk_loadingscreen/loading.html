@@ -48,17 +48,12 @@
         <div class="label">
         </div>
         <div class="icon">
-           <img src="icon/crown.png">
+            <img src="icon/crown.png">
         </div>
     </div>
 
     <div class="logo">
         
-    </div>
-    
-    <div class="onlinePlayers">
-        <div class="label"> 
-        </div>
     </div>
 
     <div class="tip">
@@ -125,5 +120,21 @@
             (handlers[e.data.eventName] || function () { })(e.data);
         });
     </script>
+	
+	<!-- RADIO -->
+	
+	<script>
+var volume = document.getElementById("radio");
+
+function setVolume() {
+audio.volume = volume.value;
+}
+</script>
+<audio id="radio" src="https://radiotest.mancos.club:443/;" autoplay="autoplay"></audio>
+<a href="#" onclick="document.getElementById('radio').play()">Hi!</a>
+<a href="#" onclick="document.getElementById('radio').pause()">Pause!</a>
+<input id="volume" name="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
+
+	<!-- RADIO -->
 </body>
 </html>
