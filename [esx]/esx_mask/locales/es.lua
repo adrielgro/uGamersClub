@@ -1,12 +1,12 @@
 Locales ['es'] = {
 
-    ['valid_purchase'] = 'validate this purchase?',
-    ['yes'] = 'yes',
-    ['no'] = 'no',
-    ['not_enough_money'] = 'you do not have enough money',
-    ['press_access'] = 'presiona ~INPUT_CONTEXT~ para ver el menú',
-    ['masks_blip'] = 'masks',
-    ['no_mask'] = 'you do not have a mask',
-    ['you_paid'] = 'you paid ',
+    ['valid_purchase'] = '¿Confirmas la compra?',
+    ['yes'] = 'Sí',
+    ['no'] = 'No',
+    ['not_enough_money'] = 'No tienes suficiente dinero',
+    ['press_access'] = 'Presiona ~INPUT_CONTEXT~ para ver el menú',
+    ['masks_blip'] = 'Máscaras',
+    ['no_mask'] = 'No tienes ninguna máscara',
+    ['you_paid'] = 'Pagaste ',
 
 }
