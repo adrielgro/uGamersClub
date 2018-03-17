@@ -26,7 +26,7 @@ Config.SpeedLimits = {
 Config.Zones = {
 
   DMVSchool = {
-    Pos   = {x = -228.7969, y = 6332.9755, z = 30},
+    Pos   = {x = -228.7969, y = 6332.9755, z = 32},
     Size  = {x = 1.5, y = 1.5, z = 1.0},
     Color = {r = 204, g = 204, b = 0},
     Type  = 1
