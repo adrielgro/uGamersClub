@@ -68,15 +68,15 @@ function OpenMenuGarage()
 	ESX.UI.Menu.CloseAll()
 
 	local elements = {
-		{label = "List of vehicles", value = 'list_vehicles'},
-		{label = "Store Vehicle", value = 'stock_vehicle'},
+		{label = "Lista de vehículos", value = 'list_vehicles'},
+		{label = "Almacenar vehículo", value = 'stock_vehicle'},
 	}
 
 
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'garage_menu',
 		{
-			title    = 'Garage',
+			title    = 'Garaje',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -117,10 +117,10 @@ function ListVehiclesMenu()
     		local labelvehicle
 
     		if(v.state)then
-    		labelvehicle = vehicleName..': Returns'
+    		labelvehicle = vehicleName..': Volver'
     		
     		else
-    		labelvehicle = vehicleName..': Exit'
+    		labelvehicle = vehicleName..': Salir'
     		end	
 			table.insert(elements, {label =labelvehicle , value = v})
 			
@@ -129,7 +129,7 @@ function ListVehiclesMenu()
 		ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'spawn_vehicle',
 		{
-			title    = 'Garage',
+			title    = 'Garaje',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -138,7 +138,7 @@ function ListVehiclesMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle)
 			else
-				TriggerEvent('esx:showNotification', 'Your vehicle is already out')
+				TriggerEvent('esx:showNotification', 'Ya tienes tu vehículo fuera.')
 			end
 		end,
 		function(data, menu)
@@ -178,40 +178,40 @@ function StockVehicleMenu()
 						if engineHealth < 840 then
 							if engineHealth < 800 then
 								TriggerServerEvent('eden_garage:payhealth', 2000)
-								TriggerServerEvent('eden_garage:logging', "$2000 had been paid \n")
+								TriggerServerEvent('eden_garage:logging', "Has pagado 2000$ \n")
 							else
 								TriggerServerEvent('eden_garage:payhealth', 1800)
-								TriggerServerEvent('eden_garage:logging', "$1800 had been paid \n")
+								TriggerServerEvent('eden_garage:logging', "Has pagado 1800$ \n")
 							end
 						else 
 							TriggerServerEvent('eden_garage:payhealth', 1700)
-							TriggerServerEvent('eden_garage:logging', "$1700 had been paid \n")
+							TriggerServerEvent('eden_garage:logging', "Has pagado 1700$ \n")
 						end
 					else 
 						TriggerServerEvent('eden_garage:payhealth', 1600)
-						TriggerServerEvent('eden_garage:logging', "$1600 had been paid \n")
+						TriggerServerEvent('eden_garage:logging', "Has pagado 1600$ \n")
 					end
 				else 
 					TriggerServerEvent('eden_garage:payhealth', 1500)
-					TriggerServerEvent('eden_garage:logging', "$1500 had been paid \n")
+					TriggerServerEvent('eden_garage:logging', "Has pagado 1500$\n")
 				end
 			else 
 				TriggerServerEvent('eden_garage:payhealth', 1000)
-				TriggerServerEvent('eden_garage:logging', "$1000 had been paid \n")
+				TriggerServerEvent('eden_garage:logging', "Has pagado 1000$ \n")
 			end
 		else
 			TriggerServerEvent('eden_garage:payhealth', 500)
-			TriggerServerEvent('eden_garage:logging', "$500 had been paid \n")
+			TriggerServerEvent('eden_garage:logging', "Has pagado 500$ \n")
 		end
 	end
 				-------------------------------------------------------
-				TriggerEvent('esx:showNotification', 'Your vehicle is in the garage')
+				TriggerEvent('esx:showNotification', 'Tu vehículo está en el garaje.')
 			else
-				TriggerEvent('esx:showNotification', 'You can not store this vehicle')
+				TriggerEvent('esx:showNotification', 'No puedes guardar un vehículo que no te pertenece.')
 			end
 		end,vehicleProps)
 	else
-		TriggerEvent('esx:showNotification', 'There is no vehicle to enter')
+		TriggerEvent('esx:showNotification', 'No hay ningún vehículo para guardar.')
 	end
 
 end
@@ -238,7 +238,7 @@ end
 AddEventHandler('eden_garage:hasEnteredMarker', function(zone)
 	if zone == 'garage' then
 		CurrentAction     = 'garage_action_menu'
-		CurrentActionMsg  = "Press ~INPUT_PICKUP~ to open the garage"
+		CurrentActionMsg  = "Presiona ~INPUT_PICKUP~ para abrir el garaje."
 		CurrentActionData = {}
 	end
 end)
@@ -261,7 +261,7 @@ function ReturnVehicleMenu()
     		local vehicleName = GetDisplayNameFromVehicleModel(hashVehicule)
     		local labelvehicle
 
-    		labelvehicle = vehicleName..': Exit'
+    		labelvehicle = vehicleName..': Salir'
     	
 			table.insert(elements, {label =labelvehicle , value = v})
 			
@@ -270,7 +270,7 @@ function ReturnVehicleMenu()
 		ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'return_vehicle',
 		{
-			title    = 'Garage',
+			title    = 'Garaje',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -282,7 +282,7 @@ function ReturnVehicleMenu()
 					TriggerServerEvent('eden_garage:pay')
 					SpawnVehicle(data.current.value)
 				else
-					ESX.ShowNotification('You n\'do not have enough d\'money')						
+					ESX.ShowNotification('No n\'tienes suficiente d\'dinero')						
 				end
 			end)
 		end,
