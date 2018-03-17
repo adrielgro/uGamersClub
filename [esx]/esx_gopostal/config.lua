@@ -11,7 +11,7 @@ Config.Trucks = {
 
 Config.Cloakroom = {
 	CloakRoom = {
-			Pos   = {x = -421.0467, y = 6136.3007, z = 31.8773},
+			Pos   = {x = -421.0467, y = 6136.3007, z = 31.3563},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1
@@ -20,20 +20,20 @@ Config.Cloakroom = {
 
 Config.Zones = {
 	VehicleSpawner = {
-			Pos   = {x = -438.9501, y = 6147.5297, z = 31.4782},
+			Pos   = {x = -438.67211, y = 6146.2729492188, z = 30.963911},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1
 		},
 
 	VehicleSpawnPoint = {
-			Pos   = {x = -443.6816, y = 6145.2871, z = 31.47833},
+			Pos   = {x = -444.695281, y = 6144.32666, z = 30.95788192},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Type  = -1
 		},
 }
 
-Config.Livraison = {
+Config.Livraison = {--[[
 -------------------------------------------Los Santos
 	-- Strawberry avenue et Davis avenue
 	Delivery1LS = {
@@ -124,7 +124,7 @@ Config.Livraison = {
 			Color = {r = 204, g = 204, b = 0},
 			Type  = 1,
 			Paye = 700
-		},
+		},--]]
 ------------------------------------------- Blaine County
 	-- panorama drive
 	Delivery1BC = {
