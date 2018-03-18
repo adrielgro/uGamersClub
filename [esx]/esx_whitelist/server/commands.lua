@@ -1,14 +1,14 @@
 function displayPermissionIssue ()
-  TriggerClientEvent('chatMessage', source, 'SYSTEM', { 255, 0, 0 }, 'Insufficienct permissions!')
+  TriggerClientEvent('chatMessage', source, 'SYSTEM', { 255, 0, 0 }, 'Permisos insuficientes!')
 end
 
-TriggerEvent('es:addGroupCommand', 'whitelist:load', 'admin', function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'whitelist:load', 'superadmin', function (source, args, user)
   loadWhiteList()
 end, function (source, args, user)
   displayPermissionIssue(source)
 end, { help = _U('help_whitelist_load') })
 
-TriggerEvent('es:addGroupCommand', 'whitelist:add', 'admin', function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'whitelist:add', 'superadmin', function (source, args, user)
   local steamID = 'steam:' .. args[1]
 
   MySQL.Async.execute(
@@ -20,4 +20,4 @@ TriggerEvent('es:addGroupCommand', 'whitelist:add', 'admin', function (source, a
   )
 end, function (source, args, user)
   displayPermissionIssue(source)
-end, { help = _U('help_whitelist_add'), params = { steam = 'SteamID', help = 'SteamID formated to hex' }})
+end, { help = _U('help_whitelist_add'), params = { steam = 'SteamID', help = 'SteamID formateado a hex' }})

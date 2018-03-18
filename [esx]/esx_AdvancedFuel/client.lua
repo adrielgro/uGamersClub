@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 									TriggerEvent("advancedFuel:setEssence", 100, GetVehicleNumberPlateText(veh), GetDisplayNameFromVehicleModel(GetEntityModel(veh)))
 									done = true
 								end
-								SetVehicleUndriveable(veh, true)
+								SetVehicleUndriveable(veh, false)
 								SetVehicleEngineOn(veh, false, false, false)
 								local essenceToPercent = (essence/0.142)*65
 								SetVehicleFuelLevel(veh,round(essenceToPercent))

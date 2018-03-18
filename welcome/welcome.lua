@@ -1,6 +1,0 @@
-AddEventHandler("es:firstSpawn", function(source)
-  TriggerEvent("chatMessage", "uG", { 255, 255, 255 }, "• Bienvenido a ^0uG Life^0 de uGamers Club")
-  TriggerEvent("chatMessage", "uG", { 255, 255, 255 }, "• Ingresa al Teamspeak: ^0ts3.ugamers.club")
-  TriggerEvent("chatMessage", "uG", { 255, 255, 255 }, "• Recuerda seguir las normas de la comunidad.")
-  TriggerEvent("chatMessage", "uG", { 255, 255, 255 }, "• Regístrate en nuestro foro para más información: https://ugamers.club")
-end)
